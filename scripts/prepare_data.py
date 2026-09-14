@@ -195,6 +195,119 @@ domains["resiliencia"] = [{
     "f1_mean": round(float(brs_f1.mean()), 4), "f2_mean": round(float(brs_f2.mean()), 4),
 }]
 
+# --- friendly variable catalog for the redesigned dashboard -----------------
+# Selector shown to a clinical, non-HRV-expert audience: real biomarkers with
+# real units, plus ONE plain-language HRV metric (SDNN) instead of exposing
+# lnRMSSD/SD1/SD2/LF/HF jargon, plus resilience.
+VAR_GROUPS = [
+    ("Cardiovascular", [
+        ("SISTOLICA", "Presion sistolica", "mmHg", "bio"),
+        ("DIASTOLICA", "Presion diastolica", "mmHg", "bio"),
+        ("F_CARDIACA", "Frecuencia cardiaca en reposo", "lpm", "bio"),
+    ]),
+    ("Metabolico", [
+        ("BMI", "Indice de masa corporal", "kg/m2", "bio"),
+        ("INDICE_CINTURA", "Indice cintura-cadera", "", "bio"),
+        ("GLUCOSA", "Glucosa", "mg/dL", "bio"),
+        ("COLESTEROL", "Colesterol total", "mg/dL", "bio"),
+        ("TRIGLICERIDOS", "Trigliceridos", "mg/dL", "bio"),
+        ("HDL", "Colesterol HDL", "mg/dL", "bio"),
+        ("LDL", "Colesterol LDL", "mg/dL", "bio"),
+        ("H_GLICOSILADA", "Hemoglobina glicosilada", "%", "bio"),
+    ]),
+    ("Inflamatorio / hormonal", [
+        ("IL6", "Interleucina-6", "pg/mL", "bio"),
+        ("PCR", "Proteina C reactiva", "mg/L", "bio"),
+        ("ALBUMINA", "Albumina", "g/dL", "bio"),
+        ("CORTISOL", "Cortisol", "ug/dL", "bio"),
+    ]),
+    ("Sistema nervioso autonomo", [
+        ("SDNN", "Variabilidad del ritmo cardiaco (SDNN)", "ms", "hrv_sup"),
+    ]),
+    ("Bienestar", [
+        ("BRS", "Puntaje de resiliencia (BRS)", "escala 1-5", "brs"),
+    ]),
+]
+
+def get_raw_pair(source, key, s):
+    if source == "bio":
+        return biomarcadores_data[s][key]["f1_raw"], biomarcadores_data[s][key]["f2_raw"]
+    if source == "hrv_sup":
+        return hrv_sup_data[s][key]["f1_raw"], hrv_sup_data[s][key]["f2_raw"]
+    if source == "brs":
+        return brs_data[s]["f1"], brs_data[s]["f2"]
+    raise ValueError(source)
+
+def get_norm_pair(source, key, s):
+    if source == "bio":
+        return biomarcadores_data[s][key]["f1_norm"], biomarcadores_data[s][key]["f2_norm"]
+    if source == "hrv_sup":
+        return hrv_sup_data[s][key]["f1_norm"], hrv_sup_data[s][key]["f2_norm"]
+    if source == "brs":
+        return brs_data[s]["f1_norm"], brs_data[s]["f2_norm"]
+    raise ValueError(source)
+
+FLAG_THRESHOLD_PCT = 10.0  # illustrative threshold to flag "cambios que conviene revisar"
+
+variable_catalog = []
+variable_values = {}
+biggest_mover = None  # (abs_pct, entry) among biomarcadores + HRV (excludes BRS, which is its own KPI)
+
+for group_label, items in VAR_GROUPS:
+    for key, label, unit, source in items:
+        f1_vals = np.array([get_raw_pair(source, key, s)[0] for s in bio.index], dtype=float)
+        f2_vals = np.array([get_raw_pair(source, key, s)[1] for s in bio.index], dtype=float)
+        mean_f1 = float(np.nanmean(f1_vals))
+        mean_f2 = float(np.nanmean(f2_vals))
+        pct_change = ((mean_f2 - mean_f1) / abs(mean_f1) * 100) if mean_f1 else 0.0
+        entry = {
+            "key": key, "group": group_label, "label": label, "unit": unit, "source": source,
+            "mean_f1": round(mean_f1, 2), "mean_f2": round(mean_f2, 2),
+            "pct_change": round(pct_change, 1),
+            "flag": bool(abs(pct_change) >= FLAG_THRESHOLD_PCT) and source != "brs",
+        }
+        variable_catalog.append(entry)
+        variable_values[key] = {
+            s: {"f1": get_raw_pair(source, key, s)[0], "f2": get_raw_pair(source, key, s)[1],
+                "f1_norm": round(get_norm_pair(source, key, s)[0], 4),
+                "f2_norm": round(get_norm_pair(source, key, s)[1], 4)}
+            for s in bio.index
+        }
+        if source != "brs":
+            if biggest_mover is None or abs(pct_change) > biggest_mover[0]:
+                biggest_mover = (abs(pct_change), entry)
+
+# --- domain composites (average normalized score per physiological system) --
+DOMAIN_GROUPS = [
+    ("cardiovascular", "Cardiovascular", [("SISTOLICA", "bio"), ("DIASTOLICA", "bio"), ("F_CARDIACA", "bio")]),
+    ("metabolico", "Metabolico", [("BMI", "bio"), ("INDICE_CINTURA", "bio"), ("GLUCOSA", "bio"),
+        ("COLESTEROL", "bio"), ("TRIGLICERIDOS", "bio"), ("HDL", "bio"), ("LDL", "bio"), ("H_GLICOSILADA", "bio")]),
+    ("inflamatorio", "Inflamatorio / hormonal", [("IL6", "bio"), ("PCR", "bio"), ("ALBUMINA", "bio"), ("CORTISOL", "bio")]),
+    ("autonomico", "Sistema nervioso autonomo", [(v[0], "hrv_sup_full") for v in HRV_VARS]),
+    ("resiliencia", "Resiliencia", [("BRS", "brs")]),
+]
+
+domain_scores = {}
+domain_catalog = []
+for dkey, dlabel, members in DOMAIN_GROUPS:
+    domain_catalog.append({"key": dkey, "label": dlabel, "n_variables": len(members)})
+    scores = {}
+    for s in bio.index:
+        f1s, f2s = [], []
+        for mkey, msource in members:
+            if msource == "bio":
+                f1s.append(biomarcadores_data[s][mkey]["f1_norm"]); f2s.append(biomarcadores_data[s][mkey]["f2_norm"])
+            elif msource == "hrv_sup_full":
+                f1s.append(hrv_sup_data[s][mkey]["f1_norm"]); f2s.append(hrv_sup_data[s][mkey]["f2_norm"])
+            elif msource == "brs":
+                f1s.append(brs_data[s]["f1_norm"]); f2s.append(brs_data[s]["f2_norm"])
+        scores[s] = {"f1": round(float(np.mean(f1s)), 4), "f2": round(float(np.mean(f2s)), 4)}
+    domain_scores[dkey] = scores
+
+kpis["variable_mas_cambio"] = biggest_mover[1]["label"]
+kpis["pct_cambio_variable_mas_cambio"] = biggest_mover[1]["pct_change"]
+kpis["unidad_variable_mas_cambio"] = biggest_mover[1]["unit"]
+
 # --- assemble & write ------------------------------------------------------
 payload = {
     "meta": {
@@ -216,6 +329,10 @@ payload = {
         "matrix": corr_matrix.values.round(3).tolist(),
     },
     "domains": domains,
+    "variable_catalog": variable_catalog,
+    "variable_values": variable_values,
+    "domain_catalog": domain_catalog,
+    "domain_scores": domain_scores,
 }
 
 with open(f"{OUT}/data/dashboard_data.json", "w") as f:
