@@ -62,7 +62,12 @@
   .wrap{ max-width: 860px; margin: 0 auto; padding: 26px 22px 60px; }
 
   /* ---------- micro context bar ---------- */
-  .micro-bar{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 30px; gap: 12px; flex-wrap: wrap; }
+  .brand-row{ display:flex; align-items:center; gap: 10px; margin-bottom: 12px; }
+  .brand-logo{ height: 24px; width:auto; display:block; opacity: .95; }
+  .brand-logo-chip{ background:#ffffff; border-radius: 5px; padding: 2px 3px; border: 1px solid var(--hairline); line-height:0; }
+  .brand-text{ font-size: 11px; color: var(--ink-muted); }
+
+  .micro-bar{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 30px; gap: 12px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid var(--hairline); }
   .micro-bar .ctx{ font-size: 13px; color: var(--ink-muted); }
   .micro-bar .ctx b{ color: var(--ink-2); font-weight: 600; }
   button.link-btn{
@@ -233,6 +238,11 @@
 </style>
 
 <div class="wrap">
+  <div class="brand-row">
+    <img class="brand-logo" src="assets/logo-uabc.png" alt="Universidad Autónoma de Baja California">
+    <img class="brand-logo brand-logo-chip" src="assets/logo-bomberos.jpg" alt="Bomberos Tijuana — Capacitación">
+    <span class="brand-text">Universidad Autónoma de Baja California · Bomberos Tijuana, Capacitación</span>
+  </div>
   <div class="micro-bar">
     <div class="ctx">Estudio de carga alostática en bomberos · <b>n = 26</b> · Fase 1 → Fase 2</div>
     <button class="link-btn" id="theme-toggle" type="button">Modo oscuro</button>
