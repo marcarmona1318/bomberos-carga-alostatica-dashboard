@@ -5,8 +5,7 @@ investigación doctoral: biomarcadores sanguíneos, variabilidad de frecuencia c
 resiliencia percibida (BRS) en una cohorte de bomberos, medidos en dos momentos — **Fase 1** y
 **Fase 2**.
 
-**Dashboard interactivo (GitHub Pages):** https://TU-USUARIO.github.io/TU-REPO/
-*(se actualiza automáticamente cuando este link se activa desde la configuración de Pages del repo — ver más abajo)*
+**Dashboard interactivo (GitHub Pages):** https://marcarmona1318.github.io/bomberos-carga-alostatica-dashboard/
 
 ## Qué hay aquí
 
@@ -33,8 +32,7 @@ trabajo — ningún nombre se incluye en este repositorio.
 
 ## Cómo ver el dashboard
 
-**Opción 1 — GitHub Pages:** una vez activado (Settings → Pages → Deploy from branch → `main` /
-`docs`), el dashboard queda disponible en `https://TU-USUARIO.github.io/TU-REPO/`.
+**Opción 1 — GitHub Pages:** https://marcarmona1318.github.io/bomberos-carga-alostatica-dashboard/
 
 **Opción 2 — local:**
 
