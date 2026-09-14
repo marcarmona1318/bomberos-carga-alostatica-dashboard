@@ -58,9 +58,36 @@ cd quarto && quarto render index.qmd
 
 ## Notas metodológicas
 
-- Todas las variables se normalizan con escalamiento mín-máx sobre el rango observado en la
-  cohorte, para hacer comparables unidades muy distintas (mmHg, mg/dL, ms, pg/mL...).
-- Las correlaciones reportadas son exploratorias (Pearson, Fase 1); con n = 26 deben leerse como
-  hipótesis a confirmar, no como hallazgos concluyentes.
+- El dashboard resume el grupo con la **mediana** (no el promedio): la muestra es pequeña (n=26)
+  y varios biomarcadores tienen valores atípicos que distorsionan la media.
+- Los cambios porcentuales no se etiquetan como "mejora" o "deterioro" — esa lectura depende del
+  indicador y del criterio clínico de quien lo revisa; un aumento no es automáticamente positivo
+  ni negativo (p. ej. HDL vs. LDL).
+- Para el análisis exploratorio más técnico (correlaciones de Pearson, normalización min-max,
+  radar por sujeto) ver `notebook/` y `quarto/`; el dashboard en `docs/` deliberadamente deja ese
+  nivel de detalle fuera de la vista principal por tratarse de una audiencia clínica no
+  especializada en HRV.
 - Este repositorio es una pieza de portafolio derivada de un proyecto de investigación más
   amplio; no sustituye ni representa el reporte final de tesis.
+
+## Discrepancia de datos conocida — cortisol
+
+El dashboard calcula un cambio de **+52.2%** en la mediana de cortisol entre Fase 1 y Fase 2
+(n=26, `2027-DATOS REVISADOS.csv`). Un artículo relacionado de este mismo proyecto reporta
+**+61%**. Se investigó esta discrepancia antes de publicar el panel, probando las fórmulas más
+comunes de "cambio de grupo":
+
+| Fórmula | Resultado |
+|---|---|
+| Cambio de la media del grupo | +54.9% |
+| Media de los cambios individuales (%) | +57.0% |
+| Cambio de la mediana del grupo (la que usa el dashboard) | +52.2% |
+| Reportado en el artículo | +61% |
+
+Ninguna reconcilia exactamente con el +61% publicado. Un participante (P15 / PM19) tiene el
+mismo valor de cortisol en ambas fases (9.82 µg/dL) — podría ser un cambio real de cero o un
+marcador de dato faltante en Fase 2; excluirlo mueve el cálculo a +58.5%/+59.3% según la
+fórmula, tampoco exacto. No se ajustaron los datos para forzar la coincidencia: la discrepancia
+se documenta aquí y dentro del propio dashboard (acordeón "Cómo leer este panel y calidad de los
+datos"), en vez de maquillarla. Si tienes a mano la versión de la base o la fórmula exacta que
+usó el artículo, con eso se puede cerrar la brecha.

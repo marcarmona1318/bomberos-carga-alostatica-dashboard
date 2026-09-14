@@ -205,7 +205,7 @@ VAR_GROUPS = [
         ("DIASTOLICA", "Presion diastolica", "mmHg", "bio"),
         ("F_CARDIACA", "Frecuencia cardiaca en reposo", "lpm", "bio"),
     ]),
-    ("Metabolico", [
+    ("Metabólico", [
         ("BMI", "Indice de masa corporal", "kg/m2", "bio"),
         ("INDICE_CINTURA", "Indice cintura-cadera", "", "bio"),
         ("GLUCOSA", "Glucosa", "mg/dL", "bio"),
@@ -221,7 +221,7 @@ VAR_GROUPS = [
         ("ALBUMINA", "Albumina", "g/dL", "bio"),
         ("CORTISOL", "Cortisol", "ug/dL", "bio"),
     ]),
-    ("Sistema nervioso autonomo", [
+    ("Sistema nervioso autónomo", [
         ("SDNN", "Variabilidad del ritmo cardiaco (SDNN)", "ms", "hrv_sup"),
     ]),
     ("Bienestar", [
@@ -247,24 +247,28 @@ def get_norm_pair(source, key, s):
         return brs_data[s]["f1_norm"], brs_data[s]["f2_norm"]
     raise ValueError(source)
 
-FLAG_THRESHOLD_PCT = 10.0  # illustrative threshold to flag "cambios que conviene revisar"
-
 variable_catalog = []
 variable_values = {}
+group_labels_ordered = []
 biggest_mover = None  # (abs_pct, entry) among biomarcadores + HRV (excludes BRS, which is its own KPI)
 
 for group_label, items in VAR_GROUPS:
+    if group_label not in group_labels_ordered:
+        group_labels_ordered.append(group_label)
     for key, label, unit, source in items:
         f1_vals = np.array([get_raw_pair(source, key, s)[0] for s in bio.index], dtype=float)
         f2_vals = np.array([get_raw_pair(source, key, s)[1] for s in bio.index], dtype=float)
-        mean_f1 = float(np.nanmean(f1_vals))
-        mean_f2 = float(np.nanmean(f2_vals))
-        pct_change = ((mean_f2 - mean_f1) / abs(mean_f1) * 100) if mean_f1 else 0.0
+        # Median is used (not mean) because this is a small sample (n=26) with
+        # visible outliers in several biomarkers (see data-quality note below);
+        # the median is more robust to a handful of extreme individual values.
+        median_f1 = float(np.median(f1_vals))
+        median_f2 = float(np.median(f2_vals))
+        pct_change = ((median_f2 - median_f1) / abs(median_f1) * 100) if median_f1 else 0.0
         entry = {
             "key": key, "group": group_label, "label": label, "unit": unit, "source": source,
-            "mean_f1": round(mean_f1, 2), "mean_f2": round(mean_f2, 2),
+            "median_f1": round(median_f1, 2), "median_f2": round(median_f2, 2),
+            "diff": round(median_f2 - median_f1, 2),
             "pct_change": round(pct_change, 1),
-            "flag": bool(abs(pct_change) >= FLAG_THRESHOLD_PCT) and source != "brs",
         }
         variable_catalog.append(entry)
         variable_values[key] = {
@@ -277,36 +281,24 @@ for group_label, items in VAR_GROUPS:
             if biggest_mover is None or abs(pct_change) > biggest_mover[0]:
                 biggest_mover = (abs(pct_change), entry)
 
-# --- domain composites (average normalized score per physiological system) --
-DOMAIN_GROUPS = [
-    ("cardiovascular", "Cardiovascular", [("SISTOLICA", "bio"), ("DIASTOLICA", "bio"), ("F_CARDIACA", "bio")]),
-    ("metabolico", "Metabolico", [("BMI", "bio"), ("INDICE_CINTURA", "bio"), ("GLUCOSA", "bio"),
-        ("COLESTEROL", "bio"), ("TRIGLICERIDOS", "bio"), ("HDL", "bio"), ("LDL", "bio"), ("H_GLICOSILADA", "bio")]),
-    ("inflamatorio", "Inflamatorio / hormonal", [("IL6", "bio"), ("PCR", "bio"), ("ALBUMINA", "bio"), ("CORTISOL", "bio")]),
-    ("autonomico", "Sistema nervioso autonomo", [(v[0], "hrv_sup_full") for v in HRV_VARS]),
-    ("resiliencia", "Resiliencia", [("BRS", "brs")]),
-]
-
-domain_scores = {}
-domain_catalog = []
-for dkey, dlabel, members in DOMAIN_GROUPS:
-    domain_catalog.append({"key": dkey, "label": dlabel, "n_variables": len(members)})
-    scores = {}
-    for s in bio.index:
-        f1s, f2s = [], []
-        for mkey, msource in members:
-            if msource == "bio":
-                f1s.append(biomarcadores_data[s][mkey]["f1_norm"]); f2s.append(biomarcadores_data[s][mkey]["f2_norm"])
-            elif msource == "hrv_sup_full":
-                f1s.append(hrv_sup_data[s][mkey]["f1_norm"]); f2s.append(hrv_sup_data[s][mkey]["f2_norm"])
-            elif msource == "brs":
-                f1s.append(brs_data[s]["f1_norm"]); f2s.append(brs_data[s]["f2_norm"])
-        scores[s] = {"f1": round(float(np.mean(f1s)), 4), "f2": round(float(np.mean(f2s)), 4)}
-    domain_scores[dkey] = scores
-
 kpis["variable_mas_cambio"] = biggest_mover[1]["label"]
 kpis["pct_cambio_variable_mas_cambio"] = biggest_mover[1]["pct_change"]
 kpis["unidad_variable_mas_cambio"] = biggest_mover[1]["unit"]
+kpis["key_variable_mas_cambio"] = biggest_mover[1]["key"]
+
+# --- data-quality note: cortisol +54.9%(mean)/... vs +61% reported elsewhere -
+# See README / dashboard footer for the full explanation. Kept here so the
+# numbers shown anywhere in the dashboard always trace back to one computation.
+cort_f1 = np.array([get_raw_pair("bio", "CORTISOL", s)[0] for s in bio.index], dtype=float)
+cort_f2 = np.array([get_raw_pair("bio", "CORTISOL", s)[1] for s in bio.index], dtype=float)
+cort_pct_each = (cort_f2 - cort_f1) / cort_f1 * 100
+data_quality = {
+    "cortisol_n": len(cort_f1),
+    "cortisol_change_of_means_pct": round(float((cort_f2.mean() - cort_f1.mean()) / cort_f1.mean() * 100), 1),
+    "cortisol_mean_of_pct_changes": round(float(cort_pct_each.mean()), 1),
+    "cortisol_change_of_medians_pct": round(float((np.median(cort_f2) - np.median(cort_f1)) / np.median(cort_f1) * 100), 1),
+    "cortisol_zero_change_subject_count": int((cort_pct_each == 0).sum()),
+}
 
 # --- assemble & write ------------------------------------------------------
 payload = {
@@ -331,8 +323,8 @@ payload = {
     "domains": domains,
     "variable_catalog": variable_catalog,
     "variable_values": variable_values,
-    "domain_catalog": domain_catalog,
-    "domain_scores": domain_scores,
+    "variable_groups_ordered": group_labels_ordered,
+    "data_quality": data_quality,
 }
 
 with open(f"{OUT}/data/dashboard_data.json", "w") as f:

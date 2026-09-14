@@ -14,8 +14,9 @@
   "variable_mas_asociada_resiliencia": "Glucosa",
   "r_variable_mas_asociada_resiliencia": -0.31,
   "variable_mas_cambio": "Cortisol",
-  "pct_cambio_variable_mas_cambio": 54.9,
-  "unidad_variable_mas_cambio": "ug/dL"
+  "pct_cambio_variable_mas_cambio": 52.2,
+  "unidad_variable_mas_cambio": "ug/dL",
+  "key_variable_mas_cambio": "CORTISOL"
  },
  "subjects": [
   {
@@ -6393,10 +6394,10 @@
    "label": "Presion sistolica",
    "unit": "mmHg",
    "source": "bio",
-   "mean_f1": 124.23,
-   "mean_f2": 122.62,
-   "pct_change": -1.3,
-   "flag": false
+   "median_f1": 120.0,
+   "median_f2": 120.0,
+   "diff": 0.0,
+   "pct_change": 0.0
   },
   {
    "key": "DIASTOLICA",
@@ -6404,10 +6405,10 @@
    "label": "Presion diastolica",
    "unit": "mmHg",
    "source": "bio",
-   "mean_f1": 79.62,
-   "mean_f2": 79.19,
-   "pct_change": -0.5,
-   "flag": false
+   "median_f1": 80.0,
+   "median_f2": 80.0,
+   "diff": 0.0,
+   "pct_change": 0.0
   },
   {
    "key": "F_CARDIACA",
@@ -6415,98 +6416,98 @@
    "label": "Frecuencia cardiaca en reposo",
    "unit": "lpm",
    "source": "bio",
-   "mean_f1": 74.51,
-   "mean_f2": 70.84,
-   "pct_change": -4.9,
-   "flag": false
+   "median_f1": 74.09,
+   "median_f2": 67.65,
+   "diff": -6.45,
+   "pct_change": -8.7
   },
   {
    "key": "BMI",
-   "group": "Metabolico",
+   "group": "Metabólico",
    "label": "Indice de masa corporal",
    "unit": "kg/m2",
    "source": "bio",
-   "mean_f1": 28.35,
-   "mean_f2": 29.32,
-   "pct_change": 3.4,
-   "flag": false
+   "median_f1": 27.5,
+   "median_f2": 28.16,
+   "diff": 0.66,
+   "pct_change": 2.4
   },
   {
    "key": "INDICE_CINTURA",
-   "group": "Metabolico",
+   "group": "Metabólico",
    "label": "Indice cintura-cadera",
    "unit": "",
    "source": "bio",
-   "mean_f1": 0.95,
-   "mean_f2": 0.96,
-   "pct_change": 0.7,
-   "flag": false
+   "median_f1": 0.96,
+   "median_f2": 0.96,
+   "diff": 0.0,
+   "pct_change": 0.5
   },
   {
    "key": "GLUCOSA",
-   "group": "Metabolico",
+   "group": "Metabólico",
    "label": "Glucosa",
    "unit": "mg/dL",
    "source": "bio",
-   "mean_f1": 97.08,
-   "mean_f2": 96.6,
-   "pct_change": -0.5,
-   "flag": false
+   "median_f1": 92.5,
+   "median_f2": 87.0,
+   "diff": -5.5,
+   "pct_change": -5.9
   },
   {
    "key": "COLESTEROL",
-   "group": "Metabolico",
+   "group": "Metabólico",
    "label": "Colesterol total",
    "unit": "mg/dL",
    "source": "bio",
-   "mean_f1": 163.31,
-   "mean_f2": 173.04,
-   "pct_change": 6.0,
-   "flag": false
+   "median_f1": 160.0,
+   "median_f2": 180.5,
+   "diff": 20.5,
+   "pct_change": 12.8
   },
   {
    "key": "TRIGLICERIDOS",
-   "group": "Metabolico",
+   "group": "Metabólico",
    "label": "Trigliceridos",
    "unit": "mg/dL",
    "source": "bio",
-   "mean_f1": 108.38,
-   "mean_f2": 139.38,
-   "pct_change": 28.6,
-   "flag": true
+   "median_f1": 95.7,
+   "median_f2": 110.75,
+   "diff": 15.05,
+   "pct_change": 15.7
   },
   {
    "key": "HDL",
-   "group": "Metabolico",
+   "group": "Metabólico",
    "label": "Colesterol HDL",
    "unit": "mg/dL",
    "source": "bio",
-   "mean_f1": 55.09,
-   "mean_f2": 46.15,
-   "pct_change": -16.2,
-   "flag": true
+   "median_f1": 55.53,
+   "median_f2": 46.2,
+   "diff": -9.33,
+   "pct_change": -16.8
   },
   {
    "key": "LDL",
-   "group": "Metabolico",
+   "group": "Metabólico",
    "label": "Colesterol LDL",
    "unit": "mg/dL",
    "source": "bio",
-   "mean_f1": 86.54,
-   "mean_f2": 97.88,
-   "pct_change": 13.1,
-   "flag": true
+   "median_f1": 83.5,
+   "median_f2": 103.0,
+   "diff": 19.5,
+   "pct_change": 23.4
   },
   {
    "key": "H_GLICOSILADA",
-   "group": "Metabolico",
+   "group": "Metabólico",
    "label": "Hemoglobina glicosilada",
    "unit": "%",
    "source": "bio",
-   "mean_f1": 5.05,
-   "mean_f2": 4.89,
-   "pct_change": -3.0,
-   "flag": false
+   "median_f1": 5.1,
+   "median_f2": 4.6,
+   "diff": -0.5,
+   "pct_change": -9.8
   },
   {
    "key": "IL6",
@@ -6514,10 +6515,10 @@
    "label": "Interleucina-6",
    "unit": "pg/mL",
    "source": "bio",
-   "mean_f1": 13.35,
-   "mean_f2": 14.63,
-   "pct_change": 9.6,
-   "flag": false
+   "median_f1": 13.25,
+   "median_f2": 12.85,
+   "diff": -0.4,
+   "pct_change": -3.0
   },
   {
    "key": "PCR",
@@ -6525,10 +6526,10 @@
    "label": "Proteina C reactiva",
    "unit": "mg/L",
    "source": "bio",
-   "mean_f1": 7.72,
-   "mean_f2": 6.55,
-   "pct_change": -15.2,
-   "flag": true
+   "median_f1": 3.6,
+   "median_f2": 3.33,
+   "diff": -0.26,
+   "pct_change": -7.4
   },
   {
    "key": "ALBUMINA",
@@ -6536,10 +6537,10 @@
    "label": "Albumina",
    "unit": "g/dL",
    "source": "bio",
-   "mean_f1": 4.35,
-   "mean_f2": 4.4,
-   "pct_change": 1.2,
-   "flag": false
+   "median_f1": 4.38,
+   "median_f2": 4.49,
+   "diff": 0.11,
+   "pct_change": 2.4
   },
   {
    "key": "CORTISOL",
@@ -6547,21 +6548,21 @@
    "label": "Cortisol",
    "unit": "ug/dL",
    "source": "bio",
-   "mean_f1": 6.19,
-   "mean_f2": 9.58,
-   "pct_change": 54.9,
-   "flag": true
+   "median_f1": 5.8,
+   "median_f2": 8.83,
+   "diff": 3.03,
+   "pct_change": 52.2
   },
   {
    "key": "SDNN",
-   "group": "Sistema nervioso autonomo",
+   "group": "Sistema nervioso autónomo",
    "label": "Variabilidad del ritmo cardiaco (SDNN)",
    "unit": "ms",
    "source": "hrv_sup",
-   "mean_f1": 39.04,
-   "mean_f2": 39.86,
-   "pct_change": 2.1,
-   "flag": false
+   "median_f1": 38.87,
+   "median_f2": 38.92,
+   "diff": 0.05,
+   "pct_change": 0.1
   },
   {
    "key": "BRS",
@@ -6569,10 +6570,10 @@
    "label": "Puntaje de resiliencia (BRS)",
    "unit": "escala 1-5",
    "source": "brs",
-   "mean_f1": 3.75,
-   "mean_f2": 3.68,
-   "pct_change": -1.9,
-   "flag": false
+   "median_f1": 3.67,
+   "median_f2": 3.58,
+   "diff": -0.08,
+   "pct_change": -2.3
   }
  ],
  "variable_values": {
@@ -9263,563 +9264,18 @@
    }
   }
  },
- "domain_catalog": [
-  {
-   "key": "cardiovascular",
-   "label": "Cardiovascular",
-   "n_variables": 3
-  },
-  {
-   "key": "metabolico",
-   "label": "Metabolico",
-   "n_variables": 8
-  },
-  {
-   "key": "inflamatorio",
-   "label": "Inflamatorio / hormonal",
-   "n_variables": 4
-  },
-  {
-   "key": "autonomico",
-   "label": "Sistema nervioso autonomo",
-   "n_variables": 9
-  },
-  {
-   "key": "resiliencia",
-   "label": "Resiliencia",
-   "n_variables": 1
-  }
+ "variable_groups_ordered": [
+  "Cardiovascular",
+  "Metabólico",
+  "Inflamatorio / hormonal",
+  "Sistema nervioso autónomo",
+  "Bienestar"
  ],
- "domain_scores": {
-  "cardiovascular": {
-   "P01": {
-    "f1": 0.2489,
-    "f2": 0.3335
-   },
-   "P02": {
-    "f1": 0.8403,
-    "f2": 0.823
-   },
-   "P03": {
-    "f1": 0.4771,
-    "f2": 0.4435
-   },
-   "P04": {
-    "f1": 0.4387,
-    "f2": 0.39
-   },
-   "P05": {
-    "f1": 0.22,
-    "f2": 0.0962
-   },
-   "P06": {
-    "f1": 0.2131,
-    "f2": 0.1035
-   },
-   "P07": {
-    "f1": 0.1517,
-    "f2": 0.1524
-   },
-   "P08": {
-    "f1": 0.2675,
-    "f2": 0.2546
-   },
-   "P09": {
-    "f1": 0.4474,
-    "f2": 0.359
-   },
-   "P10": {
-    "f1": 0.3893,
-    "f2": 0.3297
-   },
-   "P11": {
-    "f1": 0.3961,
-    "f2": 0.351
-   },
-   "P12": {
-    "f1": 0.3365,
-    "f2": 0.3316
-   },
-   "P13": {
-    "f1": 0.5956,
-    "f2": 0.3841
-   },
-   "P14": {
-    "f1": 0.4435,
-    "f2": 0.5268
-   },
-   "P15": {
-    "f1": 0.6344,
-    "f2": 0.6474
-   },
-   "P16": {
-    "f1": 0.4826,
-    "f2": 0.4828
-   },
-   "P17": {
-    "f1": 0.6414,
-    "f2": 0.4984
-   },
-   "P18": {
-    "f1": 0.3607,
-    "f2": 0.2966
-   },
-   "P19": {
-    "f1": 0.2868,
-    "f2": 0.3366
-   },
-   "P20": {
-    "f1": 0.25,
-    "f2": 0.1974
-   },
-   "P21": {
-    "f1": 0.4005,
-    "f2": 0.641
-   },
-   "P22": {
-    "f1": 0.3311,
-    "f2": 0.339
-   },
-   "P23": {
-    "f1": 0.7204,
-    "f2": 0.6769
-   },
-   "P24": {
-    "f1": 0.1468,
-    "f2": 0.1753
-   },
-   "P25": {
-    "f1": 0.3764,
-    "f2": 0.226
-   },
-   "P26": {
-    "f1": 0.4262,
-    "f2": 0.2838
-   }
-  },
-  "metabolico": {
-   "P01": {
-    "f1": 0.2799,
-    "f2": 0.2753
-   },
-   "P02": {
-    "f1": 0.3551,
-    "f2": 0.477
-   },
-   "P03": {
-    "f1": 0.3991,
-    "f2": 0.4775
-   },
-   "P04": {
-    "f1": 0.4321,
-    "f2": 0.408
-   },
-   "P05": {
-    "f1": 0.3134,
-    "f2": 0.2625
-   },
-   "P06": {
-    "f1": 0.221,
-    "f2": 0.2099
-   },
-   "P07": {
-    "f1": 0.36,
-    "f2": 0.4054
-   },
-   "P08": {
-    "f1": 0.3664,
-    "f2": 0.4892
-   },
-   "P09": {
-    "f1": 0.3751,
-    "f2": 0.3513
-   },
-   "P10": {
-    "f1": 0.19,
-    "f2": 0.1678
-   },
-   "P11": {
-    "f1": 0.259,
-    "f2": 0.2387
-   },
-   "P12": {
-    "f1": 0.3395,
-    "f2": 0.4825
-   },
-   "P13": {
-    "f1": 0.2592,
-    "f2": 0.1556
-   },
-   "P14": {
-    "f1": 0.4551,
-    "f2": 0.5481
-   },
-   "P15": {
-    "f1": 0.3723,
-    "f2": 0.2402
-   },
-   "P16": {
-    "f1": 0.2831,
-    "f2": 0.2588
-   },
-   "P17": {
-    "f1": 0.5524,
-    "f2": 0.5262
-   },
-   "P18": {
-    "f1": 0.4984,
-    "f2": 0.3733
-   },
-   "P19": {
-    "f1": 0.1949,
-    "f2": 0.202
-   },
-   "P20": {
-    "f1": 0.2817,
-    "f2": 0.2914
-   },
-   "P21": {
-    "f1": 0.3161,
-    "f2": 0.3804
-   },
-   "P22": {
-    "f1": 0.3086,
-    "f2": 0.1955
-   },
-   "P23": {
-    "f1": 0.4167,
-    "f2": 0.4322
-   },
-   "P24": {
-    "f1": 0.3655,
-    "f2": 0.4253
-   },
-   "P25": {
-    "f1": 0.6288,
-    "f2": 0.6768
-   },
-   "P26": {
-    "f1": 0.2895,
-    "f2": 0.3822
-   }
-  },
-  "inflamatorio": {
-   "P01": {
-    "f1": 0.1463,
-    "f2": 0.3643
-   },
-   "P02": {
-    "f1": 0.1713,
-    "f2": 0.1017
-   },
-   "P03": {
-    "f1": 0.2521,
-    "f2": 0.2665
-   },
-   "P04": {
-    "f1": 0.4459,
-    "f2": 0.5482
-   },
-   "P05": {
-    "f1": 0.3042,
-    "f2": 0.2267
-   },
-   "P06": {
-    "f1": 0.3136,
-    "f2": 0.5984
-   },
-   "P07": {
-    "f1": 0.1592,
-    "f2": 0.2468
-   },
-   "P08": {
-    "f1": 0.3254,
-    "f2": 0.468
-   },
-   "P09": {
-    "f1": 0.3271,
-    "f2": 0.3831
-   },
-   "P10": {
-    "f1": 0.3063,
-    "f2": 0.495
-   },
-   "P11": {
-    "f1": 0.417,
-    "f2": 0.3099
-   },
-   "P12": {
-    "f1": 0.2353,
-    "f2": 0.1245
-   },
-   "P13": {
-    "f1": 0.2289,
-    "f2": 0.3378
-   },
-   "P14": {
-    "f1": 0.2905,
-    "f2": 0.3009
-   },
-   "P15": {
-    "f1": 0.2443,
-    "f2": 0.3783
-   },
-   "P16": {
-    "f1": 0.1092,
-    "f2": 0.3063
-   },
-   "P17": {
-    "f1": 0.447,
-    "f2": 0.3173
-   },
-   "P18": {
-    "f1": 0.2288,
-    "f2": 0.3413
-   },
-   "P19": {
-    "f1": 0.2491,
-    "f2": 0.3699
-   },
-   "P20": {
-    "f1": 0.2773,
-    "f2": 0.3593
-   },
-   "P21": {
-    "f1": 0.3055,
-    "f2": 0.4649
-   },
-   "P22": {
-    "f1": 0.2437,
-    "f2": 0.3815
-   },
-   "P23": {
-    "f1": 0.356,
-    "f2": 0.3882
-   },
-   "P24": {
-    "f1": 0.1846,
-    "f2": 0.1736
-   },
-   "P25": {
-    "f1": 0.3683,
-    "f2": 0.3337
-   },
-   "P26": {
-    "f1": 0.4542,
-    "f2": 0.317
-   }
-  },
-  "autonomico": {
-   "P01": {
-    "f1": 0.3284,
-    "f2": 0.2521
-   },
-   "P02": {
-    "f1": 0.4299,
-    "f2": 0.3544
-   },
-   "P03": {
-    "f1": 0.5187,
-    "f2": 0.4939
-   },
-   "P04": {
-    "f1": 0.3701,
-    "f2": 0.4278
-   },
-   "P05": {
-    "f1": 0.5403,
-    "f2": 0.3344
-   },
-   "P06": {
-    "f1": 0.2112,
-    "f2": 0.2802
-   },
-   "P07": {
-    "f1": 0.4691,
-    "f2": 0.301
-   },
-   "P08": {
-    "f1": 0.5111,
-    "f2": 0.5111
-   },
-   "P09": {
-    "f1": 0.2656,
-    "f2": 0.37
-   },
-   "P10": {
-    "f1": 0.676,
-    "f2": 0.6166
-   },
-   "P11": {
-    "f1": 0.347,
-    "f2": 0.2664
-   },
-   "P12": {
-    "f1": 0.4781,
-    "f2": 0.575
-   },
-   "P13": {
-    "f1": 0.3203,
-    "f2": 0.3203
-   },
-   "P14": {
-    "f1": 0.2525,
-    "f2": 0.2525
-   },
-   "P15": {
-    "f1": 0.1985,
-    "f2": 0.3499
-   },
-   "P16": {
-    "f1": 0.4409,
-    "f2": 0.4403
-   },
-   "P17": {
-    "f1": 0.1781,
-    "f2": 0.6977
-   },
-   "P18": {
-    "f1": 0.4337,
-    "f2": 0.4337
-   },
-   "P19": {
-    "f1": 0.541,
-    "f2": 0.6527
-   },
-   "P20": {
-    "f1": 0.4133,
-    "f2": 0.3684
-   },
-   "P21": {
-    "f1": 0.3096,
-    "f2": 0.1454
-   },
-   "P22": {
-    "f1": 0.4334,
-    "f2": 0.3107
-   },
-   "P23": {
-    "f1": 0.3253,
-    "f2": 0.275
-   },
-   "P24": {
-    "f1": 0.3749,
-    "f2": 0.4035
-   },
-   "P25": {
-    "f1": 0.2419,
-    "f2": 0.4766
-   },
-   "P26": {
-    "f1": 0.347,
-    "f2": 0.2664
-   }
-  },
-  "resiliencia": {
-   "P01": {
-    "f1": 0.3077,
-    "f2": 0.8462
-   },
-   "P02": {
-    "f1": 0.6154,
-    "f2": 0.3846
-   },
-   "P03": {
-    "f1": 0.3846,
-    "f2": 0.5385
-   },
-   "P04": {
-    "f1": 0.1538,
-    "f2": 0.4615
-   },
-   "P05": {
-    "f1": 0.3077,
-    "f2": 0.3077
-   },
-   "P06": {
-    "f1": 0.6154,
-    "f2": 0.2308
-   },
-   "P07": {
-    "f1": 1.0,
-    "f2": 0.6923
-   },
-   "P08": {
-    "f1": 0.5385,
-    "f2": 1.0
-   },
-   "P09": {
-    "f1": 0.4615,
-    "f2": 0.0769
-   },
-   "P10": {
-    "f1": 0.1538,
-    "f2": 0.3077
-   },
-   "P11": {
-    "f1": 0.5385,
-    "f2": 0.3077
-   },
-   "P12": {
-    "f1": 0.0769,
-    "f2": 0.4615
-   },
-   "P13": {
-    "f1": 0.3846,
-    "f2": 0.1538
-   },
-   "P14": {
-    "f1": 0.1538,
-    "f2": 0.1538
-   },
-   "P15": {
-    "f1": 0.0769,
-    "f2": 0.3846
-   },
-   "P16": {
-    "f1": 0.7692,
-    "f2": 0.3077
-   },
-   "P17": {
-    "f1": 0.9231,
-    "f2": 0.4615
-   },
-   "P18": {
-    "f1": 0.6923,
-    "f2": 0.3077
-   },
-   "P19": {
-    "f1": 0.1538,
-    "f2": 0.5385
-   },
-   "P20": {
-    "f1": 0.0769,
-    "f2": 0.5385
-   },
-   "P21": {
-    "f1": 0.6154,
-    "f2": 0.2308
-   },
-   "P22": {
-    "f1": 0.3077,
-    "f2": 0.8462
-   },
-   "P23": {
-    "f1": 0.4615,
-    "f2": 0.3846
-   },
-   "P24": {
-    "f1": 0.9231,
-    "f2": 0.0769
-   },
-   "P25": {
-    "f1": 0.0,
-    "f2": 0.0
-   },
-   "P26": {
-    "f1": 0.3077,
-    "f2": 0.1538
-   }
-  }
+ "data_quality": {
+  "cortisol_n": 26,
+  "cortisol_change_of_means_pct": 54.9,
+  "cortisol_mean_of_pct_changes": 57.0,
+  "cortisol_change_of_medians_pct": 52.2,
+  "cortisol_zero_change_subject_count": 1
  }
 }

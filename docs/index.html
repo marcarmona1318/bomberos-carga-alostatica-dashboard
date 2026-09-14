@@ -3,310 +3,304 @@
 <title>Panel de Seguimiento — Bomberos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root{
     color-scheme: light;
-    --bg:              #f4f8f8;
+    --bg:              #f7f8fa;
     --surface:         #ffffff;
-    --surface-2:       #eef5f4;
-    --ink:             #142826;
-    --ink-2:           #526a68;
-    --ink-muted:       #8aa19e;
-    --hairline:        #dfe9e7;
-    --ring:            rgba(15,92,102,0.14);
+    --surface-2:       #eef0f4;
+    --ink:             #141b34;
+    --ink-2:           #4b5573;
+    --ink-muted:       #6b7590;
+    --hairline:        #e2e5ea;
 
-    --primary:         #0f5c66;   /* azul petroleo - Fase 1 / marca */
-    --primary-strong:  #0a454d;
-    --primary-tint:    #e3eeee;
-    --accent:          #14b8a6;   /* turquesa - Fase 2 */
-    --accent-tint:     #e1f7f3;
-    --flag:            #b6660a;    /* texto sobre chip ambar */
-    --flag-bg:         #fdf1de;
-    --flag-dot:        #f2971c;
+    --phase1:          #1e3a8a;   /* azul marino - Fase 1 */
+    --phase1-tint:     #eaeefb;
+    --phase2:          #8a5608;   /* ambar oscuro - Fase 2 */
+    --phase2-tint:     #f8efe0;
 
-    --line-dim:        #c7d6d4;
-
-    --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       color-scheme: dark;
-      --bg:              #0b1817;
-      --surface:         #12211f;
-      --surface-2:       #17302c;
-      --ink:             #edf6f5;
-      --ink-2:           #a7c1be;
-      --ink-muted:       #6f8b88;
-      --hairline:        #1f3532;
-      --ring:            rgba(45,212,191,0.16);
-      --primary:         #3fa9b5;
-      --primary-strong:  #6bc4cd;
-      --primary-tint:    #16302d;
-      --accent:          #2dd4bf;
-      --accent-tint:     #123330;
-      --flag:            #ffb648;
-      --flag-bg:         #2e2313;
-      --flag-dot:        #f2971c;
-      --line-dim:        #294744;
+      --bg:              #0e1220;
+      --surface:         #161b2e;
+      --surface-2:       #1d2338;
+      --ink:             #eef1fb;
+      --ink-2:           #b7bfdb;
+      --ink-muted:       #8992b8;
+      --hairline:        #262c44;
+      --phase1:          #8fa4ea;
+      --phase1-tint:     #1c2748;
+      --phase2:          #d9922a;
+      --phase2-tint:     #2c2412;
     }
   }
   :root[data-theme="dark"]{
     color-scheme: dark;
-    --bg:              #0b1817;
-    --surface:         #12211f;
-    --surface-2:       #17302c;
-    --ink:             #edf6f5;
-    --ink-2:           #a7c1be;
-    --ink-muted:       #6f8b88;
-    --hairline:        #1f3532;
-    --ring:            rgba(45,212,191,0.16);
-    --primary:         #3fa9b5;
-    --primary-strong:  #6bc4cd;
-    --primary-tint:    #16302d;
-    --accent:          #2dd4bf;
-    --accent-tint:     #123330;
-    --flag:            #ffb648;
-    --flag-bg:         #2e2313;
-    --flag-dot:        #f2971c;
-    --line-dim:        #294744;
+    --bg:              #0e1220;
+    --surface:         #161b2e;
+    --surface-2:       #1d2338;
+    --ink:             #eef1fb;
+    --ink-2:           #b7bfdb;
+    --ink-muted:       #8992b8;
+    --hairline:        #262c44;
+    --phase1:          #8fa4ea;
+    --phase1-tint:     #1c2748;
+    --phase2:          #d9922a;
+    --phase2-tint:     #2c2412;
   }
 
   *{ box-sizing: border-box; }
-  body{ background: var(--bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+  body{ background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
   h1,h2,h3{ font-family: var(--font); text-wrap: balance; margin: 0; }
+  .tab-num{ font-variant-numeric: tabular-nums; }
 
-  .wrap{ max-width: 1180px; margin: 0 auto; padding: 22px 22px 48px; }
+  .wrap{ max-width: 860px; margin: 0 auto; padding: 26px 22px 60px; }
 
-  /* ---------- header ---------- */
-  header.top{
-    display:flex; align-items:center; justify-content:space-between; gap:20px;
-    margin-bottom: 18px; flex-wrap: wrap;
+  /* ---------- micro context bar ---------- */
+  .micro-bar{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 30px; gap: 12px; flex-wrap: wrap; }
+  .micro-bar .ctx{ font-size: 13px; color: var(--ink-muted); }
+  .micro-bar .ctx b{ color: var(--ink-2); font-weight: 600; }
+  button.link-btn{
+    font-family: var(--font); font-size: 13px; color: var(--ink-muted); background: none; border: none;
+    cursor: pointer; padding: 4px 6px; text-decoration: underline; text-underline-offset: 3px;
   }
-  .title-block h1{ font-size: 21px; font-weight: 800; letter-spacing: -0.01em; }
-  .title-block p{ margin: 3px 0 0; font-size: 13px; color: var(--ink-2); }
-  .header-controls{ display:flex; align-items:center; gap: 8px; flex-wrap: wrap; }
-  .search-box{
-    display:flex; align-items:center; gap:6px; background: var(--surface); border: 1px solid var(--hairline);
-    border-radius: 9px; padding: 7px 11px; min-width: 168px;
-  }
-  .search-box svg{ flex: none; opacity: .55; }
-  .search-box input{
-    border:none; outline:none; background:none; font-family: var(--font); font-size: 13px; color: var(--ink);
-    width: 100%;
-  }
-  .search-box input::placeholder{ color: var(--ink-muted); }
-  button.pill{
-    font-family: var(--font); font-size: 13px; font-weight: 600; color: var(--primary);
-    background: var(--primary-tint); border: 1px solid transparent; border-radius: 9px; padding: 8px 14px; cursor: pointer;
-    display:flex; align-items:center; gap:6px; white-space:nowrap;
-  }
-  button.pill:hover{ filter: brightness(0.97); }
-  button.ghost{
-    font-family: var(--font); font-size: 13px; font-weight: 500; color: var(--ink-2);
-    background: var(--surface); border: 1px solid var(--hairline); border-radius: 9px; padding: 8px 12px; cursor: pointer;
-  }
-  button.ghost:hover{ color: var(--ink); border-color: var(--ink-muted); }
-  button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible, tr:focus-visible{
-    outline: 2px solid var(--accent); outline-offset: 2px;
+  button.link-btn:hover{ color: var(--ink); }
+  button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible, [tabindex]:focus-visible{
+    outline: 2px solid var(--phase1); outline-offset: 2px; border-radius: 3px;
   }
 
-  /* ---------- KPI row ---------- */
-  .kpi-row{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
-  .kpi{
-    background: var(--surface); border: 1px solid var(--hairline); border-radius: 14px;
-    padding: 16px 18px; display:flex; flex-direction:column; gap: 5px;
-  }
-  .kpi .label{ font-size: 12px; color: var(--ink-2); font-weight: 500; }
-  .kpi .value{ font-size: 26px; font-weight: 800; letter-spacing:-0.01em; line-height:1.15; }
-  .kpi .value small{ font-size: 13px; font-weight: 600; color: var(--ink-2); }
-  .kpi .sub{ font-size: 12.5px; color: var(--ink-muted); }
-  .kpi.flagged{ border-color: color-mix(in srgb, var(--flag-dot) 45%, var(--hairline)); }
-  .flag-chip{
-    display:inline-flex; align-items:center; gap:5px; font-size: 11.5px; font-weight: 700;
-    color: var(--flag); background: var(--flag-bg); border-radius: 999px; padding: 3px 9px; width: fit-content;
-  }
-  .flag-chip .dot{ width:6px; height:6px; border-radius:50%; background: var(--flag-dot); }
+  /* ---------- hero finding ---------- */
+  .hero{ margin-bottom: 30px; }
+  .hero .eyebrow{ font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--phase1); margin-bottom: 10px; }
+  .hero h1{ font-size: 34px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.18; color: var(--ink); }
+  .hero h1 .amt{ color: var(--phase2); }
+  .hero .caveat{ font-size: 15px; color: var(--ink-2); margin-top: 12px; max-width: 62ch; }
+  .hero .provenance{ font-size: 12.5px; color: var(--ink-muted); margin-top: 10px; }
+  .hero .dq-note{ display:inline-flex; align-items:center; gap:5px; font-size: 12.5px; color: var(--ink-muted); margin-top: 6px; cursor: pointer; background:none; border:none; text-decoration: underline; text-underline-offset: 2px; font-family: var(--font); padding:0; }
+  .hero .dq-note:hover{ color: var(--ink-2); }
 
-  /* ---------- main grid ---------- */
-  .main-grid{ display:grid; grid-template-columns: 1.7fr 1fr; gap: 14px; align-items: stretch; margin-bottom: 14px; }
-  .panel{ background: var(--surface); border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; }
-  .panel h2{ font-size: 15px; font-weight: 700; }
-  .panel .desc{ font-size: 12.5px; color: var(--ink-2); margin-top: 2px; }
-
-  .hero-head{ display:flex; justify-content: space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; margin-bottom: 6px; }
+  /* ---------- indicator picker ---------- */
+  .picker{ margin-bottom: 22px; }
+  .picker .lbl{ font-size: 12.5px; color: var(--ink-muted); margin-bottom: 8px; }
+  .chip-row{ display:flex; gap: 8px; flex-wrap: wrap; align-items:center; }
+  button.chip{
+    font-family: var(--font); font-size: 13.5px; font-weight: 600; color: var(--ink-2);
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 999px; padding: 7px 14px; cursor: pointer;
+  }
+  button.chip:hover{ border-color: var(--ink-muted); color: var(--ink); }
+  button.chip[aria-pressed="true"]{ background: var(--ink); color: var(--bg); border-color: var(--ink); }
   select#var-select{
-    font-family: var(--font); font-size: 13.5px; font-weight: 600; color: var(--primary-strong);
-    background: var(--primary-tint); border: 1px solid transparent; border-radius: 9px; padding: 8px 12px; cursor: pointer;
+    font-family: var(--font); font-size: 13.5px; font-weight: 500; color: var(--ink-2);
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 999px; padding: 7px 14px; cursor: pointer;
     max-width: 260px;
   }
-  .legend-row{ display:flex; gap:16px; margin: 10px 0 4px; }
-  .legend-item{ display:flex; align-items:center; gap:6px; font-size: 12px; color: var(--ink-2); font-weight: 500;}
-  .legend-dot{ width:9px; height:9px; border-radius:50%; flex:none; }
 
-  /* ---------- side panel ---------- */
-  .side-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
-  .side-id{ font-size: 19px; font-weight: 800; }
-  .side-meta{ display:flex; gap:6px; margin-top:4px; flex-wrap:wrap; }
-  .chip{ font-size: 11px; color: var(--ink-2); background: var(--surface-2); border-radius: 6px; padding: 3px 8px; font-weight:500;}
-  .side-stat{ margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--hairline); }
-  .side-stat .label{ font-size: 11.5px; color: var(--ink-muted); font-weight:600; text-transform:uppercase; letter-spacing:.03em; }
-  .side-stat .row{ display:flex; align-items:baseline; gap:8px; margin-top:4px; }
-  .side-stat .row .num{ font-size: 20px; font-weight: 800; }
-  .side-stat .row .arrow{ color: var(--ink-muted); font-size:14px; }
-  .status-chip{ font-size: 11px; font-weight:700; border-radius:6px; padding:2px 8px; }
-  .status-chip.ok{ color:#0a7a42; background: color-mix(in srgb, #0a7a42 14%, transparent); }
-  .status-chip.warn{ color: var(--flag); background: var(--flag-bg); }
+  /* ---------- group summary strip ---------- */
+  .summary-strip{
+    display:flex; align-items:baseline; gap: 22px; flex-wrap: wrap; padding: 14px 0;
+    border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); margin-bottom: 18px; font-size: 14.5px;
+  }
+  .summary-strip .item{ display:flex; align-items:baseline; gap: 6px; color: var(--ink-2); }
+  .summary-strip .item b{ color: var(--ink); font-weight: 700; font-size: 16px; }
+  .summary-strip .dot{ width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:2px; }
+  .summary-strip .diamond{ width:8px; height:8px; display:inline-block; margin-right:2px; background: var(--phase2); transform: rotate(45deg); border-radius: 1px; }
+  .summary-strip .stat-label{ font-size: 11.5px; color: var(--ink-muted); text-transform: uppercase; letter-spacing:.03em; }
 
-  .domain-list{ margin-top: 14px; display:flex; flex-direction:column; gap: 12px; }
-  .domain-row .top{ display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:5px; }
-  .domain-row .top .name{ color: var(--ink); font-weight:600; }
-  .domain-track{ position:relative; height:7px; background: var(--surface-2); border-radius: 4px; }
-  .domain-track .tick{ position:absolute; top:50%; width:10px; height:10px; border-radius:50%; transform:translate(-50%,-50%); border: 2px solid var(--surface); }
+  /* ---------- chart section ---------- */
+  .chart-head{ display:flex; justify-content:space-between; align-items:center; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .chart-head h2{ font-size: 15px; font-weight: 700; }
+  .sort-row{ display:flex; align-items:center; gap: 8px; }
+  .sort-row .lbl{ font-size: 12.5px; color: var(--ink-muted); }
+  .sort-btn{
+    font-family: var(--font); font-size: 12.5px; font-weight: 600; color: var(--ink-2);
+    background: var(--surface-2); border: 1px solid transparent; border-radius: 7px; padding: 5px 10px; cursor: pointer;
+  }
+  .sort-btn[aria-pressed="true"]{ background: var(--phase1-tint); color: var(--phase1); }
 
-  /* ---------- hero slope chart ---------- */
-  #hero-chart{ width:100%; height: 340px; display:block; }
-  .hero-line{ fill:none; stroke: var(--line-dim); stroke-width: 1.3; }
-  .hero-line.selected{ stroke: var(--primary); stroke-width: 2.4; }
-  .hero-hit{ fill:none; stroke: transparent; stroke-width: 12; cursor: pointer; }
-  .hero-dot-f1{ fill: var(--line-dim); }
-  .hero-dot-f2{ fill: var(--line-dim); }
-  .hero-dot-f1.selected{ fill: var(--primary); }
-  .hero-dot-f2.selected{ fill: var(--accent); stroke: var(--surface); stroke-width: 1.5; }
-  .hero-mean-line{ stroke: var(--ink-2); stroke-width: 2; stroke-dasharray: 3 3; }
-  .hero-axis-label{ font-size: 11px; fill: var(--ink-muted); font-family: var(--font); }
-  .hero-grid-label{ font-size: 10px; fill: var(--ink-muted); font-family: var(--font); }
-  .hero-col-label{ font-size: 12.5px; font-weight: 700; fill: var(--ink); font-family: var(--font); }
-  .hero-select-label{ font-size: 11.5px; font-weight: 700; font-family: var(--font); }
+  .search-box{
+    display:flex; align-items:center; gap:6px; background: var(--surface); border: 1px solid var(--hairline);
+    border-radius: 8px; padding: 6px 10px; min-width: 160px;
+  }
+  .search-box svg{ flex: none; opacity: .5; }
+  .search-box input{ border:none; outline:none; background:none; font-family: var(--font); font-size: 13px; color: var(--ink); width:100%; }
+  .search-box input::placeholder{ color: var(--ink-muted); }
+
+  .legend-row{ display:flex; gap:18px; margin: 12px 0 8px; }
+  .legend-item{ display:flex; align-items:center; gap:6px; font-size: 12.5px; color: var(--ink-2); font-weight: 500; }
+
+  #chart-empty{ display:none; padding: 40px 0; text-align:center; color: var(--ink-muted); font-size: 14px; }
+  #hero-chart{ width:100%; display:block; }
+  .row-hit{ cursor: pointer; }
+  .row-hit:focus-visible{ outline: 2px solid var(--phase1); outline-offset: 1px; }
+  .row-bg{ fill: transparent; }
+  .row-hit:hover .row-bg, .row-hit.selected .row-bg{ fill: var(--surface-2); }
+  .row-hit.selected .row-bg{ fill: var(--phase1-tint); }
+  .row-line{ stroke: var(--hairline); stroke-width: 2; }
+  .row-hit.selected .row-line{ stroke: var(--ink-muted); }
+  .dot-f1{ fill: var(--phase1); }
+  .diamond-f2{ fill: var(--phase2); }
+  .row-id{ font-size: 11.5px; font-family: var(--font); fill: var(--ink-2); }
+  .row-hit.selected .row-id{ font-weight: 700; fill: var(--ink); }
+  .row-delta{ font-size: 11px; font-family: var(--font); fill: var(--ink-muted); font-variant-numeric: tabular-nums; }
+  .row-hit.selected .row-delta{ fill: var(--ink); font-weight: 700; }
+  .grid-line{ stroke: var(--hairline); stroke-width: 1; }
+  .axis-label{ font-size: 10.5px; fill: var(--ink-muted); font-family: var(--font); font-variant-numeric: tabular-nums; }
 
   #hero-tooltip{
     position: fixed; pointer-events:none; z-index: 30; background: var(--ink); color: var(--bg);
-    font-family: var(--font); font-size: 12px; padding: 7px 10px; border-radius: 8px;
+    font-family: var(--font); font-size: 12.5px; padding: 7px 10px; border-radius: 8px;
     max-width: 220px; line-height: 1.4; opacity: 0; transition: opacity .1s ease; transform: translate(-50%,-100%);
   }
   :root[data-theme="dark"] #hero-tooltip{ background: var(--surface-2); color: var(--ink); border: 1px solid var(--hairline); }
   @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) #hero-tooltip{ background: var(--surface-2); color: var(--ink); border: 1px solid var(--hairline); } }
 
-  /* ---------- table ---------- */
-  .table-panel{ margin-bottom: 14px; }
-  .table-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px; flex-wrap:wrap; gap:10px; }
-  .table-scroll{ max-height: 380px; overflow-y: auto; border: 1px solid var(--hairline); border-radius: 10px; }
-  table.data{ width:100%; border-collapse: collapse; font-size: 13px; }
-  table.data thead th{
-    position: sticky; top:0; background: var(--surface-2); text-align:left; padding: 9px 12px;
-    font-weight: 600; font-size: 11.5px; color: var(--ink-2); text-transform: uppercase; letter-spacing:.03em;
-    cursor:pointer; user-select:none; border-bottom: 1px solid var(--hairline); white-space: nowrap;
+  /* ---------- individual detail ---------- */
+  .detail{ margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--hairline); }
+  .detail-empty{ font-size: 14.5px; color: var(--ink-muted); padding: 10px 0 20px; }
+  .detail-head{ display:flex; justify-content:space-between; align-items:flex-start; gap: 14px; flex-wrap:wrap; margin-bottom: 18px; }
+  .detail-id{ font-size: 22px; font-weight: 800; }
+  .detail-meta{ font-size: 13px; color: var(--ink-muted); margin-top: 3px; }
+  button.export-btn{
+    font-family: var(--font); font-size: 13px; font-weight: 600; color: var(--ink);
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 8px; padding: 8px 14px; cursor: pointer;
+    display:flex; align-items:center; gap: 7px;
   }
-  table.data thead th:hover{ color: var(--ink); }
-  table.data tbody td{ padding: 8px 12px; border-bottom: 1px solid var(--hairline); color: var(--ink); }
-  table.data tbody tr{ cursor: pointer; }
-  table.data tbody tr:hover{ background: var(--surface-2); }
-  table.data tbody tr.selected{ background: var(--primary-tint); }
-  table.data tbody tr:last-child td{ border-bottom: none; }
-  .cambio-up{ color: var(--flag); font-weight:600; }
-  .cambio-down{ color: var(--primary); font-weight:600; }
+  button.export-btn:hover{ border-color: var(--ink-muted); }
 
-  /* ---------- details / accordion ---------- */
-  details.info{ background: var(--surface); border: 1px solid var(--hairline); border-radius: 12px; padding: 4px 18px; }
-  details.info summary{ padding: 12px 0; font-size: 13.5px; font-weight: 600; cursor: pointer; color: var(--ink); list-style: none; display:flex; align-items:center; gap:8px; }
+  .detail-main{ display:flex; gap: 40px; flex-wrap: wrap; align-items:flex-start; margin-bottom: 22px; }
+  .detail-stat .lbl{ font-size: 12.5px; color: var(--ink-muted); margin-bottom: 4px; }
+  .detail-stat .big{ display:flex; align-items:baseline; gap: 10px; font-size: 30px; font-weight: 800; }
+  .detail-stat .big .arrow{ font-size: 18px; color: var(--ink-muted); font-weight:400; }
+  .detail-stat .diff{ font-size: 14px; color: var(--ink-2); margin-top: 4px; }
+
+  .range-compare{ min-width: 240px; flex:1; }
+  .range-compare .lbl{ font-size: 12.5px; color: var(--ink-muted); margin-bottom: 10px; }
+  .range-track{ position:relative; height: 4px; background: var(--surface-2); border-radius: 2px; margin: 14px 4px; }
+  .range-track .tick{ position:absolute; top:50%; transform:translate(-50%,-50%); }
+  .range-track .median-tick{ width:2px; height:14px; background: var(--ink-muted); top:50%; }
+  .range-endlabel{ display:flex; justify-content:space-between; font-size: 10.5px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+
+  details.other-indicators{ margin-top: 6px; }
+  details.other-indicators summary{ font-size: 13.5px; font-weight: 600; color: var(--ink); cursor: pointer; padding: 8px 0; list-style:none; display:flex; align-items:center; gap:7px; }
+  details.other-indicators summary::-webkit-details-marker{ display:none; }
+  details.other-indicators summary .chev{ transition: transform .15s ease; flex:none; }
+  details.other-indicators[open] summary .chev{ transform: rotate(90deg); }
+  table.other-table{ width:100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  table.other-table th{ text-align:left; font-size: 11px; text-transform:uppercase; letter-spacing:.03em; color: var(--ink-muted); font-weight:600; padding: 6px 8px; border-bottom: 1px solid var(--hairline); }
+  table.other-table td{ padding: 7px 8px; border-bottom: 1px solid var(--hairline); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  table.other-table td:first-child{ color: var(--ink); font-variant-numeric: normal; }
+  table.other-table tr.group-row td{ padding-top: 14px; font-weight: 700; color: var(--ink); text-transform:uppercase; font-size: 11px; letter-spacing:.03em; border-bottom: none; font-variant-numeric: normal; }
+
+  /* ---------- accordion (methodology) ---------- */
+  details.info{ margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--hairline); }
+  details.info summary{ font-size: 14px; font-weight: 600; cursor: pointer; color: var(--ink); list-style: none; display:flex; align-items:center; gap:8px; padding-bottom: 6px; }
   details.info summary::-webkit-details-marker{ display:none; }
   details.info summary .chev{ transition: transform .15s ease; }
   details.info[open] summary .chev{ transform: rotate(90deg); }
-  .info-body{ padding: 0 0 16px; font-size: 13px; color: var(--ink-2); line-height:1.6; }
+  .info-body{ padding: 8px 0 4px; font-size: 14px; color: var(--ink-2); line-height:1.65; }
   .info-body ul{ margin: 6px 0; padding-left: 18px; }
   .info-body b{ color: var(--ink); }
+  .dq-table{ width:100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
+  .dq-table th, .dq-table td{ text-align:left; padding: 6px 10px; border-bottom: 1px solid var(--hairline); }
+  .dq-table th{ color: var(--ink-muted); font-weight:600; font-size:11.5px; text-transform:uppercase; }
 
-  footer.foot{ margin-top: 18px; font-size: 11.5px; color: var(--ink-muted); text-align:center; }
+  footer.foot{ margin-top: 26px; font-size: 12px; color: var(--ink-muted); }
 
-  @media (max-width: 900px){
-    .main-grid{ grid-template-columns: 1fr; }
-    .kpi-row{ grid-template-columns: repeat(2, 1fr); }
+  /* ---------- print report (hidden on screen) ---------- */
+  #print-report{ display:none; }
+
+  @media print{
+    body *{ visibility: hidden; }
+    #print-report, #print-report *{ visibility: visible; }
+    #print-report{ display:block; position:absolute; top:0; left:0; width:100%; padding: 20px; color:#111; background:#fff; }
+    #print-report h1{ font-size: 22px; margin-bottom: 4px; }
+    #print-report .pr-meta{ font-size: 12px; color:#444; margin-bottom: 18px; }
+    #print-report table{ width:100%; border-collapse: collapse; font-size: 12px; }
+    #print-report th, #print-report td{ text-align:left; padding: 5px 8px; border-bottom: 1px solid #ccc; }
+    #print-report tr.grp td{ font-weight:700; padding-top:14px; border-bottom:none; text-transform:uppercase; font-size:10.5px; }
+    #print-report .pr-foot{ margin-top: 20px; font-size: 10.5px; color:#555; }
+  }
+
+  @media (max-width: 620px){
+    .hero h1{ font-size: 27px; }
+    .detail-main{ gap: 24px; }
   }
 </style>
 
 <div class="wrap">
-  <header class="top">
-    <div class="title-block">
-      <h1>Panel de seguimiento — cuerpo de bomberos</h1>
-      <p>26 elementos evaluados en dos momentos, Fase 1 y Fase 2</p>
-    </div>
-    <div class="header-controls">
-      <div class="search-box">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="search-input" placeholder="Buscar participante (P01…)">
-      </div>
-      <button class="ghost" id="reset-btn" type="button">Restablecer</button>
-      <button class="pill" id="theme-toggle" type="button">Modo oscuro</button>
-    </div>
-  </header>
-
-  <div class="kpi-row" id="kpi-row"></div>
-
-  <div class="main-grid">
-    <div class="panel">
-      <div class="hero-head">
-        <div>
-          <h2 id="hero-title">Cortisol — Fase 1 vs Fase 2</h2>
-          <p class="desc">Cada línea conecta la misma persona en ambas evaluaciones. Elige un participante en la tabla para resaltar su cambio.</p>
-        </div>
-        <select id="var-select" aria-label="Elegir variable clínica"></select>
-      </div>
-      <div class="legend-row">
-        <div class="legend-item"><span class="legend-dot" style="background:var(--primary)"></span>Fase 1</div>
-        <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Fase 2</div>
-        <div class="legend-item"><span class="legend-dot" style="background:var(--ink-2); opacity:.5"></span>Promedio del grupo</div>
-      </div>
-      <svg id="hero-chart" viewBox="0 0 640 300" preserveAspectRatio="xMidYMid meet"></svg>
-    </div>
-
-    <div class="panel" id="side-panel"></div>
+  <div class="micro-bar">
+    <div class="ctx">Estudio de carga alostática en bomberos · <b>n = 26</b> · Fase 1 → Fase 2</div>
+    <button class="link-btn" id="theme-toggle" type="button">Modo oscuro</button>
   </div>
 
-  <div class="panel table-panel">
-    <div class="table-head">
-      <div>
-        <h2>Participantes</h2>
-        <p class="desc" id="table-desc">Toca una fila para ver su detalle.</p>
-      </div>
-    </div>
-    <div class="table-scroll">
-      <table class="data" id="data-table">
-        <thead><tr>
-          <th data-col="sujeto">Sujeto</th>
-          <th data-col="edad">Edad</th>
-          <th data-col="genero">Género</th>
-          <th data-col="f1" id="th-f1">Fase 1</th>
-          <th data-col="f2" id="th-f2">Fase 2</th>
-          <th data-col="cambio">Cambio</th>
-        </tr></thead>
-        <tbody id="table-body"></tbody>
-      </table>
+  <div class="hero">
+    <div class="eyebrow">Hallazgo principal</div>
+    <h1 id="hero-headline"></h1>
+    <p class="caveat">Esto es un cambio medido en el promedio del grupo; no indica por sí solo mejoría o deterioro clínico.</p>
+    <div class="provenance" id="hero-provenance"></div>
+    <button class="dq-note" id="dq-note-link" type="button" hidden>ⓘ Nota sobre este dato — ver discrepancia con el artículo</button>
+  </div>
+
+  <div class="picker">
+    <div class="lbl">Explorar otro indicador</div>
+    <div class="chip-row" id="chip-row"></div>
+    <div class="chip-row" style="margin-top:8px;">
+      <select id="var-select" aria-label="Elegir cualquier indicador, organizado por dominio"></select>
     </div>
   </div>
 
-  <details class="info">
-    <summary><svg class="chev" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>¿Cómo leer este panel?</summary>
+  <div class="summary-strip" id="summary-strip"></div>
+
+  <div class="chart-head">
+    <h2 id="chart-title">Comparación por participante</h2>
+    <div class="search-box">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" placeholder="Buscar por ID (P01…)" aria-label="Buscar participante por identificador">
+    </div>
+  </div>
+  <div class="sort-row">
+    <span class="lbl">Ordenar por:</span>
+    <button class="sort-btn" id="sort-change" data-sort="change" aria-pressed="true" type="button">Cambio absoluto</button>
+    <button class="sort-btn" id="sort-id" data-sort="id" aria-pressed="false" type="button">Identificador</button>
+    <button class="link-btn" id="reset-btn" type="button" style="margin-left:auto;">Restablecer vista</button>
+  </div>
+  <div class="legend-row">
+    <div class="legend-item"><svg width="10" height="10"><circle cx="5" cy="5" r="5" fill="var(--phase1)"/></svg>Fase 1</div>
+    <div class="legend-item"><svg width="10" height="10"><rect x="1" y="1" width="8" height="8" fill="var(--phase2)" transform="rotate(45 5 5)"/></svg>Fase 2</div>
+  </div>
+
+  <svg id="hero-chart" role="group" aria-label="Comparación de cada participante entre Fase 1 y Fase 2"></svg>
+  <p id="chart-empty">No se encontró ningún participante con ese identificador.</p>
+
+  <div class="detail" id="detail-section">
+    <p class="detail-empty" id="detail-empty">Selecciona una fila del gráfico (o búscala arriba) para ver el detalle de un participante.</p>
+    <div id="detail-content" hidden></div>
+  </div>
+
+  <details class="info" id="dq-accordion">
+    <summary><svg class="chev" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>Cómo leer este panel y calidad de los datos</summary>
     <div class="info-body">
-      <p><b>Fase 1 → Fase 2:</b> la misma cohorte fue evaluada dos veces; cada línea o par de barras muestra el cambio de una persona entre ambos momentos, no una tendencia continua.</p>
-      <p><b>Resiliencia (BRS):</b> puntaje promedio de la Brief Resilience Scale, escala 1–5. A mayor puntaje, mayor capacidad percibida de recuperarse ante el estrés.</p>
-      <p><b>Los 5 bloques del panel individual:</b></p>
-      <ul>
-        <li><b>Cardiovascular</b> — presión arterial y frecuencia cardiaca en reposo.</li>
-        <li><b>Metabólico</b> — peso, glucosa y perfil de grasas en sangre (colesterol, triglicéridos).</li>
-        <li><b>Inflamatorio / hormonal</b> — marcadores de inflamación (IL-6, PCR) y cortisol.</li>
-        <li><b>Sistema nervioso autónomo</b> — variabilidad del ritmo cardiaco (SDNN): qué tan bien se adapta el corazón al estrés.</li>
-        <li><b>Resiliencia</b> — puntaje BRS normalizado junto a los demás bloques.</li>
-      </ul>
-      <p><b>Chip "revisar":</b> marca variables cuyo promedio de grupo cambió 10% o más entre fases — una señal para mirar más de cerca, no un diagnóstico.</p>
-      <p><b>Privacidad:</b> los identificadores originales fueron reemplazados por códigos anónimos (P01–P26); ningún nombre se usa en este panel ni en los datos que lo alimentan. n = 26, cohorte de un cuerpo de bomberos — hallazgos exploratorios.</p>
+      <p><b>Fase 1 → Fase 2:</b> la misma cohorte fue evaluada dos veces; cada par de puntos muestra el cambio de una persona entre ambos momentos — no una tendencia continua ni un seguimiento de varios meses.</p>
+      <p><b>Mediana, no promedio:</b> los resúmenes de grupo en este panel usan la mediana porque la muestra es pequeña (n=26) y varios indicadores tienen valores atípicos que distorsionan el promedio.</p>
+      <p><b>Cambios sin calificar:</b> un aumento o una disminución no se etiquetan aquí como "bien" o "mal" — esa lectura depende del indicador y del criterio clínico de quien lo revisa.</p>
+      <p><b>Discrepancia de datos — Cortisol:</b> este panel calcula un cambio de <b id="dq-median-val"></b>% en la mediana de cortisol entre fases. Un artículo relacionado reporta +61%. No se pudo reconciliar exactamente con los datos disponibles en este entorno; los valores obtenidos con distintas fórmulas son:</p>
+      <table class="dq-table" id="dq-table"></table>
+      <p>Ninguno de estos cálculos iguala el +61% publicado. Posibles causas no verificables aquí: una fórmula distinta, un subconjunto de participantes diferente, o una versión de la base de datos posterior a esta. Se documenta la discrepancia en vez de ajustar las cifras para que coincidan.</p>
+      <p><b>Privacidad:</b> los identificadores originales fueron reemplazados por códigos anónimos (P01–P26); ningún nombre se usa en este panel ni en los datos que lo alimentan.</p>
     </div>
   </details>
 
-  <footer class="foot">Proyecto de investigación doctoral · Marcel Carmona — pieza de portafolio en ciencia de datos.</footer>
+  <footer class="foot">Proyecto de investigación doctoral · Marcel Carmona — pieza de portafolio en ciencia de datos. Hallazgos exploratorios, n = 26.</footer>
 
   <div id="hero-tooltip" role="tooltip"></div>
 </div>
+
+<div id="print-report"></div>
 
 <script>
 (async function(){
@@ -314,9 +308,9 @@
   const css = getComputedStyle(document.documentElement);
   const cv = name => css.getPropertyValue(name).trim();
 
-  const DEFAULT_VAR = 'CORTISOL';
-  const DEFAULT_SUBJECT = 'P01';
-  const state = { variable: DEFAULT_VAR, subject: DEFAULT_SUBJECT, search: '', sortCol: 'sujeto', sortDir: 'asc' };
+  const DEFAULT_VAR = DATA.kpis.key_variable_mas_cambio || 'CORTISOL';
+  const HIGHLIGHT_KEYS = ['CORTISOL', 'BRS', 'GLUCOSA', 'SISTOLICA'];
+  const state = { variable: DEFAULT_VAR, subject: null, search: '', sort: 'change' };
 
   /* ---------------- theme ---------------- */
   const themeBtn = document.getElementById('theme-toggle');
@@ -336,256 +330,318 @@
     renderAll();
   });
 
-  /* ---------------- KPIs ---------------- */
-  function renderKPIs(){
-    const k = DATA.kpis;
-    const brsDown = k.brs_f2_promedio < k.brs_f1_promedio;
-    const host = document.getElementById('kpi-row');
-    host.innerHTML = `
-      <div class="kpi">
-        <div class="label">Participantes</div>
-        <div class="value">${k.n_sujetos} <small>bomberos</small></div>
-        <div class="sub">Edad media ${k.edad_promedio} años · ${k.pct_masculino}% masculino</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Seguimiento</div>
-        <div class="value" style="font-size:19px;">Fase 1 → Fase 2</div>
-        <div class="sub">Misma cohorte, dos evaluaciones</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Resiliencia promedio (BRS)</div>
-        <div class="value">${k.brs_f2_promedio.toFixed(2)} <small>/ 5</small></div>
-        <div class="sub">${brsDown ? '▼' : '▲'} desde ${k.brs_f1_promedio.toFixed(2)} en Fase 1</div>
-      </div>
-      <div class="kpi flagged">
-        <div class="label">Cambio más notable</div>
-        <div class="value" style="font-size:19px;">${k.variable_mas_cambio}</div>
-        <span class="flag-chip"><span class="dot"></span>${k.pct_cambio_variable_mas_cambio > 0 ? '+' : ''}${k.pct_cambio_variable_mas_cambio}% · revisar</span>
-      </div>`;
+  /* ---------------- variable helpers ---------------- */
+  const byKey = {}; DATA.variable_catalog.forEach(v => byKey[v.key] = v);
+  function currentVarMeta(){ return byKey[state.variable]; }
+  function rankOf(key){
+    const sorted = [...DATA.variable_catalog].sort((a,b) => Math.abs(b.pct_change) - Math.abs(a.pct_change));
+    return sorted.findIndex(v => v.key === key);
+  }
+  function fmtUnit(meta){ return meta.unit ? ` ${meta.unit}` : ''; }
+  function fmtNum(v, unit){
+    const decimals = (unit === '%' || unit === '' || unit === 'escala 1-5') ? (Math.abs(v) < 10 ? 2 : 1) : (Math.abs(v) < 10 ? 2 : (Math.abs(v) < 100 ? 1 : 0));
+    return v.toFixed(decimals);
   }
 
-  /* ---------------- variable selector ---------------- */
+  /* ---------------- chip / select picker ---------------- */
+  const chipRow = document.getElementById('chip-row');
+  chipRow.innerHTML = HIGHLIGHT_KEYS.map(k => {
+    const v = byKey[k];
+    return `<button class="chip" data-key="${k}" aria-pressed="${k === state.variable}">${v.label}</button>`;
+  }).join('');
+  chipRow.querySelectorAll('.chip').forEach(btn => btn.addEventListener('click', () => setVariable(btn.dataset.key)));
+
   const groups = {};
   DATA.variable_catalog.forEach(v => { (groups[v.group] = groups[v.group] || []).push(v); });
   const varSelect = document.getElementById('var-select');
-  varSelect.innerHTML = Object.entries(groups).map(([g, items]) => `
+  varSelect.innerHTML = `<option value="">Todos los indicadores…</option>` + DATA.variable_groups_ordered.map(g => `
     <optgroup label="${g}">
-      ${items.map(v => `<option value="${v.key}">${v.label}${v.flag ? ' (revisar)' : ''}</option>`).join('')}
+      ${groups[g].map(v => `<option value="${v.key}">${v.label} (${v.pct_change >= 0 ? '+' : ''}${v.pct_change}%)</option>`).join('')}
     </optgroup>`).join('');
-  varSelect.value = state.variable;
-  varSelect.addEventListener('change', () => { state.variable = varSelect.value; renderHero(); renderTable(); renderSideVariableCallout(); });
+  varSelect.addEventListener('change', () => { if(varSelect.value) setVariable(varSelect.value); });
 
-  function currentVarMeta(){ return DATA.variable_catalog.find(v => v.key === state.variable); }
+  function setVariable(key){
+    state.variable = key;
+    chipRow.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.key === key)));
+    varSelect.value = HIGHLIGHT_KEYS.includes(key) ? '' : key;
+    renderHero(); renderSummary(); renderChart(); renderDetail();
+  }
 
-  /* ---------------- hero slope chart ---------------- */
-  const svg = document.getElementById('hero-chart');
-  const tooltip = document.getElementById('hero-tooltip');
-  const W = 640, H = 300, padL = 54, padR = 96, padT = 34, padB = 28;
-
+  /* ---------------- hero finding (dynamic headline) ---------------- */
   function renderHero(){
     const meta = currentVarMeta();
-    document.getElementById('hero-title').textContent = `${meta.label} — Fase 1 vs Fase 2`;
+    const up = meta.pct_change >= 0;
+    const verb = up ? 'subió' : 'bajó';
+    const rank = rankOf(meta.key);
+    let tail = '';
+    if(meta.key !== 'BRS'){
+      if(rank === 0) tail = ' — el mayor cambio entre los 17 indicadores medidos';
+      else if(Math.abs(meta.pct_change) < 1) tail = ' — prácticamente sin cambio en el grupo';
+    }
+    document.getElementById('hero-headline').innerHTML =
+      `${meta.label} ${verb} de ${fmtNum(meta.median_f1, meta.unit)} a <span class="amt">${fmtNum(meta.median_f2, meta.unit)}${fmtUnit(meta)}</span> entre evaluaciones (${up?'+':''}${meta.pct_change}%)${tail}.`;
+    document.getElementById('hero-provenance').textContent =
+      `Mediana del grupo, n = 26. Fórmula: cambio porcentual de la mediana (Fase 2 vs. Fase 1).`;
+
+    const dqBtn = document.getElementById('dq-note-link');
+    dqBtn.hidden = meta.key !== 'CORTISOL';
+  }
+  document.getElementById('dq-note-link').addEventListener('click', () => {
+    const acc = document.getElementById('dq-accordion');
+    acc.open = true;
+    acc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  /* ---------------- data quality accordion ---------------- */
+  (function renderDQ(){
+    const dq = DATA.data_quality;
+    document.getElementById('dq-median-val').textContent = dq.cortisol_change_of_medians_pct;
+    document.getElementById('dq-table').innerHTML = `
+      <tr><th>Fórmula</th><th>Resultado</th></tr>
+      <tr><td>Cambio de la media del grupo</td><td class="tab-num">+${dq.cortisol_change_of_means_pct}%</td></tr>
+      <tr><td>Media de los cambios individuales (%)</td><td class="tab-num">+${dq.cortisol_mean_of_pct_changes}%</td></tr>
+      <tr><td>Cambio de la mediana del grupo (usado arriba)</td><td class="tab-num">+${dq.cortisol_change_of_medians_pct}%</td></tr>
+      <tr><td>Reportado en el artículo</td><td class="tab-num">+61%</td></tr>`;
+  })();
+
+  /* ---------------- group summary strip ---------------- */
+  function renderSummary(){
+    const meta = currentVarMeta();
+    const up = meta.diff >= 0;
+    document.getElementById('summary-strip').innerHTML = `
+      <div class="item"><span class="dot" style="background:var(--phase1)"></span><span class="stat-label">Mediana F1</span> <b class="tab-num">${fmtNum(meta.median_f1, meta.unit)}${fmtUnit(meta)}</b></div>
+      <div class="item"><span class="diamond"></span><span class="stat-label">Mediana F2</span> <b class="tab-num">${fmtNum(meta.median_f2, meta.unit)}${fmtUnit(meta)}</b></div>
+      <div class="item"><span class="stat-label">Diferencia</span> <b class="tab-num">${up?'+':''}${fmtNum(meta.diff, meta.unit)}${fmtUnit(meta)} (${up?'+':''}${meta.pct_change}%)</b></div>`;
+  }
+
+  /* ---------------- main chart: horizontal per-participant rows ---------------- */
+  const svg = document.getElementById('hero-chart');
+  const tooltip = document.getElementById('hero-tooltip');
+  const rowH = 22, padTop = 30, padBottom = 30, padLeft = 48, padRight = 62;
+  const chartW = 760;
+
+  function getRows(){
+    const meta = currentVarMeta();
     const values = DATA.variable_values[meta.key];
-    const subjects = DATA.subjects.map(s => s.id);
-    const all = subjects.map(id => ({ id, f1: values[id].f1, f2: values[id].f2 }));
+    let rows = DATA.subjects.map(s => ({ id: s.id, f1: values[s.id].f1, f2: values[s.id].f2 }));
+    if(state.search){
+      const q = state.search.toLowerCase();
+      rows = rows.filter(r => r.id.toLowerCase().includes(q));
+    }
+    if(state.sort === 'change'){
+      rows.sort((a, b) => Math.abs(b.f2 - b.f1) - Math.abs(a.f2 - a.f1));
+    } else {
+      rows.sort((a, b) => a.id.localeCompare(b.id));
+    }
+    return rows;
+  }
 
-    let lo = Math.min(...all.flatMap(d => [d.f1, d.f2]));
-    let hi = Math.max(...all.flatMap(d => [d.f1, d.f2]));
-    const pad = (hi - lo) * 0.12 || 1;
+  function renderChart(){
+    const meta = currentVarMeta();
+    const rows = getRows();
+    const emptyEl = document.getElementById('chart-empty');
+    document.getElementById('chart-title').textContent = `${meta.label} por participante`;
+
+    if(rows.length === 0){
+      svg.style.display = 'none';
+      emptyEl.style.display = 'block';
+      return;
+    }
+    svg.style.display = 'block';
+    emptyEl.style.display = 'none';
+
+    const allValues = DATA.subjects.flatMap(s => { const v = DATA.variable_values[meta.key][s.id]; return [v.f1, v.f2]; });
+    let lo = Math.min(...allValues), hi = Math.max(...allValues);
+    const pad = (hi - lo) * 0.08 || 1;
     lo -= pad; hi += pad;
-    const y = v => padT + (1 - (v - lo) / (hi - lo)) * (H - padT - padB);
-    const x1 = padL, x2 = W - padR;
+    const x = v => padLeft + ((v - lo) / (hi - lo)) * (chartW - padLeft - padRight);
 
-    const meanF1 = all.reduce((a, d) => a + d.f1, 0) / all.length;
-    const meanF2 = all.reduce((a, d) => a + d.f2, 0) / all.length;
+    const H = padTop + rows.length * rowH + padBottom;
+    svg.setAttribute('viewBox', `0 0 ${chartW} ${H}`);
 
     const nGrid = 4;
     let gridSvg = '';
     for(let i = 0; i <= nGrid; i++){
       const val = lo + (hi - lo) * (i / nGrid);
-      const yy = y(val);
-      gridSvg += `<line x1="${x1-10}" y1="${yy}" x2="${x2+10}" y2="${yy}" stroke="${cv('--hairline')}" stroke-width="1"/>`;
-      gridSvg += `<text class="hero-grid-label" x="${x1-16}" y="${yy+3.5}" text-anchor="end">${val.toFixed(meta.unit === '%' || val < 10 ? 1 : 0)}</text>`;
+      const xx = x(val);
+      gridSvg += `<line class="grid-line" x1="${xx}" y1="${padTop - 10}" x2="${xx}" y2="${H - padBottom + 4}"/>`;
+      gridSvg += `<text class="axis-label" x="${xx}" y="${H - padBottom + 18}" text-anchor="middle">${fmtNum(val, meta.unit)}</text>`;
     }
+    gridSvg += `<text class="axis-label" x="${chartW - padRight + 10}" y="${padTop - 16}" text-anchor="start">${meta.unit}</text>`;
 
-    let linesSvg = '';
-    all.forEach(d => {
-      const isSel = d.id === state.subject;
-      const yy1 = y(d.f1), yy2 = y(d.f2);
-      if(!isSel){
-        linesSvg += `<line class="hero-line" x1="${x1}" y1="${yy1}" x2="${x2}" y2="${yy2}"/>`;
-        linesSvg += `<circle class="hero-dot-f1" cx="${x1}" cy="${yy1}" r="3"/>`;
-        linesSvg += `<circle class="hero-dot-f2" cx="${x2}" cy="${yy2}" r="3"/>`;
-        linesSvg += `<line class="hero-hit" data-id="${d.id}" x1="${x1}" y1="${yy1}" x2="${x2}" y2="${yy2}"/>`;
-      }
+    let rowsSvg = '';
+    rows.forEach((r, i) => {
+      const y = padTop + i * rowH + rowH / 2;
+      const x1 = x(r.f1), x2 = x(r.f2);
+      const isSel = r.id === state.subject;
+      const delta = r.f2 - r.f1;
+      const deltaStr = (delta >= 0 ? '+' : '') + fmtNum(delta, meta.unit);
+      rowsSvg += `
+        <g class="row-hit${isSel ? ' selected' : ''}" tabindex="0" role="button"
+           aria-label="Participante ${r.id}, Fase 1 ${fmtNum(r.f1, meta.unit)}${fmtUnit(meta)}, Fase 2 ${fmtNum(r.f2, meta.unit)}${fmtUnit(meta)}, cambio ${deltaStr}"
+           data-id="${r.id}">
+          <rect class="row-bg" x="0" y="${y - rowH/2}" width="${chartW}" height="${rowH}" rx="4"/>
+          <text class="row-id" x="4" y="${y + 4}">${r.id}</text>
+          <line class="row-line" x1="${x1}" y1="${y}" x2="${x2}" y2="${y}"/>
+          <circle class="dot-f1" cx="${x1}" cy="${y}" r="${isSel ? 4.5 : 3.5}"/>
+          <rect class="diamond-f2" x="${x2-3.2}" y="${y-3.2}" width="6.4" height="6.4" transform="rotate(45 ${x2} ${y})"/>
+          <text class="row-delta" x="${chartW - 6}" y="${y + 4}" text-anchor="end">${deltaStr}</text>
+        </g>`;
     });
-    // selected participant drawn last so it renders on top
-    const sel = all.find(d => d.id === state.subject);
-    if(sel){
-      const yy1 = y(sel.f1), yy2 = y(sel.f2);
-      linesSvg += `<line class="hero-line selected" x1="${x1}" y1="${yy1}" x2="${x2}" y2="${yy2}"/>`;
-      linesSvg += `<circle class="hero-dot-f1 selected" cx="${x1}" cy="${yy1}" r="5"/>`;
-      linesSvg += `<circle class="hero-dot-f2 selected" cx="${x2}" cy="${yy2}" r="5"/>`;
-      linesSvg += `<text class="hero-select-label" x="${x2+10}" y="${yy2+4}" fill="${cv('--primary')}">${sel.id}</text>`;
-      linesSvg += `<line class="hero-hit" data-id="${sel.id}" x1="${x1}" y1="${yy1}" x2="${x2}" y2="${yy2}"/>`;
-    }
 
-    const meanY1 = y(meanF1), meanY2 = y(meanF2);
-    const meanSvg = `
-      <line class="hero-mean-line" x1="${x1}" y1="${meanY1}" x2="${x2}" y2="${meanY2}"/>
-      <circle cx="${x1}" cy="${meanY1}" r="4.5" fill="${cv('--primary')}" opacity="0.9"/>
-      <circle cx="${x2}" cy="${meanY2}" r="4.5" fill="${cv('--accent')}" opacity="0.9"/>`;
+    svg.innerHTML = gridSvg + rowsSvg;
 
-    const colLabels = `
-      <text class="hero-col-label" x="${x1}" y="${padT-14}" text-anchor="middle">Fase 1</text>
-      <text class="hero-col-label" x="${x2}" y="${padT-14}" text-anchor="middle">Fase 2</text>
-      <text class="hero-axis-label" x="${(x1+x2)/2}" y="${H-6}" text-anchor="middle">${meta.unit ? meta.unit : ''}</text>`;
-
-    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    svg.innerHTML = gridSvg + linesSvg + meanSvg + colLabels;
-
-    svg.querySelectorAll('.hero-hit').forEach(el => {
+    svg.querySelectorAll('.row-hit').forEach(el => {
+      const id = el.dataset.id;
+      el.addEventListener('click', () => selectSubject(id));
+      el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectSubject(id); } });
       el.addEventListener('mousemove', e => {
-        const id = el.dataset.id; const d = all.find(a => a.id === id);
+        const v = DATA.variable_values[meta.key][id];
         tooltip.style.opacity = 1; tooltip.style.left = e.clientX + 'px'; tooltip.style.top = (e.clientY - 10) + 'px';
-        tooltip.innerHTML = `<strong>${id}</strong><br>Fase 1: ${d.f1.toFixed(2)} ${meta.unit}<br>Fase 2: ${d.f2.toFixed(2)} ${meta.unit}`;
+        tooltip.innerHTML = `<strong>${id}</strong><br>Fase 1: ${fmtNum(v.f1, meta.unit)}${fmtUnit(meta)}<br>Fase 2: ${fmtNum(v.f2, meta.unit)}${fmtUnit(meta)}`;
       });
       el.addEventListener('mouseleave', () => tooltip.style.opacity = 0);
-      el.addEventListener('click', () => selectSubject(el.dataset.id));
     });
   }
 
-  /* ---------------- side panel ---------------- */
-  function renderSidePanel(){
-    const subj = DATA.subjects.find(s => s.id === state.subject);
-    const brs = DATA.brs[state.subject];
-    const isMissing = brs.estado_fase2 !== 'Contestó fase 2';
-    const brsDown = brs.f2 < brs.f1;
-    const host = document.getElementById('side-panel');
-
-    const domainHtml = DATA.domain_catalog.map(d => {
-      const s = DATA.domain_scores[d.key][state.subject];
-      return `
-      <div class="domain-row">
-        <div class="top"><span class="name">${d.label}</span></div>
-        <div class="domain-track">
-          <div class="tick" style="left:${s.f1*100}%; background:${cv('--primary')};"></div>
-          <div class="tick" style="left:${s.f2*100}%; background:${cv('--accent')};"></div>
-        </div>
-      </div>`;
-    }).join('');
-
-    host.innerHTML = `
-      <div class="side-head">
-        <div>
-          <div class="side-id">${subj.id}</div>
-          <div class="side-meta">
-            <span class="chip">${subj.edad} años</span>
-            <span class="chip">${subj.genero === 'M' ? 'Masculino' : 'Femenino'}</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="side-stat">
-        <div class="label">Resiliencia (BRS)</div>
-        <div class="row">
-          <span class="num">${brs.f1.toFixed(2)}</span><span class="arrow">→</span>
-          <span class="num">${isMissing ? '—' : brs.f2.toFixed(2)}</span>
-          ${isMissing ? `<span class="status-chip warn">Sin dato F2</span>` : `<span class="status-chip ${brsDown ? 'warn' : 'ok'}">${brsDown ? '▼' : '▲'}</span>`}
-        </div>
-      </div>
-
-      <div class="side-stat" id="side-var-callout"></div>
-
-      <div class="domain-list">${domainHtml}</div>
-    `;
-    renderSideVariableCallout();
+  document.getElementById('sort-change').addEventListener('click', () => setSort('change'));
+  document.getElementById('sort-id').addEventListener('click', () => setSort('id'));
+  function setSort(s){
+    state.sort = s;
+    document.getElementById('sort-change').setAttribute('aria-pressed', String(s === 'change'));
+    document.getElementById('sort-id').setAttribute('aria-pressed', String(s === 'id'));
+    renderChart();
   }
-
-  function renderSideVariableCallout(){
-    const el = document.getElementById('side-var-callout');
-    if(!el) return;
-    const meta = currentVarMeta();
-    const v = DATA.variable_values[meta.key][state.subject];
-    el.innerHTML = `
-      <div class="label">${meta.label}</div>
-      <div class="row">
-        <span class="num" style="font-size:16px;">${v.f1.toFixed(2)}</span><span class="arrow">→</span>
-        <span class="num" style="font-size:16px;">${v.f2.toFixed(2)}</span>
-        <span class="arrow" style="font-size:12px;">${meta.unit}</span>
-      </div>`;
-  }
-
-  function selectSubject(id){
-    state.subject = id;
-    renderHero();
-    renderSidePanel();
-    renderTable();
-  }
-
-  /* ---------------- table ---------------- */
-  function renderTable(){
-    const meta = currentVarMeta();
-    document.getElementById('th-f1').textContent = `Fase 1 (${meta.unit || meta.label})`;
-    document.getElementById('th-f2').textContent = `Fase 2 (${meta.unit || meta.label})`;
-    document.getElementById('table-desc').textContent = `Ordenado por ${state.sortCol}. Toca una fila para ver su detalle — variable actual: ${meta.label}.`;
-
-    let rows = DATA.subjects.map(s => {
-      const v = DATA.variable_values[meta.key][s.id];
-      const cambio = meta.mean_f1 ? ((v.f2 - v.f1) / Math.abs(v.f1 || 1) * 100) : 0;
-      return { sujeto: s.id, edad: s.edad, genero: s.genero, f1: v.f1, f2: v.f2, cambio };
-    });
-
-    if(state.search){
-      const q = state.search.toLowerCase();
-      rows = rows.filter(r => r.sujeto.toLowerCase().includes(q));
-    }
-
-    rows.sort((a, b) => {
-      const av = a[state.sortCol], bv = b[state.sortCol];
-      const cmp = typeof av === 'string' ? av.localeCompare(bv) : av - bv;
-      return state.sortDir === 'asc' ? cmp : -cmp;
-    });
-
-    document.getElementById('table-body').innerHTML = rows.map(r => `
-      <tr data-id="${r.sujeto}" class="${r.sujeto === state.subject ? 'selected' : ''}">
-        <td>${r.sujeto}</td>
-        <td>${r.edad}</td>
-        <td>${r.genero === 'M' ? 'M' : 'F'}</td>
-        <td>${r.f1.toFixed(2)}</td>
-        <td>${r.f2.toFixed(2)}</td>
-        <td class="${r.cambio >= 0 ? 'cambio-up' : 'cambio-down'}">${r.cambio >= 0 ? '+' : ''}${r.cambio.toFixed(1)}%</td>
-      </tr>`).join('');
-
-    document.querySelectorAll('#data-table tbody tr').forEach(tr => {
-      tr.addEventListener('click', () => selectSubject(tr.dataset.id));
-    });
-  }
-
-  document.querySelectorAll('#data-table thead th').forEach(th => {
-    th.addEventListener('click', () => {
-      const col = th.dataset.col;
-      if(state.sortCol === col){ state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc'; }
-      else { state.sortCol = col; state.sortDir = 'asc'; }
-      renderTable();
-    });
-  });
 
   const searchInput = document.getElementById('search-input');
-  searchInput.addEventListener('input', () => { state.search = searchInput.value.trim(); renderTable(); });
+  searchInput.addEventListener('input', () => { state.search = searchInput.value.trim(); renderChart(); });
 
+  /* ---------------- individual detail ---------------- */
+  function selectSubject(id){
+    state.subject = id;
+    renderChart();
+    renderDetail();
+    document.getElementById('detail-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function renderDetail(){
+    const emptyEl = document.getElementById('detail-empty');
+    const contentEl = document.getElementById('detail-content');
+    if(!state.subject){
+      emptyEl.style.display = 'block'; contentEl.hidden = true; return;
+    }
+    emptyEl.style.display = 'none'; contentEl.hidden = false;
+
+    const subj = DATA.subjects.find(s => s.id === state.subject);
+    const meta = currentVarMeta();
+    const v = DATA.variable_values[meta.key][state.subject];
+    const diff = v.f2 - v.f1;
+    const pct = v.f1 ? (diff / Math.abs(v.f1) * 100) : null;
+    const up = diff >= 0;
+
+    const allValues = DATA.subjects.flatMap(s => { const vv = DATA.variable_values[meta.key][s.id]; return [vv.f1, vv.f2]; });
+    const gmin = Math.min(...allValues), gmax = Math.max(...allValues);
+    const range = gmax - gmin || 1;
+    const posOf = val => Math.max(0, Math.min(100, ((val - gmin) / range) * 100));
+
+    contentEl.innerHTML = `
+      <div class="detail-head">
+        <div>
+          <div class="detail-id">${subj.id}</div>
+          <div class="detail-meta">${subj.edad} años · ${subj.genero === 'M' ? 'masculino' : 'femenino'}${subj.exp_previa ? ' · con experiencia previa en emergencias' : ''}</div>
+        </div>
+        <button class="export-btn" id="export-btn" type="button">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Exportar reporte (PDF)
+        </button>
+      </div>
+
+      <div class="detail-main">
+        <div class="detail-stat">
+          <div class="lbl">${meta.label}</div>
+          <div class="big">
+            <span class="tab-num">${fmtNum(v.f1, meta.unit)}</span><span class="arrow">→</span><span class="tab-num">${fmtNum(v.f2, meta.unit)}${fmtUnit(meta)}</span>
+          </div>
+          <div class="diff tab-num">${up?'+':''}${fmtNum(diff, meta.unit)}${fmtUnit(meta)}${pct !== null ? ` (${up?'+':''}${pct.toFixed(1)}%)` : ''}</div>
+        </div>
+
+        <div class="range-compare">
+          <div class="lbl">Comparado con el grupo (rango observado, ${meta.unit || 'sin unidad'})</div>
+          <div class="range-track">
+            <div class="tick median-tick" style="left:${posOf(meta.median_f1)}%;" title="Mediana Fase 1"></div>
+            <div class="tick" style="left:${posOf(v.f1)}%; width:9px; height:9px; border-radius:50%; background:var(--phase1);"></div>
+            <div class="tick" style="left:${posOf(v.f2)}%; width:8px; height:8px; background:var(--phase2); transform:translate(-50%,-50%) rotate(45deg);"></div>
+          </div>
+          <div class="range-endlabel"><span>${fmtNum(gmin, meta.unit)}</span><span>${fmtNum(gmax, meta.unit)}</span></div>
+        </div>
+      </div>
+
+      <details class="other-indicators">
+        <summary><svg class="chev" width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>Otros indicadores (${DATA.variable_catalog.length - 1})</summary>
+        ${renderOtherIndicatorsTable(state.subject, meta.key)}
+      </details>
+    `;
+
+    document.getElementById('export-btn').addEventListener('click', () => exportReport(state.subject));
+  }
+
+  function renderOtherIndicatorsTable(subjectId, excludeKey){
+    let html = '<table class="other-table"><thead><tr><th>Indicador</th><th>Fase 1</th><th>Fase 2</th><th>Diferencia</th></tr></thead><tbody>';
+    DATA.variable_groups_ordered.forEach(g => {
+      const items = DATA.variable_catalog.filter(v => v.group === g && v.key !== excludeKey);
+      if(items.length === 0) return;
+      html += `<tr class="group-row"><td colspan="4">${g}</td></tr>`;
+      items.forEach(it => {
+        const v = DATA.variable_values[it.key][subjectId];
+        const d = v.f2 - v.f1;
+        html += `<tr><td>${it.label}</td><td class="tab-num">${fmtNum(v.f1, it.unit)}${it.unit ? ' ' + it.unit : ''}</td><td class="tab-num">${fmtNum(v.f2, it.unit)}${it.unit ? ' ' + it.unit : ''}</td><td class="tab-num">${d>=0?'+':''}${fmtNum(d, it.unit)}</td></tr>`;
+      });
+    });
+    html += '</tbody></table>';
+    return html;
+  }
+
+  /* ---------------- print / export report ---------------- */
+  function exportReport(subjectId){
+    const subj = DATA.subjects.find(s => s.id === subjectId);
+    let rowsHtml = '';
+    DATA.variable_groups_ordered.forEach(g => {
+      const items = DATA.variable_catalog.filter(v => v.group === g);
+      rowsHtml += `<tr class="grp"><td colspan="4">${g}</td></tr>`;
+      items.forEach(it => {
+        const v = DATA.variable_values[it.key][subjectId];
+        const d = v.f2 - v.f1;
+        rowsHtml += `<tr><td>${it.label}</td><td>${fmtNum(v.f1, it.unit)} ${it.unit}</td><td>${fmtNum(v.f2, it.unit)} ${it.unit}</td><td>${d>=0?'+':''}${fmtNum(d, it.unit)}</td></tr>`;
+      });
+    });
+    document.getElementById('print-report').innerHTML = `
+      <h1>Reporte individual — ${subj.id}</h1>
+      <div class="pr-meta">${subj.edad} años · ${subj.genero === 'M' ? 'masculino' : 'femenino'} · Estudio de carga alostática en bomberos · Fase 1 → Fase 2 · generado ${new Date().toLocaleDateString('es-MX')}</div>
+      <table>
+        <thead><tr><th>Indicador</th><th>Fase 1</th><th>Fase 2</th><th>Diferencia</th></tr></thead>
+        <tbody>${rowsHtml}</tbody>
+      </table>
+      <div class="pr-foot">Datos anonimizados (código de participante, sin nombre). Cohorte n=26. Los resúmenes de grupo en el panel interactivo usan la mediana; este reporte muestra los valores individuales sin agregación. Proyecto de investigación doctoral, Marcel Carmona — pieza de portafolio en ciencia de datos.</div>
+    `;
+    window.print();
+  }
+
+  /* ---------------- reset ---------------- */
   document.getElementById('reset-btn').addEventListener('click', () => {
-    state.variable = DEFAULT_VAR; state.subject = DEFAULT_SUBJECT; state.search = '';
-    state.sortCol = 'sujeto'; state.sortDir = 'asc';
-    searchInput.value = ''; varSelect.value = DEFAULT_VAR;
+    state.variable = DEFAULT_VAR; state.subject = null; state.search = ''; state.sort = 'change';
+    searchInput.value = '';
+    document.getElementById('sort-change').setAttribute('aria-pressed', 'true');
+    document.getElementById('sort-id').setAttribute('aria-pressed', 'false');
     renderAll();
   });
 
   function renderAll(){
-    renderKPIs();
+    chipRow.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.key === state.variable)));
+    varSelect.value = HIGHLIGHT_KEYS.includes(state.variable) ? '' : state.variable;
     renderHero();
-    renderSidePanel();
-    renderTable();
+    renderSummary();
+    renderChart();
+    renderDetail();
   }
   renderAll();
 })();
