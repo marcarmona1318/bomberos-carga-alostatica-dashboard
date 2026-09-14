@@ -1,0 +1,6386 @@
+{
+ "meta": {
+  "n": 26,
+  "descripcion": "Carga alostatica en personal de bomberos - Fase 1 (F1) vs Fase 2 (F2)",
+  "fuente": "Tesis doctoral, Marcel Carmona - datos anonimizados (PM -> P01..P26)"
+ },
+ "kpis": {
+  "n_sujetos": 26,
+  "edad_promedio": 25.0,
+  "brs_f1_promedio": 3.75,
+  "brs_f2_promedio": 3.68,
+  "pct_mejora_resiliencia": 38.5,
+  "pct_masculino": 84.6,
+  "variable_mas_asociada_resiliencia": "Glucosa",
+  "r_variable_mas_asociada_resiliencia": -0.31
+ },
+ "subjects": [
+  {
+   "id": "P01",
+   "edad": 21,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P02",
+   "edad": 25,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P03",
+   "edad": 22,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": false
+  },
+  {
+   "id": "P04",
+   "edad": 22,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": false
+  },
+  {
+   "id": "P05",
+   "edad": 28,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": false
+  },
+  {
+   "id": "P06",
+   "edad": 20,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P07",
+   "edad": 28,
+   "genero": "F",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P08",
+   "edad": 23,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P09",
+   "edad": 21,
+   "genero": "F",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P10",
+   "edad": 19,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": false
+  },
+  {
+   "id": "P11",
+   "edad": 18,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": false
+  },
+  {
+   "id": "P12",
+   "edad": 22,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P13",
+   "edad": 20,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": false
+  },
+  {
+   "id": "P14",
+   "edad": 22,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": true
+  },
+  {
+   "id": "P15",
+   "edad": 27,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": false
+  },
+  {
+   "id": "P16",
+   "edad": 27,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": true
+  },
+  {
+   "id": "P17",
+   "edad": 33,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": true
+  },
+  {
+   "id": "P18",
+   "edad": 35,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P19",
+   "edad": 26,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": true
+  },
+  {
+   "id": "P20",
+   "edad": 26,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P21",
+   "edad": 23,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P22",
+   "edad": 30,
+   "genero": "F",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P23",
+   "edad": 23,
+   "genero": "M",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P24",
+   "edad": 30,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": false
+  },
+  {
+   "id": "P25",
+   "edad": 30,
+   "genero": "F",
+   "tum_cert": true,
+   "exp_previa": true
+  },
+  {
+   "id": "P26",
+   "edad": 28,
+   "genero": "M",
+   "tum_cert": false,
+   "exp_previa": false
+  }
+ ],
+ "biomarcadores_catalog": [
+  {
+   "key": "INDICE_CINTURA",
+   "label": "Indice cintura-cadera",
+   "unit": ""
+  },
+  {
+   "key": "BMI",
+   "label": "IMC",
+   "unit": "kg/m2"
+  },
+  {
+   "key": "SISTOLICA",
+   "label": "Presion sistolica",
+   "unit": "mmHg"
+  },
+  {
+   "key": "DIASTOLICA",
+   "label": "Presion diastolica",
+   "unit": "mmHg"
+  },
+  {
+   "key": "F_CARDIACA",
+   "label": "Frecuencia cardiaca",
+   "unit": "lpm"
+  },
+  {
+   "key": "COLESTEROL",
+   "label": "Colesterol total",
+   "unit": "mg/dL"
+  },
+  {
+   "key": "TRIGLICERIDOS",
+   "label": "Trigliceridos",
+   "unit": "mg/dL"
+  },
+  {
+   "key": "HDL",
+   "label": "HDL",
+   "unit": "mg/dL"
+  },
+  {
+   "key": "LDL",
+   "label": "LDL",
+   "unit": "mg/dL"
+  },
+  {
+   "key": "ALBUMINA",
+   "label": "Albumina",
+   "unit": "g/dL"
+  },
+  {
+   "key": "GLUCOSA",
+   "label": "Glucosa",
+   "unit": "mg/dL"
+  },
+  {
+   "key": "IL6",
+   "label": "Interleucina-6",
+   "unit": "pg/mL"
+  },
+  {
+   "key": "CORTISOL",
+   "label": "Cortisol",
+   "unit": "ug/dL"
+  },
+  {
+   "key": "H_GLICOSILADA",
+   "label": "Hemoglobina glicosilada",
+   "unit": "%"
+  },
+  {
+   "key": "PCR",
+   "label": "Proteina C reactiva",
+   "unit": "mg/L"
+  }
+ ],
+ "hrv_catalog": [
+  {
+   "key": "SDNN",
+   "label": "SDNN",
+   "unit": "ms"
+  },
+  {
+   "key": "RMSSD",
+   "label": "RMSSD",
+   "unit": "ms"
+  },
+  {
+   "key": "lnRMSSD",
+   "label": "ln(RMSSD)",
+   "unit": ""
+  },
+  {
+   "key": "SD1",
+   "label": "SD1 (Poincare)",
+   "unit": "ms"
+  },
+  {
+   "key": "SD2",
+   "label": "SD2 (Poincare)",
+   "unit": "ms"
+  },
+  {
+   "key": "MeanHR",
+   "label": "Frecuencia cardiaca media",
+   "unit": "lpm"
+  },
+  {
+   "key": "LF",
+   "label": "Potencia LF",
+   "unit": "ms2"
+  },
+  {
+   "key": "HF",
+   "label": "Potencia HF",
+   "unit": "ms2"
+  },
+  {
+   "key": "LFHF",
+   "label": "Razon LF/HF",
+   "unit": ""
+  }
+ ],
+ "biomarcadores": {
+  "P01": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.5876,
+    "f2_norm": 1.0,
+    "f1_raw": 0.96,
+    "f2_raw": 1.04
+   },
+   "BMI": {
+    "f1_norm": 0.2902,
+    "f2_norm": 0.3223,
+    "f1_raw": 25.5,
+    "f2_raw": 26.13
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.0385,
+    "f1_raw": 110.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.25,
+    "f2_norm": 0.25,
+    "f1_raw": 70.0,
+    "f2_raw": 70.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.4582,
+    "f2_norm": 0.7121,
+    "f1_raw": 77.58,
+    "f2_raw": 94.33
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.177,
+    "f2_norm": 0.1593,
+    "f1_raw": 138.0,
+    "f2_raw": 136.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0628,
+    "f2_norm": 0.1413,
+    "f1_raw": 85.0,
+    "f2_raw": 120.0
+   },
+   "HDL": {
+    "f1_norm": 0.277,
+    "f2_norm": 0.1417,
+    "f1_raw": 44.07,
+    "f2_raw": 39.1
+   },
+   "LDL": {
+    "f1_norm": 0.3407,
+    "f2_norm": 0.3031,
+    "f1_raw": 77.0,
+    "f2_raw": 72.9
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5315,
+    "f2_norm": 0.5315,
+    "f1_raw": 4.29,
+    "f2_raw": 4.29
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0825,
+    "f2_norm": 0.0825,
+    "f1_raw": 93.0,
+    "f2_raw": 93.0
+   },
+   "IL6": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.3727,
+    "f1_raw": 4.8,
+    "f2_raw": 19.0
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0539,
+    "f2_norm": 0.1867,
+    "f1_raw": 5.34,
+    "f2_raw": 7.46
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.4211,
+    "f2_norm": 0.0526,
+    "f1_raw": 6.3,
+    "f2_raw": 4.2
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.3662,
+    "f1_raw": 0.0,
+    "f2_raw": 11.49
+   }
+  },
+  "P02": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.6443,
+    "f2_norm": 0.6443,
+    "f1_raw": 0.971,
+    "f2_raw": 0.971
+   },
+   "BMI": {
+    "f1_norm": 0.4328,
+    "f2_norm": 0.7892,
+    "f1_raw": 28.3,
+    "f2_raw": 35.3
+   },
+   "SISTOLICA": {
+    "f1_norm": 1.0,
+    "f2_norm": 1.0,
+    "f1_raw": 160.0,
+    "f2_raw": 160.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.75,
+    "f2_norm": 0.75,
+    "f1_raw": 90.0,
+    "f2_raw": 90.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.7708,
+    "f2_norm": 0.7191,
+    "f1_raw": 98.2,
+    "f2_raw": 94.79
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.4336,
+    "f2_norm": 0.7434,
+    "f1_raw": 167.0,
+    "f2_raw": 202.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0948,
+    "f2_norm": 0.6771,
+    "f1_raw": 99.3,
+    "f2_raw": 359.0
+   },
+   "HDL": {
+    "f1_norm": 0.4051,
+    "f2_norm": 0.079,
+    "f1_raw": 48.77,
+    "f2_raw": 36.8
+   },
+   "LDL": {
+    "f1_norm": 0.533,
+    "f2_norm": 0.4872,
+    "f1_raw": 98.0,
+    "f2_raw": 93.0
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.4865,
+    "f2_norm": 0.009,
+    "f1_raw": 4.19,
+    "f2_raw": 3.13
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1392,
+    "f2_norm": 0.2732,
+    "f1_raw": 104.0,
+    "f2_raw": 130.0
+   },
+   "IL6": {
+    "f1_norm": 0.0577,
+    "f2_norm": 0.0446,
+    "f1_raw": 7.0,
+    "f2_raw": 6.5
+   },
+   "CORTISOL": {
+    "f1_norm": 0.141,
+    "f2_norm": 0.3208,
+    "f1_raw": 6.73,
+    "f2_raw": 9.6
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.1579,
+    "f2_norm": 0.1228,
+    "f1_raw": 4.8,
+    "f2_raw": 4.6
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0325,
+    "f1_raw": 0.0,
+    "f2_raw": 1.02
+   }
+  },
+  "P03": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.5619,
+    "f2_norm": 0.5619,
+    "f1_raw": 0.955,
+    "f2_raw": 0.955
+   },
+   "BMI": {
+    "f1_norm": 0.4786,
+    "f2_norm": 0.5545,
+    "f1_raw": 29.2,
+    "f2_raw": 30.69
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.4231,
+    "f2_norm": 0.4231,
+    "f1_raw": 130.0,
+    "f2_raw": 130.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.75,
+    "f2_norm": 0.75,
+    "f1_raw": 90.0,
+    "f2_raw": 90.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.2582,
+    "f2_norm": 0.1574,
+    "f1_raw": 64.39,
+    "f2_raw": 57.74
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.5752,
+    "f2_norm": 0.9115,
+    "f1_raw": 183.0,
+    "f2_raw": 221.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.15,
+    "f2_norm": 0.1009,
+    "f1_raw": 123.9,
+    "f2_raw": 102.0
+   },
+   "HDL": {
+    "f1_norm": 0.7606,
+    "f2_norm": 0.5203,
+    "f1_raw": 61.82,
+    "f2_raw": 53.0
+   },
+   "LDL": {
+    "f1_norm": 0.5147,
+    "f2_norm": 0.9817,
+    "f1_raw": 96.0,
+    "f2_raw": 147.0
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5631,
+    "f2_norm": 0.5901,
+    "f1_raw": 4.36,
+    "f2_raw": 4.42
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0464,
+    "f2_norm": 0.0309,
+    "f1_raw": 86.0,
+    "f2_raw": 83.0
+   },
+   "IL6": {
+    "f1_norm": 0.2231,
+    "f2_norm": 0.084,
+    "f1_raw": 13.3,
+    "f2_raw": 8.0
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0852,
+    "f2_norm": 0.2318,
+    "f1_raw": 5.84,
+    "f2_raw": 8.18
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.1053,
+    "f2_norm": 0.1579,
+    "f1_raw": 4.5,
+    "f2_raw": 4.8
+   },
+   "PCR": {
+    "f1_norm": 0.137,
+    "f2_norm": 0.16,
+    "f1_raw": 4.3,
+    "f2_raw": 5.02
+   }
+  },
+  "P04": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.6598,
+    "f2_norm": 0.6598,
+    "f1_raw": 0.974,
+    "f2_raw": 0.974
+   },
+   "BMI": {
+    "f1_norm": 0.8401,
+    "f2_norm": 0.9297,
+    "f1_raw": 36.3,
+    "f2_raw": 38.06
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.4231,
+    "f2_norm": 0.4231,
+    "f1_raw": 130.0,
+    "f2_raw": 130.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.3931,
+    "f2_norm": 0.247,
+    "f1_raw": 73.29,
+    "f2_raw": 63.65
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.4336,
+    "f2_norm": 0.469,
+    "f1_raw": 167.0,
+    "f2_raw": 171.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0812,
+    "f2_norm": 0.0852,
+    "f1_raw": 93.2,
+    "f2_raw": 95.0
+   },
+   "HDL": {
+    "f1_norm": 0.4595,
+    "f2_norm": 0.0817,
+    "f1_raw": 50.77,
+    "f2_raw": 36.9
+   },
+   "LDL": {
+    "f1_norm": 0.533,
+    "f2_norm": 0.6886,
+    "f1_raw": 98.0,
+    "f2_raw": 115.0
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6306,
+    "f2_norm": 0.7207,
+    "f1_raw": 4.51,
+    "f2_raw": 4.71
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.134,
+    "f2_norm": 0.1392,
+    "f1_raw": 103.0,
+    "f2_raw": 104.0
+   },
+   "IL6": {
+    "f1_norm": 0.2336,
+    "f2_norm": 0.1549,
+    "f1_raw": 13.7,
+    "f2_raw": 10.7
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0081,
+    "f2_norm": 0.317,
+    "f1_raw": 4.61,
+    "f2_raw": 9.54
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.3158,
+    "f2_norm": 0.2105,
+    "f1_raw": 5.7,
+    "f2_raw": 5.1
+   },
+   "PCR": {
+    "f1_norm": 0.9114,
+    "f2_norm": 1.0,
+    "f1_raw": 28.6,
+    "f2_raw": 31.38
+   }
+  },
+  "P05": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.6856,
+    "f2_norm": 0.6856,
+    "f1_raw": 0.979,
+    "f2_raw": 0.979
+   },
+   "BMI": {
+    "f1_norm": 0.2088,
+    "f2_norm": 0.248,
+    "f1_raw": 23.9,
+    "f2_raw": 24.67
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.0385,
+    "f1_raw": 110.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.25,
+    "f2_norm": 0.25,
+    "f1_raw": 70.0,
+    "f2_raw": 70.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.3714,
+    "f2_norm": 0.0,
+    "f1_raw": 71.86,
+    "f2_raw": 47.36
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.3363,
+    "f2_norm": 0.3274,
+    "f1_raw": 156.0,
+    "f2_raw": 155.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.1778,
+    "f2_norm": 0.1525,
+    "f1_raw": 136.3,
+    "f2_raw": 125.0
+   },
+   "HDL": {
+    "f1_norm": 0.4252,
+    "f2_norm": 0.1008,
+    "f1_raw": 49.51,
+    "f2_raw": 37.6
+   },
+   "LDL": {
+    "f1_norm": 0.359,
+    "f2_norm": 0.4808,
+    "f1_raw": 79.0,
+    "f2_raw": 92.3
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6036,
+    "f2_norm": 0.0,
+    "f1_raw": 4.45,
+    "f2_raw": 3.11
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0515,
+    "f2_norm": 0.0876,
+    "f1_raw": 87.0,
+    "f2_raw": 94.0
+   },
+   "IL6": {
+    "f1_norm": 0.1916,
+    "f2_norm": 0.3333,
+    "f1_raw": 12.1,
+    "f2_raw": 17.5
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0201,
+    "f2_norm": 0.2356,
+    "f1_raw": 4.8,
+    "f2_raw": 8.24
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2632,
+    "f2_norm": 0.0175,
+    "f1_raw": 5.4,
+    "f2_raw": 4.0
+   },
+   "PCR": {
+    "f1_norm": 0.4015,
+    "f2_norm": 0.3378,
+    "f1_raw": 12.6,
+    "f2_raw": 10.6
+   }
+  },
+  "P06": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.4639,
+    "f2_norm": 0.4639,
+    "f1_raw": 0.936,
+    "f2_raw": 0.936
+   },
+   "BMI": {
+    "f1_norm": 0.3462,
+    "f2_norm": 0.3065,
+    "f1_raw": 26.6,
+    "f2_raw": 25.82
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.0385,
+    "f1_raw": 110.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0,
+    "f1_raw": 60.0,
+    "f2_raw": 60.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.6007,
+    "f2_norm": 0.2721,
+    "f1_raw": 86.98,
+    "f2_raw": 65.31
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.1327,
+    "f2_norm": 0.1327,
+    "f1_raw": 133.0,
+    "f2_raw": 133.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0924,
+    "f2_norm": 0.2061,
+    "f1_raw": 98.2,
+    "f2_raw": 148.9
+   },
+   "HDL": {
+    "f1_norm": 0.2661,
+    "f2_norm": 0.0354,
+    "f1_raw": 43.67,
+    "f2_raw": 35.2
+   },
+   "LDL": {
+    "f1_norm": 0.2766,
+    "f2_norm": 0.2582,
+    "f1_raw": 70.0,
+    "f2_raw": 68.0
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5315,
+    "f2_norm": 0.6396,
+    "f1_raw": 4.29,
+    "f2_raw": 4.53
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.067,
+    "f2_norm": 0.0309,
+    "f1_raw": 90.0,
+    "f2_raw": 83.0
+   },
+   "IL6": {
+    "f1_norm": 0.4121,
+    "f2_norm": 1.0,
+    "f1_raw": 20.5,
+    "f2_raw": 42.9
+   },
+   "CORTISOL": {
+    "f1_norm": 0.3108,
+    "f2_norm": 0.6698,
+    "f1_raw": 9.44,
+    "f2_raw": 15.17
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.1228,
+    "f2_norm": 0.2456,
+    "f1_raw": 4.6,
+    "f2_raw": 5.3
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0841,
+    "f1_raw": 0.0,
+    "f2_raw": 2.64
+   }
+  },
+  "P07": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.634,
+    "f2_norm": 0.634,
+    "f1_raw": 0.969,
+    "f2_raw": 0.969
+   },
+   "BMI": {
+    "f1_norm": 0.2851,
+    "f2_norm": 0.2128,
+    "f1_raw": 25.4,
+    "f2_raw": 23.98
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.0385,
+    "f1_raw": 110.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.25,
+    "f2_norm": 0.25,
+    "f1_raw": 70.0,
+    "f2_raw": 70.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.1666,
+    "f2_norm": 0.1686,
+    "f1_raw": 58.35,
+    "f2_raw": 58.48
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.5044,
+    "f2_norm": 0.7965,
+    "f1_raw": 175.0,
+    "f2_raw": 208.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0392,
+    "f2_norm": 0.0942,
+    "f1_raw": 74.5,
+    "f2_raw": 99.0
+   },
+   "HDL": {
+    "f1_norm": 0.574,
+    "f2_norm": 0.4358,
+    "f1_raw": 54.97,
+    "f2_raw": 49.9
+   },
+   "LDL": {
+    "f1_norm": 0.5971,
+    "f2_norm": 0.9016,
+    "f1_raw": 105.0,
+    "f2_raw": 138.26
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.545,
+    "f2_norm": 0.5541,
+    "f1_raw": 4.32,
+    "f2_raw": 4.34
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0361,
+    "f2_norm": 0.0103,
+    "f1_raw": 84.0,
+    "f2_raw": 79.0
+   },
+   "IL6": {
+    "f1_norm": 0.021,
+    "f2_norm": 0.1627,
+    "f1_raw": 5.6,
+    "f2_raw": 11.0
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0708,
+    "f2_norm": 0.208,
+    "f1_raw": 5.61,
+    "f2_raw": 7.8
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2105,
+    "f2_norm": 0.1579,
+    "f1_raw": 5.1,
+    "f2_raw": 4.8
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0625,
+    "f1_raw": 0.0,
+    "f2_raw": 1.96
+   }
+  },
+  "P08": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.4845,
+    "f2_norm": 0.5876,
+    "f1_raw": 0.94,
+    "f2_raw": 0.96
+   },
+   "BMI": {
+    "f1_norm": 0.1527,
+    "f2_norm": 0.14,
+    "f1_raw": 22.8,
+    "f2_raw": 22.55
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.0,
+    "f1_raw": 110.0,
+    "f2_raw": 108.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.25,
+    "f2_norm": 0.25,
+    "f1_raw": 70.0,
+    "f2_raw": 70.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.5139,
+    "f2_norm": 0.5139,
+    "f1_raw": 81.26,
+    "f2_raw": 81.26
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.5221,
+    "f2_norm": 0.6637,
+    "f1_raw": 177.0,
+    "f2_raw": 193.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0332,
+    "f2_norm": 0.1509,
+    "f1_raw": 71.8,
+    "f2_raw": 124.3
+   },
+   "HDL": {
+    "f1_norm": 0.8284,
+    "f2_norm": 0.7546,
+    "f1_raw": 64.31,
+    "f2_raw": 61.6
+   },
+   "LDL": {
+    "f1_norm": 0.533,
+    "f2_norm": 0.6117,
+    "f1_raw": 98.0,
+    "f2_raw": 106.6
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6261,
+    "f2_norm": 0.8153,
+    "f1_raw": 4.5,
+    "f2_raw": 4.92
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0619,
+    "f2_norm": 0.0052,
+    "f1_raw": 89.0,
+    "f2_raw": 78.0
+   },
+   "IL6": {
+    "f1_norm": 0.2205,
+    "f2_norm": 0.3911,
+    "f1_raw": 13.2,
+    "f2_raw": 19.7
+   },
+   "CORTISOL": {
+    "f1_norm": 0.1084,
+    "f2_norm": 0.2663,
+    "f1_raw": 6.21,
+    "f2_raw": 8.73
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.3158,
+    "f2_norm": 1.0,
+    "f1_raw": 5.7,
+    "f2_raw": 9.6
+   },
+   "PCR": {
+    "f1_norm": 0.3467,
+    "f2_norm": 0.3993,
+    "f1_raw": 10.88,
+    "f2_raw": 12.53
+   }
+  },
+  "P09": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0,
+    "f1_raw": 0.846,
+    "f2_raw": 0.846
+   },
+   "BMI": {
+    "f1_norm": 0.7434,
+    "f2_norm": 0.7098,
+    "f1_raw": 34.4,
+    "f2_raw": 33.74
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.2308,
+    "f2_norm": 0.2308,
+    "f1_raw": 120.0,
+    "f2_raw": 120.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.25,
+    "f2_norm": 0.25,
+    "f1_raw": 70.0,
+    "f2_raw": 70.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.8613,
+    "f2_norm": 0.5961,
+    "f1_raw": 104.17,
+    "f2_raw": 86.68
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.5664,
+    "f2_norm": 0.5487,
+    "f1_raw": 182.0,
+    "f2_raw": 180.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.1756,
+    "f2_norm": 0.0554,
+    "f1_raw": 135.3,
+    "f2_raw": 81.7
+   },
+   "HDL": {
+    "f1_norm": 0.7559,
+    "f2_norm": 0.6974,
+    "f1_raw": 61.65,
+    "f2_raw": 59.5
+   },
+   "LDL": {
+    "f1_norm": 0.4872,
+    "f2_norm": 0.5897,
+    "f1_raw": 93.0,
+    "f2_raw": 104.2
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5315,
+    "f2_norm": 0.6261,
+    "f1_raw": 4.29,
+    "f2_raw": 4.5
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0619,
+    "f2_norm": 0.0515,
+    "f1_raw": 89.0,
+    "f2_raw": 87.0
+   },
+   "IL6": {
+    "f1_norm": 0.2625,
+    "f2_norm": 0.1995,
+    "f1_raw": 14.8,
+    "f2_raw": 12.4
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0683,
+    "f2_norm": 0.2061,
+    "f1_raw": 5.57,
+    "f2_raw": 7.77
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2105,
+    "f2_norm": 0.1579,
+    "f1_raw": 5.1,
+    "f2_raw": 4.8
+   },
+   "PCR": {
+    "f1_norm": 0.4461,
+    "f2_norm": 0.5006,
+    "f1_raw": 14.0,
+    "f2_raw": 15.71
+   }
+  },
+  "P10": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.4072,
+    "f2_norm": 0.4072,
+    "f1_raw": 0.925,
+    "f2_raw": 0.925
+   },
+   "BMI": {
+    "f1_norm": 0.1578,
+    "f2_norm": 0.1492,
+    "f1_raw": 22.9,
+    "f2_raw": 22.73
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.2308,
+    "f2_norm": 0.2308,
+    "f1_raw": 120.0,
+    "f2_raw": 120.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.4372,
+    "f2_norm": 0.2582,
+    "f1_raw": 76.2,
+    "f2_raw": 64.39
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.115,
+    "f2_norm": 0.0973,
+    "f1_raw": 131.0,
+    "f2_raw": 129.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0056,
+    "f2_norm": 0.0493,
+    "f1_raw": 59.5,
+    "f2_raw": 79.0
+   },
+   "HDL": {
+    "f1_norm": 0.4789,
+    "f2_norm": 0.3269,
+    "f1_raw": 51.48,
+    "f2_raw": 45.9
+   },
+   "LDL": {
+    "f1_norm": 0.2582,
+    "f2_norm": 0.2518,
+    "f1_raw": 68.0,
+    "f2_raw": 67.3
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5991,
+    "f2_norm": 1.0,
+    "f1_raw": 4.44,
+    "f2_raw": 5.33
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0619,
+    "f2_norm": 0.0258,
+    "f1_raw": 89.0,
+    "f2_raw": 82.0
+   },
+   "IL6": {
+    "f1_norm": 0.0184,
+    "f2_norm": 0.0499,
+    "f1_raw": 5.5,
+    "f2_raw": 6.7
+   },
+   "CORTISOL": {
+    "f1_norm": 0.2155,
+    "f2_norm": 0.4599,
+    "f1_raw": 7.92,
+    "f2_raw": 11.82
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.0351,
+    "f2_norm": 0.0351,
+    "f1_raw": 4.1,
+    "f2_raw": 4.1
+   },
+   "PCR": {
+    "f1_norm": 0.392,
+    "f2_norm": 0.4704,
+    "f1_raw": 12.3,
+    "f2_raw": 14.76
+   }
+  },
+  "P11": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.5258,
+    "f2_norm": 0.5258,
+    "f1_raw": 0.948,
+    "f2_raw": 0.948
+   },
+   "BMI": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.056,
+    "f1_raw": 19.8,
+    "f2_raw": 20.9
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.2308,
+    "f2_norm": 0.2308,
+    "f1_raw": 120.0,
+    "f2_raw": 120.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.4576,
+    "f2_norm": 0.3222,
+    "f1_raw": 77.54,
+    "f2_raw": 68.61
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.2743,
+    "f2_norm": 0.292,
+    "f1_raw": 149.0,
+    "f2_raw": 151.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0493,
+    "f2_norm": 0.0572,
+    "f1_raw": 79.0,
+    "f2_raw": 82.5
+   },
+   "HDL": {
+    "f1_norm": 0.6045,
+    "f2_norm": 0.4113,
+    "f1_raw": 56.09,
+    "f2_raw": 49.0
+   },
+   "LDL": {
+    "f1_norm": 0.3407,
+    "f2_norm": 0.4185,
+    "f1_raw": 77.0,
+    "f2_raw": 85.5
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6396,
+    "f2_norm": 0.8063,
+    "f1_raw": 4.53,
+    "f2_raw": 4.9
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.067,
+    "f2_norm": 0.0258,
+    "f1_raw": 90.0,
+    "f2_raw": 82.0
+   },
+   "IL6": {
+    "f1_norm": 0.0997,
+    "f2_norm": 0.1811,
+    "f1_raw": 8.6,
+    "f2_raw": 11.7
+   },
+   "CORTISOL": {
+    "f1_norm": 0.062,
+    "f2_norm": 0.1967,
+    "f1_raw": 5.47,
+    "f2_raw": 7.62
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2105,
+    "f2_norm": 0.1228,
+    "f1_raw": 5.1,
+    "f2_raw": 4.6
+   },
+   "PCR": {
+    "f1_norm": 0.8668,
+    "f2_norm": 0.0554,
+    "f1_raw": 27.2,
+    "f2_raw": 1.74
+   }
+  },
+  "P12": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.634,
+    "f2_norm": 0.634,
+    "f1_raw": 0.969,
+    "f2_raw": 0.969
+   },
+   "BMI": {
+    "f1_norm": 0.3208,
+    "f2_norm": 0.363,
+    "f1_raw": 26.1,
+    "f2_raw": 26.93
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.2308,
+    "f2_norm": 0.2308,
+    "f1_raw": 120.0,
+    "f2_raw": 120.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.2788,
+    "f2_norm": 0.2641,
+    "f1_raw": 65.75,
+    "f2_raw": 64.78
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.4071,
+    "f2_norm": 0.6726,
+    "f1_raw": 164.0,
+    "f2_raw": 194.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.1101,
+    "f2_norm": 0.25,
+    "f1_raw": 106.1,
+    "f2_raw": 168.5
+   },
+   "HDL": {
+    "f1_norm": 0.6837,
+    "f2_norm": 0.5121,
+    "f1_raw": 59.0,
+    "f2_raw": 52.7
+   },
+   "LDL": {
+    "f1_norm": 0.4048,
+    "f2_norm": 0.6209,
+    "f1_raw": 84.0,
+    "f2_raw": 107.6
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5856,
+    "f2_norm": 0.036,
+    "f1_raw": 4.41,
+    "f2_raw": 3.19
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1031,
+    "f2_norm": 0.0,
+    "f1_raw": 97.0,
+    "f2_raw": 77.0
+   },
+   "IL6": {
+    "f1_norm": 0.2073,
+    "f2_norm": 0.2152,
+    "f1_raw": 12.7,
+    "f2_raw": 13.0
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0558,
+    "f2_norm": 0.2469,
+    "f1_raw": 5.37,
+    "f2_raw": 8.42
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.0526,
+    "f2_norm": 0.807,
+    "f1_raw": 4.2,
+    "f2_raw": 8.5
+   },
+   "PCR": {
+    "f1_norm": 0.0924,
+    "f2_norm": 0.0,
+    "f1_raw": 2.9,
+    "f2_raw": 0.0
+   }
+  },
+  "P13": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.4845,
+    "f2_norm": 0.5361,
+    "f1_raw": 0.94,
+    "f2_raw": 0.95
+   },
+   "BMI": {
+    "f1_norm": 0.1477,
+    "f2_norm": 0.165,
+    "f1_raw": 22.7,
+    "f2_raw": 23.04
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.6154,
+    "f2_norm": 0.2308,
+    "f1_raw": 140.0,
+    "f2_raw": 120.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.75,
+    "f2_norm": 0.5,
+    "f1_raw": 90.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.4215,
+    "f2_norm": 0.4215,
+    "f1_raw": 75.16,
+    "f2_raw": 75.16
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.2478,
+    "f2_norm": 0.0354,
+    "f1_raw": 146.0,
+    "f2_raw": 122.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0085,
+    "f2_norm": 0.0195,
+    "f1_raw": 60.8,
+    "f2_raw": 65.7
+   },
+   "HDL": {
+    "f1_norm": 0.7151,
+    "f2_norm": 0.158,
+    "f1_raw": 60.15,
+    "f2_raw": 39.7
+   },
+   "LDL": {
+    "f1_norm": 0.3132,
+    "f2_norm": 0.2692,
+    "f1_raw": 74.0,
+    "f2_raw": 69.2
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6802,
+    "f2_norm": 0.8514,
+    "f1_raw": 4.62,
+    "f2_raw": 5.0
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0515,
+    "f2_norm": 0.0619,
+    "f1_raw": 87.0,
+    "f2_raw": 89.0
+   },
+   "IL6": {
+    "f1_norm": 0.2336,
+    "f2_norm": 0.1024,
+    "f1_raw": 13.7,
+    "f2_raw": 8.7
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0019,
+    "f2_norm": 0.3271,
+    "f1_raw": 4.51,
+    "f2_raw": 9.7
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.1053,
+    "f2_norm": 0.0,
+    "f1_raw": 4.5,
+    "f2_raw": 3.9
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0704,
+    "f1_raw": 0.0,
+    "f2_raw": 2.21
+   }
+  },
+  "P14": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.6392,
+    "f2_norm": 0.5876,
+    "f1_raw": 0.97,
+    "f2_raw": 0.96
+   },
+   "BMI": {
+    "f1_norm": 0.779,
+    "f2_norm": 1.0,
+    "f1_raw": 35.1,
+    "f2_raw": 39.44
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.4231,
+    "f2_norm": 0.4231,
+    "f1_raw": 130.0,
+    "f2_raw": 130.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.75,
+    "f1_raw": 80.0,
+    "f2_raw": 90.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.4074,
+    "f2_norm": 0.4074,
+    "f1_raw": 74.23,
+    "f2_raw": 74.23
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.6372,
+    "f2_norm": 0.9558,
+    "f1_raw": 190.0,
+    "f2_raw": 226.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.3446,
+    "f2_norm": 0.4332,
+    "f1_raw": 210.7,
+    "f2_raw": 250.2
+   },
+   "HDL": {
+    "f1_norm": 0.505,
+    "f2_norm": 0.3432,
+    "f1_raw": 52.44,
+    "f2_raw": 46.5
+   },
+   "LDL": {
+    "f1_norm": 0.5055,
+    "f2_norm": 0.8214,
+    "f1_raw": 95.0,
+    "f2_raw": 129.5
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6532,
+    "f2_norm": 0.6216,
+    "f1_raw": 4.56,
+    "f2_raw": 4.49
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0722,
+    "f2_norm": 0.1031,
+    "f1_raw": 91.0,
+    "f2_raw": 97.0
+   },
+   "IL6": {
+    "f1_norm": 0.2808,
+    "f2_norm": 0.105,
+    "f1_raw": 15.5,
+    "f2_raw": 8.8
+   },
+   "CORTISOL": {
+    "f1_norm": 0.1529,
+    "f2_norm": 0.3415,
+    "f1_raw": 6.92,
+    "f2_raw": 9.93
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.1579,
+    "f2_norm": 0.1404,
+    "f1_raw": 4.8,
+    "f2_raw": 4.7
+   },
+   "PCR": {
+    "f1_norm": 0.0749,
+    "f2_norm": 0.1354,
+    "f1_raw": 2.35,
+    "f2_raw": 4.25
+   }
+  },
+  "P15": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.6598,
+    "f2_norm": 0.6598,
+    "f1_raw": 0.974,
+    "f2_raw": 0.974
+   },
+   "BMI": {
+    "f1_norm": 0.6365,
+    "f2_norm": 0.6813,
+    "f1_raw": 32.3,
+    "f2_raw": 33.18
+   },
+   "SISTOLICA": {
+    "f1_norm": 1.0,
+    "f2_norm": 1.0,
+    "f1_raw": 160.0,
+    "f2_raw": 160.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.4033,
+    "f2_norm": 0.4421,
+    "f1_raw": 73.96,
+    "f2_raw": 76.52
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.2655,
+    "f2_norm": 0.0,
+    "f1_raw": 148.0,
+    "f2_raw": 118.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0087,
+    "f2_norm": 0.0,
+    "f1_raw": 60.9,
+    "f2_raw": 57.0
+   },
+   "HDL": {
+    "f1_norm": 0.9586,
+    "f2_norm": 0.1798,
+    "f1_raw": 69.09,
+    "f2_raw": 40.5
+   },
+   "LDL": {
+    "f1_norm": 0.2491,
+    "f2_norm": 0.2408,
+    "f1_raw": 67.0,
+    "f2_raw": 66.1
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5721,
+    "f2_norm": 0.8514,
+    "f1_raw": 4.38,
+    "f2_raw": 5.0
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1649,
+    "f2_norm": 0.0722,
+    "f1_raw": 109.0,
+    "f2_raw": 91.0
+   },
+   "IL6": {
+    "f1_norm": 0.0131,
+    "f2_norm": 0.1995,
+    "f1_raw": 5.3,
+    "f2_raw": 12.4
+   },
+   "CORTISOL": {
+    "f1_norm": 0.3346,
+    "f2_norm": 0.3346,
+    "f1_raw": 9.82,
+    "f2_raw": 9.82
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.0351,
+    "f2_norm": 0.0877,
+    "f1_raw": 4.1,
+    "f2_raw": 4.4
+   },
+   "PCR": {
+    "f1_norm": 0.0574,
+    "f2_norm": 0.1275,
+    "f1_raw": 1.8,
+    "f2_raw": 4.0
+   }
+  },
+  "P16": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.5052,
+    "f2_norm": 0.5052,
+    "f1_raw": 0.944,
+    "f2_raw": 0.944
+   },
+   "BMI": {
+    "f1_norm": 0.6925,
+    "f2_norm": 0.7276,
+    "f1_raw": 33.4,
+    "f2_raw": 34.09
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.4231,
+    "f2_norm": 0.4231,
+    "f1_raw": 130.0,
+    "f2_raw": 130.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.75,
+    "f2_norm": 0.75,
+    "f1_raw": 90.0,
+    "f2_raw": 90.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.2747,
+    "f2_norm": 0.2752,
+    "f1_raw": 65.48,
+    "f2_raw": 65.51
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.0973,
+    "f2_norm": 0.1327,
+    "f1_raw": 129.0,
+    "f2_raw": 133.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0202,
+    "f2_norm": 0.0572,
+    "f1_raw": 66.0,
+    "f2_raw": 82.5
+   },
+   "HDL": {
+    "f1_norm": 0.2885,
+    "f2_norm": 0.0518,
+    "f1_raw": 44.49,
+    "f2_raw": 35.8
+   },
+   "LDL": {
+    "f1_norm": 0.2857,
+    "f2_norm": 0.3745,
+    "f1_raw": 71.0,
+    "f2_raw": 80.7
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.3919,
+    "f2_norm": 0.5495,
+    "f1_raw": 3.98,
+    "f2_raw": 4.33
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0773,
+    "f2_norm": 0.0284,
+    "f1_raw": 92.0,
+    "f2_raw": 82.5
+   },
+   "IL6": {
+    "f1_norm": 0.0236,
+    "f2_norm": 0.2073,
+    "f1_raw": 5.7,
+    "f2_raw": 12.7
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0213,
+    "f2_norm": 0.3872,
+    "f1_raw": 4.82,
+    "f2_raw": 10.66
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2982,
+    "f2_norm": 0.193,
+    "f1_raw": 5.6,
+    "f2_raw": 5.0
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0813,
+    "f1_raw": 0.0,
+    "f2_raw": 2.55
+   }
+  },
+  "P17": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.6701,
+    "f2_norm": 0.6701,
+    "f1_raw": 0.976,
+    "f2_raw": 0.976
+   },
+   "BMI": {
+    "f1_norm": 0.9369,
+    "f2_norm": 0.974,
+    "f1_raw": 38.2,
+    "f2_raw": 38.93
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.6154,
+    "f2_norm": 0.6154,
+    "f1_raw": 140.0,
+    "f2_raw": 140.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.75,
+    "f2_norm": 0.75,
+    "f1_raw": 90.0,
+    "f2_raw": 90.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.5587,
+    "f2_norm": 0.1299,
+    "f1_raw": 84.21,
+    "f2_raw": 55.93
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.8407,
+    "f2_norm": 0.9469,
+    "f1_raw": 213.0,
+    "f2_raw": 225.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.2392,
+    "f2_norm": 0.3318,
+    "f1_raw": 163.7,
+    "f2_raw": 205.0
+   },
+   "HDL": {
+    "f1_norm": 0.4824,
+    "f2_norm": 0.0163,
+    "f1_raw": 51.61,
+    "f2_raw": 34.5
+   },
+   "LDL": {
+    "f1_norm": 0.8168,
+    "f2_norm": 1.0,
+    "f1_raw": 129.0,
+    "f2_raw": 149.0
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.473,
+    "f2_norm": 0.6171,
+    "f1_raw": 4.16,
+    "f2_raw": 4.48
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0825,
+    "f2_norm": 0.0773,
+    "f1_raw": 93.0,
+    "f2_raw": 92.0
+   },
+   "IL6": {
+    "f1_norm": 0.4383,
+    "f2_norm": 0.3648,
+    "f1_raw": 21.5,
+    "f2_raw": 18.7
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0802,
+    "f2_norm": 0.2237,
+    "f1_raw": 5.76,
+    "f2_raw": 8.05
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.3509,
+    "f2_norm": 0.193,
+    "f1_raw": 5.9,
+    "f2_raw": 5.0
+   },
+   "PCR": {
+    "f1_norm": 0.7967,
+    "f2_norm": 0.0637,
+    "f1_raw": 25.0,
+    "f2_raw": 2.0
+   }
+  },
+  "P18": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.5361,
+    "f2_norm": 0.6907,
+    "f1_raw": 0.95,
+    "f2_raw": 0.98
+   },
+   "BMI": {
+    "f1_norm": 0.3513,
+    "f2_norm": 0.3814,
+    "f1_raw": 26.7,
+    "f2_raw": 27.29
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.2308,
+    "f2_norm": 0.0385,
+    "f1_raw": 120.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.3513,
+    "f2_norm": 0.3513,
+    "f1_raw": 70.53,
+    "f2_raw": 70.53
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.8673,
+    "f2_norm": 0.5752,
+    "f1_raw": 216.0,
+    "f2_raw": 183.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.1563,
+    "f2_norm": 0.1482,
+    "f1_raw": 126.7,
+    "f2_raw": 123.1
+   },
+   "HDL": {
+    "f1_norm": 1.0,
+    "f2_norm": 0.3895,
+    "f1_raw": 70.61,
+    "f2_raw": 48.2
+   },
+   "LDL": {
+    "f1_norm": 0.7344,
+    "f2_norm": 0.6447,
+    "f1_raw": 120.0,
+    "f2_raw": 110.2
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6081,
+    "f2_norm": 0.8288,
+    "f1_raw": 4.46,
+    "f2_raw": 4.95
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1134,
+    "f2_norm": 0.1392,
+    "f1_raw": 99.0,
+    "f2_raw": 104.0
+   },
+   "IL6": {
+    "f1_norm": 0.2152,
+    "f2_norm": 0.2205,
+    "f1_raw": 13.0,
+    "f2_raw": 13.2
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0921,
+    "f2_norm": 0.2425,
+    "f1_raw": 5.95,
+    "f2_raw": 8.35
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2281,
+    "f2_norm": 0.0175,
+    "f1_raw": 5.2,
+    "f2_raw": 4.0
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0733,
+    "f1_raw": 0.0,
+    "f2_raw": 2.3
+   }
+  },
+  "P19": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.3505,
+    "f2_norm": 0.3505,
+    "f1_raw": 0.914,
+    "f2_raw": 0.914
+   },
+   "BMI": {
+    "f1_norm": 0.336,
+    "f2_norm": 0.3773,
+    "f1_raw": 26.4,
+    "f2_raw": 27.21
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.2308,
+    "f2_norm": 0.2308,
+    "f1_raw": 120.0,
+    "f2_raw": 120.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.1295,
+    "f2_norm": 0.2791,
+    "f1_raw": 55.9,
+    "f2_raw": 65.77
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.0354,
+    "f2_norm": 0.1327,
+    "f1_raw": 122.0,
+    "f2_raw": 133.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.1574,
+    "f2_norm": 0.1401,
+    "f1_raw": 127.2,
+    "f2_raw": 119.5
+   },
+   "HDL": {
+    "f1_norm": 0.2117,
+    "f2_norm": 0.0,
+    "f1_raw": 41.67,
+    "f2_raw": 33.9
+   },
+   "LDL": {
+    "f1_norm": 0.1392,
+    "f2_norm": 0.3242,
+    "f1_raw": 55.0,
+    "f2_raw": 75.2
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5405,
+    "f2_norm": 0.6351,
+    "f1_raw": 4.31,
+    "f2_raw": 4.52
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1186,
+    "f2_norm": 0.0979,
+    "f1_raw": 100.0,
+    "f2_raw": 96.0
+   },
+   "IL6": {
+    "f1_norm": 0.1732,
+    "f2_norm": 0.357,
+    "f1_raw": 11.4,
+    "f2_raw": 18.4
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0883,
+    "f2_norm": 0.2356,
+    "f1_raw": 5.89,
+    "f2_raw": 8.24
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2105,
+    "f2_norm": 0.193,
+    "f1_raw": 5.1,
+    "f2_raw": 5.0
+   },
+   "PCR": {
+    "f1_norm": 0.1944,
+    "f2_norm": 0.2518,
+    "f1_raw": 6.1,
+    "f2_raw": 7.9
+   }
+  },
+  "P20": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.6649,
+    "f2_norm": 0.6649,
+    "f1_raw": 0.975,
+    "f2_raw": 0.975
+   },
+   "BMI": {
+    "f1_norm": 0.0153,
+    "f2_norm": 0.2006,
+    "f1_raw": 20.1,
+    "f2_raw": 23.74
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.0385,
+    "f1_raw": 110.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.25,
+    "f2_norm": 0.25,
+    "f1_raw": 70.0,
+    "f2_raw": 70.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.4616,
+    "f2_norm": 0.3038,
+    "f1_raw": 77.81,
+    "f2_raw": 67.4
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.2124,
+    "f2_norm": 0.2389,
+    "f1_raw": 142.0,
+    "f2_raw": 145.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0724,
+    "f2_norm": 0.0139,
+    "f1_raw": 89.3,
+    "f2_raw": 63.2
+   },
+   "HDL": {
+    "f1_norm": 0.8415,
+    "f2_norm": 0.8308,
+    "f1_raw": 64.79,
+    "f2_raw": 64.4
+   },
+   "LDL": {
+    "f1_norm": 0.1758,
+    "f2_norm": 0.2582,
+    "f1_raw": 59.0,
+    "f2_raw": 68.0
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5991,
+    "f2_norm": 0.5495,
+    "f1_raw": 4.44,
+    "f2_raw": 4.33
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0258,
+    "f2_norm": 0.0361,
+    "f1_raw": 82.0,
+    "f2_raw": 84.0
+   },
+   "IL6": {
+    "f1_norm": 0.2362,
+    "f2_norm": 0.3465,
+    "f1_raw": 13.8,
+    "f2_raw": 18.0
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.3452,
+    "f1_raw": 4.48,
+    "f2_raw": 9.99
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2456,
+    "f2_norm": 0.0877,
+    "f1_raw": 5.3,
+    "f2_raw": 4.4
+   },
+   "PCR": {
+    "f1_norm": 0.2741,
+    "f2_norm": 0.196,
+    "f1_raw": 8.6,
+    "f2_raw": 6.15
+   }
+  },
+  "P21": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.567,
+    "f2_norm": 0.567,
+    "f1_raw": 0.956,
+    "f2_raw": 0.956
+   },
+   "BMI": {
+    "f1_norm": 0.7026,
+    "f2_norm": 0.6848,
+    "f1_raw": 33.6,
+    "f2_raw": 33.25
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.4231,
+    "f2_norm": 0.4231,
+    "f1_raw": 130.0,
+    "f2_raw": 130.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.2784,
+    "f2_norm": 1.0,
+    "f1_raw": 65.72,
+    "f2_raw": 113.32
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.2035,
+    "f2_norm": 0.5575,
+    "f1_raw": 141.0,
+    "f2_raw": 181.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.161,
+    "f2_norm": 0.1561,
+    "f1_raw": 128.8,
+    "f2_raw": 126.6
+   },
+   "HDL": {
+    "f1_norm": 0.2484,
+    "f2_norm": 0.286,
+    "f1_raw": 43.02,
+    "f2_raw": 44.4
+   },
+   "LDL": {
+    "f1_norm": 0.2949,
+    "f2_norm": 0.6548,
+    "f1_raw": 72.0,
+    "f2_raw": 111.3
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5766,
+    "f2_norm": 0.5495,
+    "f1_raw": 4.39,
+    "f2_raw": 4.33
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1237,
+    "f2_norm": 0.067,
+    "f1_raw": 101.0,
+    "f2_raw": 90.0
+   },
+   "IL6": {
+    "f1_norm": 0.3465,
+    "f2_norm": 0.2572,
+    "f1_raw": 18.0,
+    "f2_raw": 14.6
+   },
+   "CORTISOL": {
+    "f1_norm": 0.2989,
+    "f2_norm": 1.0,
+    "f1_raw": 9.25,
+    "f2_raw": 20.44
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2281,
+    "f2_norm": 0.0702,
+    "f1_raw": 5.2,
+    "f2_raw": 4.3
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0529,
+    "f1_raw": 0.0,
+    "f2_raw": 1.66
+   }
+  },
+  "P22": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.4948,
+    "f2_norm": 0.4948,
+    "f1_raw": 0.942,
+    "f2_raw": 0.942
+   },
+   "BMI": {
+    "f1_norm": 0.5804,
+    "f2_norm": 0.4705,
+    "f1_raw": 31.2,
+    "f2_raw": 29.04
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.2308,
+    "f2_norm": 0.2308,
+    "f1_raw": 120.0,
+    "f2_raw": 120.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.475,
+    "f1_raw": 80.0,
+    "f2_raw": 79.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.2624,
+    "f2_norm": 0.3112,
+    "f1_raw": 64.67,
+    "f2_raw": 67.89
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.2743,
+    "f2_norm": 0.2655,
+    "f1_raw": 149.0,
+    "f2_raw": 148.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0796,
+    "f2_norm": 0.0309,
+    "f1_raw": 92.5,
+    "f2_raw": 70.8
+   },
+   "HDL": {
+    "f1_norm": 0.3615,
+    "f2_norm": 0.1607,
+    "f1_raw": 47.17,
+    "f2_raw": 39.8
+   },
+   "LDL": {
+    "f1_norm": 0.3956,
+    "f2_norm": 0.0,
+    "f1_raw": 83.0,
+    "f2_raw": 39.8
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.4054,
+    "f2_norm": 0.7432,
+    "f1_raw": 4.01,
+    "f2_raw": 4.76
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.0722,
+    "f2_norm": 0.0361,
+    "f1_raw": 91.0,
+    "f2_raw": 84.0
+   },
+   "IL6": {
+    "f1_norm": 0.4961,
+    "f2_norm": 0.5013,
+    "f1_raw": 23.7,
+    "f2_raw": 23.9
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0733,
+    "f2_norm": 0.2137,
+    "f1_raw": 5.65,
+    "f2_raw": 7.89
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2105,
+    "f2_norm": 0.1053,
+    "f1_raw": 5.1,
+    "f2_raw": 4.5
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0679,
+    "f1_raw": 0.0,
+    "f2_raw": 2.13
+   }
+  },
+  "P23": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.6443,
+    "f2_norm": 0.6443,
+    "f1_raw": 0.971,
+    "f2_raw": 0.971
+   },
+   "BMI": {
+    "f1_norm": 0.5143,
+    "f2_norm": 0.5601,
+    "f1_raw": 29.9,
+    "f2_raw": 30.8
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.6154,
+    "f2_norm": 0.6154,
+    "f1_raw": 140.0,
+    "f2_raw": 140.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 1.0,
+    "f2_norm": 1.0,
+    "f1_raw": 100.0,
+    "f2_raw": 100.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.5459,
+    "f2_norm": 0.4154,
+    "f1_raw": 83.37,
+    "f2_raw": 74.76
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.531,
+    "f2_norm": 0.6814,
+    "f1_raw": 178.0,
+    "f2_raw": 195.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.2009,
+    "f2_norm": 0.393,
+    "f1_raw": 146.6,
+    "f2_raw": 232.3
+   },
+   "HDL": {
+    "f1_norm": 0.6312,
+    "f2_norm": 0.3487,
+    "f1_raw": 57.07,
+    "f2_raw": 46.7
+   },
+   "LDL": {
+    "f1_norm": 0.478,
+    "f2_norm": 0.5678,
+    "f1_raw": 92.0,
+    "f2_raw": 101.8
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6126,
+    "f2_norm": 0.7072,
+    "f1_raw": 4.47,
+    "f2_raw": 4.68
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1237,
+    "f2_norm": 0.0515,
+    "f1_raw": 101.0,
+    "f2_raw": 87.0
+   },
+   "IL6": {
+    "f1_norm": 0.4488,
+    "f2_norm": 0.2677,
+    "f1_raw": 21.9,
+    "f2_raw": 15.0
+   },
+   "CORTISOL": {
+    "f1_norm": 0.1046,
+    "f2_norm": 0.2788,
+    "f1_raw": 6.15,
+    "f2_raw": 8.93
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.2105,
+    "f2_norm": 0.2105,
+    "f1_raw": 5.1,
+    "f2_raw": 5.1
+   },
+   "PCR": {
+    "f1_norm": 0.2581,
+    "f2_norm": 0.2992,
+    "f1_raw": 8.1,
+    "f2_raw": 9.39
+   }
+  },
+  "P24": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.4845,
+    "f2_norm": 0.4845,
+    "f1_raw": 0.94,
+    "f2_raw": 0.94
+   },
+   "BMI": {
+    "f1_norm": 0.4837,
+    "f2_norm": 0.5474,
+    "f1_raw": 29.3,
+    "f2_raw": 30.55
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.0385,
+    "f1_raw": 110.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.25,
+    "f2_norm": 0.25,
+    "f1_raw": 70.0,
+    "f2_raw": 70.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.1518,
+    "f2_norm": 0.2373,
+    "f1_raw": 57.37,
+    "f2_raw": 63.01
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.5398,
+    "f2_norm": 0.7522,
+    "f1_raw": 179.0,
+    "f2_raw": 203.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0307,
+    "f2_norm": 0.0408,
+    "f1_raw": 70.7,
+    "f2_raw": 75.2
+   },
+   "HDL": {
+    "f1_norm": 0.608,
+    "f2_norm": 0.5639,
+    "f1_raw": 56.22,
+    "f2_raw": 54.6
+   },
+   "LDL": {
+    "f1_norm": 0.6337,
+    "f2_norm": 0.8571,
+    "f1_raw": 109.0,
+    "f2_raw": 133.4
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.5135,
+    "f2_norm": 0.2658,
+    "f1_raw": 4.25,
+    "f2_raw": 3.7
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1082,
+    "f2_norm": 0.0515,
+    "f1_raw": 98.0,
+    "f2_raw": 87.0
+   },
+   "IL6": {
+    "f1_norm": 0.0945,
+    "f2_norm": 0.042,
+    "f1_raw": 8.4,
+    "f2_raw": 6.4
+   },
+   "CORTISOL": {
+    "f1_norm": 0.1303,
+    "f2_norm": 0.3014,
+    "f1_raw": 6.56,
+    "f2_raw": 9.29
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.0351,
+    "f2_norm": 0.1053,
+    "f1_raw": 4.1,
+    "f2_raw": 4.5
+   },
+   "PCR": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0851,
+    "f1_raw": 0.0,
+    "f2_raw": 2.67
+   }
+  },
+  "P25": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.5309,
+    "f2_norm": 0.5876,
+    "f1_raw": 0.949,
+    "f2_raw": 0.96
+   },
+   "BMI": {
+    "f1_norm": 0.7026,
+    "f2_norm": 0.7403,
+    "f1_raw": 33.6,
+    "f2_raw": 34.34
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.0385,
+    "f1_raw": 110.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.5,
+    "f2_norm": 0.5,
+    "f1_raw": 80.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.5908,
+    "f2_norm": 0.1395,
+    "f1_raw": 86.33,
+    "f2_raw": 56.56
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.9204,
+    "f2_norm": 1.0,
+    "f1_raw": 222.0,
+    "f2_raw": 231.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.4265,
+    "f2_norm": 1.0,
+    "f1_raw": 247.2,
+    "f2_raw": 503.0
+   },
+   "HDL": {
+    "f1_norm": 0.8812,
+    "f2_norm": 0.4631,
+    "f1_raw": 66.25,
+    "f2_raw": 50.9
+   },
+   "LDL": {
+    "f1_norm": 0.6062,
+    "f2_norm": 0.6062,
+    "f1_raw": 106.0,
+    "f2_raw": 106.0
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.4369,
+    "f2_norm": 0.6216,
+    "f1_raw": 4.08,
+    "f2_raw": 4.49
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.5412,
+    "f2_norm": 1.0,
+    "f1_raw": 182.0,
+    "f2_raw": 271.0
+   },
+   "IL6": {
+    "f1_norm": 0.5617,
+    "f2_norm": 0.1811,
+    "f1_raw": 26.2,
+    "f2_raw": 11.7
+   },
+   "CORTISOL": {
+    "f1_norm": 0.0219,
+    "f2_norm": 0.1435,
+    "f1_raw": 4.83,
+    "f2_raw": 6.77
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.4211,
+    "f2_norm": 0.0175,
+    "f1_raw": 6.3,
+    "f2_raw": 4.0
+   },
+   "PCR": {
+    "f1_norm": 0.4525,
+    "f2_norm": 0.3888,
+    "f1_raw": 14.2,
+    "f2_raw": 12.2
+   }
+  },
+  "P26": {
+   "INDICE_CINTURA": {
+    "f1_norm": 0.5876,
+    "f2_norm": 0.6907,
+    "f1_raw": 0.96,
+    "f2_raw": 0.98
+   },
+   "BMI": {
+    "f1_norm": 0.1884,
+    "f2_norm": 0.3096,
+    "f1_raw": 23.5,
+    "f2_raw": 25.88
+   },
+   "SISTOLICA": {
+    "f1_norm": 0.2308,
+    "f2_norm": 0.0385,
+    "f1_raw": 120.0,
+    "f2_raw": 110.0
+   },
+   "DIASTOLICA": {
+    "f1_norm": 0.75,
+    "f2_norm": 0.5,
+    "f1_raw": 90.0,
+    "f2_raw": 80.0
+   },
+   "F_CARDIACA": {
+    "f1_norm": 0.2978,
+    "f2_norm": 0.3129,
+    "f1_raw": 67.0,
+    "f2_raw": 68.0
+   },
+   "COLESTEROL": {
+    "f1_norm": 0.2743,
+    "f2_norm": 0.5752,
+    "f1_raw": 149.0,
+    "f2_raw": 183.0
+   },
+   "TRIGLICERIDOS": {
+    "f1_norm": 0.0173,
+    "f2_norm": 0.0179,
+    "f1_raw": 64.7,
+    "f2_raw": 65.0
+   },
+   "HDL": {
+    "f1_norm": 0.7532,
+    "f2_norm": 0.79,
+    "f1_raw": 61.55,
+    "f2_raw": 62.9
+   },
+   "LDL": {
+    "f1_norm": 0.3223,
+    "f2_norm": 0.6154,
+    "f1_raw": 75.0,
+    "f2_raw": 107.0
+   },
+   "ALBUMINA": {
+    "f1_norm": 0.6171,
+    "f2_norm": 0.4414,
+    "f1_raw": 4.48,
+    "f2_raw": 4.09
+   },
+   "GLUCOSA": {
+    "f1_norm": 0.1031,
+    "f2_norm": 0.0412,
+    "f1_raw": 97.0,
+    "f2_raw": 85.0
+   },
+   "IL6": {
+    "f1_norm": 0.3255,
+    "f2_norm": 0.3701,
+    "f1_raw": 17.2,
+    "f2_raw": 18.9
+   },
+   "CORTISOL": {
+    "f1_norm": 0.1786,
+    "f2_norm": 0.3916,
+    "f1_raw": 7.33,
+    "f2_raw": 10.73
+   },
+   "H_GLICOSILADA": {
+    "f1_norm": 0.0702,
+    "f2_norm": 0.0175,
+    "f1_raw": 4.3,
+    "f2_raw": 4.0
+   },
+   "PCR": {
+    "f1_norm": 0.6957,
+    "f2_norm": 0.065,
+    "f1_raw": 21.83,
+    "f2_raw": 2.04
+   }
+  }
+ },
+ "hrv_sup": {
+  "P01": {
+   "SDNN": {
+    "f1_norm": 0.3285,
+    "f2_norm": 0.1827,
+    "f1_raw": 33.08,
+    "f2_raw": 21.9
+   },
+   "RMSSD": {
+    "f1_norm": 0.3385,
+    "f2_norm": 0.0805,
+    "f1_raw": 15.14,
+    "f2_raw": 4.62
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.7043,
+    "f2_norm": 0.3594,
+    "f1_raw": 2.72,
+    "f2_raw": 1.53
+   },
+   "SD1": {
+    "f1_norm": 0.3385,
+    "f2_norm": 0.0805,
+    "f1_raw": 10.71,
+    "f2_raw": 3.27
+   },
+   "SD2": {
+    "f1_norm": 0.3289,
+    "f2_norm": 0.1881,
+    "f1_raw": 45.48,
+    "f2_raw": 30.76
+   },
+   "MeanHR": {
+    "f1_norm": 0.4582,
+    "f2_norm": 0.7121,
+    "f1_raw": 77.58,
+    "f2_raw": 94.33
+   },
+   "LF": {
+    "f1_norm": 0.142,
+    "f2_norm": 0.0267,
+    "f1_raw": 308200.98,
+    "f2_raw": 61815.83
+   },
+   "HF": {
+    "f1_norm": 0.1512,
+    "f2_norm": 0.0085,
+    "f1_raw": 59797.74,
+    "f2_raw": 3890.99
+   },
+   "LFHF": {
+    "f1_norm": 0.1657,
+    "f2_norm": 0.6305,
+    "f1_raw": 5.15,
+    "f2_raw": 15.89
+   }
+  },
+  "P02": {
+   "SDNN": {
+    "f1_norm": 0.4403,
+    "f2_norm": 0.4321,
+    "f1_raw": 41.66,
+    "f2_raw": 41.03
+   },
+   "RMSSD": {
+    "f1_norm": 0.3355,
+    "f2_norm": 0.2985,
+    "f1_raw": 15.02,
+    "f2_raw": 13.51
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.7014,
+    "f2_norm": 0.6696,
+    "f1_raw": 2.71,
+    "f2_raw": 2.6
+   },
+   "SD1": {
+    "f1_norm": 0.3354,
+    "f2_norm": 0.2983,
+    "f1_raw": 10.62,
+    "f2_raw": 9.55
+   },
+   "SD2": {
+    "f1_norm": 0.4475,
+    "f2_norm": 0.4407,
+    "f1_raw": 57.88,
+    "f2_raw": 57.16
+   },
+   "MeanHR": {
+    "f1_norm": 0.7708,
+    "f2_norm": 0.7191,
+    "f1_raw": 98.2,
+    "f2_raw": 94.79
+   },
+   "LF": {
+    "f1_norm": 0.3306,
+    "f2_norm": 0.0788,
+    "f1_raw": 711295.14,
+    "f2_raw": 173179.93
+   },
+   "HF": {
+    "f1_norm": 0.3202,
+    "f2_norm": 0.083,
+    "f1_raw": 125993.43,
+    "f2_raw": 33079.91
+   },
+   "LFHF": {
+    "f1_norm": 0.1874,
+    "f2_norm": 0.1696,
+    "f1_raw": 5.65,
+    "f2_raw": 5.24
+   }
+  },
+  "P03": {
+   "SDNN": {
+    "f1_norm": 0.6212,
+    "f2_norm": 0.515,
+    "f1_raw": 55.54,
+    "f2_raw": 47.39
+   },
+   "RMSSD": {
+    "f1_norm": 0.7405,
+    "f2_norm": 0.8293,
+    "f1_raw": 31.53,
+    "f2_raw": 35.15
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.9159,
+    "f2_norm": 0.9478,
+    "f1_raw": 3.45,
+    "f2_raw": 3.56
+   },
+   "SD1": {
+    "f1_norm": 0.7402,
+    "f2_norm": 0.829,
+    "f1_raw": 22.29,
+    "f2_raw": 24.85
+   },
+   "SD2": {
+    "f1_norm": 0.613,
+    "f2_norm": 0.4879,
+    "f1_raw": 75.18,
+    "f2_raw": 62.1
+   },
+   "MeanHR": {
+    "f1_norm": 0.2582,
+    "f2_norm": 0.1574,
+    "f1_raw": 64.39,
+    "f2_raw": 57.74
+   },
+   "LF": {
+    "f1_norm": 0.299,
+    "f2_norm": 0.1354,
+    "f1_raw": 643811.94,
+    "f2_raw": 294059.04
+   },
+   "HF": {
+    "f1_norm": 0.3065,
+    "f2_norm": 0.5402,
+    "f1_raw": 120638.28,
+    "f2_raw": 212172.58
+   },
+   "LFHF": {
+    "f1_norm": 0.174,
+    "f2_norm": 0.003,
+    "f1_raw": 5.34,
+    "f2_raw": 1.39
+   }
+  },
+  "P04": {
+   "SDNN": {
+    "f1_norm": 0.342,
+    "f2_norm": 0.4146,
+    "f1_raw": 34.12,
+    "f2_raw": 39.69
+   },
+   "RMSSD": {
+    "f1_norm": 0.4697,
+    "f2_norm": 0.6512,
+    "f1_raw": 20.49,
+    "f2_raw": 27.89
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.7913,
+    "f2_norm": 0.8812,
+    "f1_raw": 3.02,
+    "f2_raw": 3.33
+   },
+   "SD1": {
+    "f1_norm": 0.4696,
+    "f2_norm": 0.6511,
+    "f1_raw": 14.49,
+    "f2_raw": 19.72
+   },
+   "SD2": {
+    "f1_norm": 0.3334,
+    "f2_norm": 0.3956,
+    "f1_raw": 45.95,
+    "f2_raw": 52.45
+   },
+   "MeanHR": {
+    "f1_norm": 0.3931,
+    "f2_norm": 0.247,
+    "f1_raw": 73.29,
+    "f2_raw": 63.65
+   },
+   "LF": {
+    "f1_norm": 0.1778,
+    "f2_norm": 0.1686,
+    "f1_raw": 384652.1,
+    "f2_raw": 365059.92
+   },
+   "HF": {
+    "f1_norm": 0.2058,
+    "f2_norm": 0.3959,
+    "f1_raw": 81166.96,
+    "f2_raw": 155662.36
+   },
+   "LFHF": {
+    "f1_norm": 0.148,
+    "f2_norm": 0.0446,
+    "f1_raw": 4.74,
+    "f2_raw": 2.35
+   }
+  },
+  "P05": {
+   "SDNN": {
+    "f1_norm": 0.7938,
+    "f2_norm": 0.3411,
+    "f1_raw": 68.78,
+    "f2_raw": 34.05
+   },
+   "RMSSD": {
+    "f1_norm": 0.6326,
+    "f2_norm": 0.5453,
+    "f1_raw": 27.13,
+    "f2_raw": 23.57
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8725,
+    "f2_norm": 0.8319,
+    "f1_raw": 3.3,
+    "f2_raw": 3.16
+   },
+   "SD1": {
+    "f1_norm": 0.6323,
+    "f2_norm": 0.5453,
+    "f1_raw": 19.18,
+    "f2_raw": 16.67
+   },
+   "SD2": {
+    "f1_norm": 0.8046,
+    "f2_norm": 0.3249,
+    "f1_raw": 95.21,
+    "f2_raw": 45.06
+   },
+   "MeanHR": {
+    "f1_norm": 0.3714,
+    "f2_norm": 0.0,
+    "f1_raw": 71.86,
+    "f2_raw": 47.36
+   },
+   "LF": {
+    "f1_norm": 0.2059,
+    "f2_norm": 0.1283,
+    "f1_raw": 444831.59,
+    "f2_raw": 279031.05
+   },
+   "HF": {
+    "f1_norm": 0.5113,
+    "f2_norm": 0.1652,
+    "f1_raw": 200868.61,
+    "f2_raw": 65280.65
+   },
+   "LFHF": {
+    "f1_norm": 0.0385,
+    "f2_norm": 0.1277,
+    "f1_raw": 2.21,
+    "f2_raw": 4.27
+   }
+  },
+  "P06": {
+   "SDNN": {
+    "f1_norm": 0.0892,
+    "f2_norm": 0.2464,
+    "f1_raw": 14.72,
+    "f2_raw": 26.78
+   },
+   "RMSSD": {
+    "f1_norm": 0.194,
+    "f2_norm": 0.4074,
+    "f1_raw": 9.25,
+    "f2_raw": 17.95
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.5594,
+    "f2_norm": 0.7536,
+    "f1_raw": 2.22,
+    "f2_raw": 2.89
+   },
+   "SD1": {
+    "f1_norm": 0.1939,
+    "f2_norm": 0.4072,
+    "f1_raw": 6.54,
+    "f2_raw": 12.69
+   },
+   "SD2": {
+    "f1_norm": 0.0826,
+    "f2_norm": 0.2346,
+    "f1_raw": 19.73,
+    "f2_raw": 35.62
+   },
+   "MeanHR": {
+    "f1_norm": 0.6007,
+    "f2_norm": 0.2721,
+    "f1_raw": 86.98,
+    "f2_raw": 65.31
+   },
+   "LF": {
+    "f1_norm": 0.0245,
+    "f2_norm": 0.0458,
+    "f1_raw": 57141.02,
+    "f2_raw": 102664.02
+   },
+   "HF": {
+    "f1_norm": 0.0337,
+    "f2_norm": 0.1096,
+    "f1_raw": 13759.41,
+    "f2_raw": 43480.72
+   },
+   "LFHF": {
+    "f1_norm": 0.1225,
+    "f2_norm": 0.045,
+    "f1_raw": 4.15,
+    "f2_raw": 2.36
+   }
+  },
+  "P07": {
+   "SDNN": {
+    "f1_norm": 0.6491,
+    "f2_norm": 0.4232,
+    "f1_raw": 57.68,
+    "f2_raw": 40.35
+   },
+   "RMSSD": {
+    "f1_norm": 0.5725,
+    "f2_norm": 0.3152,
+    "f1_raw": 24.68,
+    "f2_raw": 14.19
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8464,
+    "f2_norm": 0.6841,
+    "f1_raw": 3.21,
+    "f2_raw": 2.65
+   },
+   "SD1": {
+    "f1_norm": 0.5723,
+    "f2_norm": 0.3153,
+    "f1_raw": 17.45,
+    "f2_raw": 10.04
+   },
+   "SD2": {
+    "f1_norm": 0.6546,
+    "f2_norm": 0.4302,
+    "f1_raw": 79.53,
+    "f2_raw": 56.07
+   },
+   "MeanHR": {
+    "f1_norm": 0.1666,
+    "f2_norm": 0.1686,
+    "f1_raw": 58.35,
+    "f2_raw": 58.48
+   },
+   "LF": {
+    "f1_norm": 0.2518,
+    "f2_norm": 0.0757,
+    "f1_raw": 542963.4,
+    "f2_raw": 166547.43
+   },
+   "HF": {
+    "f1_norm": 0.1393,
+    "f2_norm": 0.0615,
+    "f1_raw": 55122.46,
+    "f2_raw": 24640.81
+   },
+   "LFHF": {
+    "f1_norm": 0.3691,
+    "f2_norm": 0.2354,
+    "f1_raw": 9.85,
+    "f2_raw": 6.76
+   }
+  },
+  "P08": {
+   "SDNN": {
+    "f1_norm": 0.4318,
+    "f2_norm": 0.4318,
+    "f1_raw": 41.01,
+    "f2_raw": 41.01
+   },
+   "RMSSD": {
+    "f1_norm": 0.573,
+    "f2_norm": 0.573,
+    "f1_raw": 24.7,
+    "f2_raw": 24.7
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8464,
+    "f2_norm": 0.8464,
+    "f1_raw": 3.21,
+    "f2_raw": 3.21
+   },
+   "SD1": {
+    "f1_norm": 0.5727,
+    "f2_norm": 0.5727,
+    "f1_raw": 17.46,
+    "f2_raw": 17.46
+   },
+   "SD2": {
+    "f1_norm": 0.4222,
+    "f2_norm": 0.4222,
+    "f1_raw": 55.23,
+    "f2_raw": 55.23
+   },
+   "MeanHR": {
+    "f1_norm": 0.5139,
+    "f2_norm": 0.5139,
+    "f1_raw": 81.26,
+    "f2_raw": 81.26
+   },
+   "LF": {
+    "f1_norm": 0.2395,
+    "f2_norm": 0.2395,
+    "f1_raw": 516708.52,
+    "f2_raw": 516708.52
+   },
+   "HF": {
+    "f1_norm": 1.0,
+    "f2_norm": 1.0,
+    "f1_raw": 392292.96,
+    "f2_raw": 392292.96
+   },
+   "LFHF": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.0,
+    "f1_raw": 1.32,
+    "f2_raw": 1.32
+   }
+  },
+  "P09": {
+   "SDNN": {
+    "f1_norm": 0.1663,
+    "f2_norm": 0.3007,
+    "f1_raw": 20.64,
+    "f2_raw": 30.95
+   },
+   "RMSSD": {
+    "f1_norm": 0.1015,
+    "f2_norm": 0.2087,
+    "f1_raw": 5.48,
+    "f2_raw": 9.85
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.4087,
+    "f2_norm": 0.5797,
+    "f1_raw": 1.7,
+    "f2_raw": 2.29
+   },
+   "SD1": {
+    "f1_norm": 0.1016,
+    "f2_norm": 0.2088,
+    "f1_raw": 3.88,
+    "f2_raw": 6.97
+   },
+   "SD2": {
+    "f1_norm": 0.1703,
+    "f2_norm": 0.3067,
+    "f1_raw": 28.9,
+    "f2_raw": 43.16
+   },
+   "MeanHR": {
+    "f1_norm": 0.8613,
+    "f2_norm": 0.5961,
+    "f1_raw": 104.17,
+    "f2_raw": 86.68
+   },
+   "LF": {
+    "f1_norm": 0.0686,
+    "f2_norm": 0.1066,
+    "f1_raw": 151267.26,
+    "f2_raw": 232608.96
+   },
+   "HF": {
+    "f1_norm": 0.0295,
+    "f2_norm": 0.0229,
+    "f1_raw": 12127.93,
+    "f2_raw": 9523.27
+   },
+   "LFHF": {
+    "f1_norm": 0.4825,
+    "f2_norm": 1.0,
+    "f1_raw": 12.47,
+    "f2_raw": 24.43
+   }
+  },
+  "P10": {
+   "SDNN": {
+    "f1_norm": 0.7886,
+    "f2_norm": 0.6565,
+    "f1_raw": 68.38,
+    "f2_raw": 58.25
+   },
+   "RMSSD": {
+    "f1_norm": 0.8612,
+    "f2_norm": 0.9242,
+    "f1_raw": 36.45,
+    "f2_raw": 39.02
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.9594,
+    "f2_norm": 0.9768,
+    "f1_raw": 3.6,
+    "f2_raw": 3.66
+   },
+   "SD1": {
+    "f1_norm": 0.8609,
+    "f2_norm": 0.924,
+    "f1_raw": 25.77,
+    "f2_raw": 27.59
+   },
+   "SD2": {
+    "f1_norm": 0.784,
+    "f2_norm": 0.6349,
+    "f1_raw": 93.06,
+    "f2_raw": 77.47
+   },
+   "MeanHR": {
+    "f1_norm": 0.4372,
+    "f2_norm": 0.2582,
+    "f1_raw": 76.2,
+    "f2_raw": 64.39
+   },
+   "LF": {
+    "f1_norm": 0.4627,
+    "f2_norm": 0.3971,
+    "f1_raw": 993574.65,
+    "f2_raw": 853413.22
+   },
+   "HF": {
+    "f1_norm": 0.8602,
+    "f2_norm": 0.7003,
+    "f1_raw": 337527.45,
+    "f2_raw": 274876.61
+   },
+   "LFHF": {
+    "f1_norm": 0.0701,
+    "f2_norm": 0.077,
+    "f1_raw": 2.94,
+    "f2_raw": 3.1
+   }
+  },
+  "P11": {
+   "SDNN": {
+    "f1_norm": 0.5206,
+    "f2_norm": 0.263,
+    "f1_raw": 47.82,
+    "f2_raw": 28.06
+   },
+   "RMSSD": {
+    "f1_norm": 0.3105,
+    "f2_norm": 0.2892,
+    "f1_raw": 14.0,
+    "f2_raw": 13.13
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6812,
+    "f2_norm": 0.6609,
+    "f1_raw": 2.64,
+    "f2_raw": 2.57
+   },
+   "SD1": {
+    "f1_norm": 0.3101,
+    "f2_norm": 0.2889,
+    "f1_raw": 9.89,
+    "f2_raw": 9.28
+   },
+   "SD2": {
+    "f1_norm": 0.5329,
+    "f2_norm": 0.2624,
+    "f1_raw": 66.8,
+    "f2_raw": 38.52
+   },
+   "MeanHR": {
+    "f1_norm": 0.4576,
+    "f2_norm": 0.3222,
+    "f1_raw": 77.54,
+    "f2_raw": 68.61
+   },
+   "LF": {
+    "f1_norm": 0.08,
+    "f2_norm": 0.0806,
+    "f1_raw": 175758.74,
+    "f2_raw": 176919.11
+   },
+   "HF": {
+    "f1_norm": 0.1054,
+    "f2_norm": 0.1068,
+    "f1_raw": 41846.84,
+    "f2_raw": 42390.84
+   },
+   "LFHF": {
+    "f1_norm": 0.1246,
+    "f2_norm": 0.1233,
+    "f1_raw": 4.2,
+    "f2_raw": 4.17
+   }
+  },
+  "P12": {
+   "SDNN": {
+    "f1_norm": 0.5112,
+    "f2_norm": 0.5918,
+    "f1_raw": 47.1,
+    "f2_raw": 53.28
+   },
+   "RMSSD": {
+    "f1_norm": 0.6272,
+    "f2_norm": 0.6971,
+    "f1_raw": 26.91,
+    "f2_raw": 29.76
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8696,
+    "f2_norm": 0.8986,
+    "f1_raw": 3.29,
+    "f2_raw": 3.39
+   },
+   "SD1": {
+    "f1_norm": 0.6271,
+    "f2_norm": 0.6968,
+    "f1_raw": 19.03,
+    "f2_raw": 21.04
+   },
+   "SD2": {
+    "f1_norm": 0.5033,
+    "f2_norm": 0.5847,
+    "f1_raw": 63.71,
+    "f2_raw": 72.22
+   },
+   "MeanHR": {
+    "f1_norm": 0.2788,
+    "f2_norm": 0.2641,
+    "f1_raw": 65.75,
+    "f2_raw": 64.78
+   },
+   "LF": {
+    "f1_norm": 0.359,
+    "f2_norm": 0.6413,
+    "f1_raw": 771905.03,
+    "f2_raw": 1375251.45
+   },
+   "HF": {
+    "f1_norm": 0.2731,
+    "f2_norm": 0.2474,
+    "f1_raw": 107548.24,
+    "f2_raw": 97493.34
+   },
+   "LFHF": {
+    "f1_norm": 0.2536,
+    "f2_norm": 0.5534,
+    "f1_raw": 7.18,
+    "f2_raw": 14.11
+   }
+  },
+  "P13": {
+   "SDNN": {
+    "f1_norm": 0.3946,
+    "f2_norm": 0.3946,
+    "f1_raw": 38.15,
+    "f2_raw": 38.15
+   },
+   "RMSSD": {
+    "f1_norm": 0.259,
+    "f2_norm": 0.259,
+    "f1_raw": 11.9,
+    "f2_raw": 11.9
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6348,
+    "f2_norm": 0.6348,
+    "f1_raw": 2.48,
+    "f2_raw": 2.48
+   },
+   "SD1": {
+    "f1_norm": 0.2588,
+    "f2_norm": 0.2588,
+    "f1_raw": 8.41,
+    "f2_raw": 8.41
+   },
+   "SD2": {
+    "f1_norm": 0.403,
+    "f2_norm": 0.403,
+    "f1_raw": 53.22,
+    "f2_raw": 53.22
+   },
+   "MeanHR": {
+    "f1_norm": 0.4215,
+    "f2_norm": 0.4215,
+    "f1_raw": 75.16,
+    "f2_raw": 75.16
+   },
+   "LF": {
+    "f1_norm": 0.1345,
+    "f2_norm": 0.1345,
+    "f1_raw": 292164.79,
+    "f2_raw": 292164.79
+   },
+   "HF": {
+    "f1_norm": 0.0934,
+    "f2_norm": 0.0934,
+    "f1_raw": 37145.3,
+    "f2_raw": 37145.3
+   },
+   "LFHF": {
+    "f1_norm": 0.2834,
+    "f2_norm": 0.2834,
+    "f1_raw": 7.87,
+    "f2_raw": 7.87
+   }
+  },
+  "P14": {
+   "SDNN": {
+    "f1_norm": 0.2096,
+    "f2_norm": 0.2096,
+    "f1_raw": 23.96,
+    "f2_raw": 23.96
+   },
+   "RMSSD": {
+    "f1_norm": 0.2215,
+    "f2_norm": 0.2215,
+    "f1_raw": 10.37,
+    "f2_raw": 10.37
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.5942,
+    "f2_norm": 0.5942,
+    "f1_raw": 2.34,
+    "f2_raw": 2.34
+   },
+   "SD1": {
+    "f1_norm": 0.2213,
+    "f2_norm": 0.2213,
+    "f1_raw": 7.33,
+    "f2_raw": 7.33
+   },
+   "SD2": {
+    "f1_norm": 0.2099,
+    "f2_norm": 0.2099,
+    "f1_raw": 33.04,
+    "f2_raw": 33.04
+   },
+   "MeanHR": {
+    "f1_norm": 0.4074,
+    "f2_norm": 0.4074,
+    "f1_raw": 74.23,
+    "f2_raw": 74.23
+   },
+   "LF": {
+    "f1_norm": 0.0616,
+    "f2_norm": 0.0616,
+    "f1_raw": 136348.83,
+    "f2_raw": 136348.83
+   },
+   "HF": {
+    "f1_norm": 0.0399,
+    "f2_norm": 0.0399,
+    "f1_raw": 16191.53,
+    "f2_raw": 16191.53
+   },
+   "LFHF": {
+    "f1_norm": 0.3072,
+    "f2_norm": 0.3072,
+    "f1_raw": 8.42,
+    "f2_raw": 8.42
+   }
+  },
+  "P15": {
+   "SDNN": {
+    "f1_norm": 0.1099,
+    "f2_norm": 0.3741,
+    "f1_raw": 16.31,
+    "f2_raw": 36.58
+   },
+   "RMSSD": {
+    "f1_norm": 0.2279,
+    "f2_norm": 0.233,
+    "f1_raw": 10.63,
+    "f2_raw": 10.84
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6,
+    "f2_norm": 0.6058,
+    "f1_raw": 2.36,
+    "f2_raw": 2.38
+   },
+   "SD1": {
+    "f1_norm": 0.2275,
+    "f2_norm": 0.2331,
+    "f1_raw": 7.51,
+    "f2_raw": 7.67
+   },
+   "SD2": {
+    "f1_norm": 0.1022,
+    "f2_norm": 0.3825,
+    "f1_raw": 21.78,
+    "f2_raw": 51.08
+   },
+   "MeanHR": {
+    "f1_norm": 0.4033,
+    "f2_norm": 0.4421,
+    "f1_raw": 73.96,
+    "f2_raw": 76.52
+   },
+   "LF": {
+    "f1_norm": 0.0156,
+    "f2_norm": 0.1206,
+    "f1_raw": 38068.68,
+    "f2_raw": 262501.26
+   },
+   "HF": {
+    "f1_norm": 0.0322,
+    "f2_norm": 0.0358,
+    "f1_raw": 13155.94,
+    "f2_raw": 14577.94
+   },
+   "LFHF": {
+    "f1_norm": 0.0679,
+    "f2_norm": 0.7222,
+    "f1_raw": 2.89,
+    "f2_raw": 18.01
+   }
+  },
+  "P16": {
+   "SDNN": {
+    "f1_norm": 0.5249,
+    "f2_norm": 0.3929,
+    "f1_raw": 48.15,
+    "f2_raw": 38.02
+   },
+   "RMSSD": {
+    "f1_norm": 0.5725,
+    "f2_norm": 0.7106,
+    "f1_raw": 24.68,
+    "f2_raw": 30.31
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8464,
+    "f2_norm": 0.9043,
+    "f1_raw": 3.21,
+    "f2_raw": 3.41
+   },
+   "SD1": {
+    "f1_norm": 0.5723,
+    "f2_norm": 0.7104,
+    "f1_raw": 17.45,
+    "f2_raw": 21.43
+   },
+   "SD2": {
+    "f1_norm": 0.5224,
+    "f2_norm": 0.3646,
+    "f1_raw": 65.71,
+    "f2_raw": 49.21
+   },
+   "MeanHR": {
+    "f1_norm": 0.2747,
+    "f2_norm": 0.2752,
+    "f1_raw": 65.48,
+    "f2_raw": 65.51
+   },
+   "LF": {
+    "f1_norm": 0.2168,
+    "f2_norm": 0.1811,
+    "f1_raw": 468077.81,
+    "f2_raw": 391810.4
+   },
+   "HF": {
+    "f1_norm": 0.347,
+    "f2_norm": 0.3615,
+    "f1_raw": 136503.61,
+    "f2_raw": 142164.22
+   },
+   "LFHF": {
+    "f1_norm": 0.0913,
+    "f2_norm": 0.0623,
+    "f1_raw": 3.43,
+    "f2_raw": 2.76
+   }
+  },
+  "P17": {
+   "SDNN": {
+    "f1_norm": 0.1352,
+    "f2_norm": 1.0,
+    "f1_raw": 18.25,
+    "f2_raw": 84.6
+   },
+   "RMSSD": {
+    "f1_norm": 0.1187,
+    "f2_norm": 1.0,
+    "f1_raw": 6.18,
+    "f2_raw": 42.11
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.4435,
+    "f2_norm": 1.0,
+    "f1_raw": 1.82,
+    "f2_raw": 3.74
+   },
+   "SD1": {
+    "f1_norm": 0.1186,
+    "f2_norm": 1.0,
+    "f1_raw": 4.37,
+    "f2_raw": 29.78
+   },
+   "SD2": {
+    "f1_norm": 0.137,
+    "f2_norm": 1.0,
+    "f1_raw": 25.41,
+    "f2_raw": 115.64
+   },
+   "MeanHR": {
+    "f1_norm": 0.5587,
+    "f2_norm": 0.1299,
+    "f1_raw": 84.21,
+    "f2_raw": 55.93
+   },
+   "LF": {
+    "f1_norm": 0.0163,
+    "f2_norm": 0.5116,
+    "f1_raw": 39479.44,
+    "f2_raw": 1098063.24
+   },
+   "HF": {
+    "f1_norm": 0.0752,
+    "f2_norm": 0.3468,
+    "f1_raw": 30013.36,
+    "f2_raw": 136393.92
+   },
+   "LFHF": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.2912,
+    "f1_raw": 1.32,
+    "f2_raw": 8.05
+   }
+  },
+  "P18": {
+   "SDNN": {
+    "f1_norm": 0.4971,
+    "f2_norm": 0.4971,
+    "f1_raw": 46.02,
+    "f2_raw": 46.02
+   },
+   "RMSSD": {
+    "f1_norm": 0.4969,
+    "f2_norm": 0.4969,
+    "f1_raw": 21.6,
+    "f2_raw": 21.6
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8058,
+    "f2_norm": 0.8058,
+    "f1_raw": 3.07,
+    "f2_raw": 3.07
+   },
+   "SD1": {
+    "f1_norm": 0.4967,
+    "f2_norm": 0.4967,
+    "f1_raw": 15.27,
+    "f2_raw": 15.27
+   },
+   "SD2": {
+    "f1_norm": 0.4981,
+    "f2_norm": 0.4981,
+    "f1_raw": 63.17,
+    "f2_raw": 63.17
+   },
+   "MeanHR": {
+    "f1_norm": 0.3513,
+    "f2_norm": 0.3513,
+    "f1_raw": 70.53,
+    "f2_raw": 70.53
+   },
+   "LF": {
+    "f1_norm": 0.2716,
+    "f2_norm": 0.2716,
+    "f1_raw": 585191.07,
+    "f2_raw": 585191.07
+   },
+   "HF": {
+    "f1_norm": 0.1737,
+    "f2_norm": 0.1737,
+    "f1_raw": 68587.66,
+    "f2_raw": 68587.66
+   },
+   "LFHF": {
+    "f1_norm": 0.312,
+    "f2_norm": 0.312,
+    "f1_raw": 8.53,
+    "f2_raw": 8.53
+   }
+  },
+  "P19": {
+   "SDNN": {
+    "f1_norm": 0.5928,
+    "f2_norm": 0.6182,
+    "f1_raw": 53.36,
+    "f2_raw": 55.31
+   },
+   "RMSSD": {
+    "f1_norm": 0.7417,
+    "f2_norm": 0.7643,
+    "f1_raw": 31.58,
+    "f2_raw": 32.5
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.9159,
+    "f2_norm": 0.9246,
+    "f1_raw": 3.45,
+    "f2_raw": 3.48
+   },
+   "SD1": {
+    "f1_norm": 0.7416,
+    "f2_norm": 0.7641,
+    "f1_raw": 22.33,
+    "f2_raw": 22.98
+   },
+   "SD2": {
+    "f1_norm": 0.582,
+    "f2_norm": 0.6077,
+    "f1_raw": 71.94,
+    "f2_raw": 74.63
+   },
+   "MeanHR": {
+    "f1_norm": 0.1295,
+    "f2_norm": 0.2791,
+    "f1_raw": 55.9,
+    "f2_raw": 65.77
+   },
+   "LF": {
+    "f1_norm": 0.4544,
+    "f2_norm": 1.0,
+    "f1_raw": 975939.36,
+    "f2_raw": 2141991.88
+   },
+   "HF": {
+    "f1_norm": 0.1827,
+    "f2_norm": 0.4536,
+    "f1_raw": 72113.16,
+    "f2_raw": 178256.06
+   },
+   "LFHF": {
+    "f1_norm": 0.5283,
+    "f2_norm": 0.463,
+    "f1_raw": 13.53,
+    "f2_raw": 12.02
+   }
+  },
+  "P20": {
+   "SDNN": {
+    "f1_norm": 0.3631,
+    "f2_norm": 0.4752,
+    "f1_raw": 35.74,
+    "f2_raw": 44.34
+   },
+   "RMSSD": {
+    "f1_norm": 0.4952,
+    "f2_norm": 0.3902,
+    "f1_raw": 21.53,
+    "f2_raw": 17.25
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8058,
+    "f2_norm": 0.742,
+    "f1_raw": 3.07,
+    "f2_raw": 2.85
+   },
+   "SD1": {
+    "f1_norm": 0.495,
+    "f2_norm": 0.3902,
+    "f1_raw": 15.22,
+    "f2_raw": 12.2
+   },
+   "SD2": {
+    "f1_norm": 0.3542,
+    "f2_norm": 0.4812,
+    "f1_raw": 48.12,
+    "f2_raw": 61.4
+   },
+   "MeanHR": {
+    "f1_norm": 0.4616,
+    "f2_norm": 0.3038,
+    "f1_raw": 77.81,
+    "f2_raw": 67.4
+   },
+   "LF": {
+    "f1_norm": 0.2011,
+    "f2_norm": 0.137,
+    "f1_raw": 434529.63,
+    "f2_raw": 297492.03
+   },
+   "HF": {
+    "f1_norm": 0.5059,
+    "f2_norm": 0.0888,
+    "f1_raw": 198723.01,
+    "f2_raw": 35344.66
+   },
+   "LFHF": {
+    "f1_norm": 0.0376,
+    "f2_norm": 0.3072,
+    "f1_raw": 2.19,
+    "f2_raw": 8.42
+   }
+  },
+  "P21": {
+   "SDNN": {
+    "f1_norm": 0.2686,
+    "f2_norm": 0.0,
+    "f1_raw": 28.49,
+    "f2_raw": 7.88
+   },
+   "RMSSD": {
+    "f1_norm": 0.3056,
+    "f2_norm": 0.0,
+    "f1_raw": 13.8,
+    "f2_raw": 1.34
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6754,
+    "f2_norm": 0.0,
+    "f1_raw": 2.62,
+    "f2_raw": 0.29
+   },
+   "SD1": {
+    "f1_norm": 0.3056,
+    "f2_norm": 0.0,
+    "f1_raw": 9.76,
+    "f2_raw": 0.95
+   },
+   "SD2": {
+    "f1_norm": 0.2672,
+    "f2_norm": 0.0,
+    "f1_raw": 39.03,
+    "f2_raw": 11.09
+   },
+   "MeanHR": {
+    "f1_norm": 0.2784,
+    "f2_norm": 1.0,
+    "f1_raw": 65.72,
+    "f2_raw": 113.32
+   },
+   "LF": {
+    "f1_norm": 0.157,
+    "f2_norm": 0.0,
+    "f1_raw": 340353.04,
+    "f2_raw": 4727.4
+   },
+   "HF": {
+    "f1_norm": 0.0717,
+    "f2_norm": 0.0,
+    "f1_raw": 28652.99,
+    "f2_raw": 558.98
+   },
+   "LFHF": {
+    "f1_norm": 0.4569,
+    "f2_norm": 0.309,
+    "f1_raw": 11.88,
+    "f2_raw": 8.46
+   }
+  },
+  "P22": {
+   "SDNN": {
+    "f1_norm": 0.3886,
+    "f2_norm": 0.3289,
+    "f1_raw": 37.69,
+    "f2_raw": 33.11
+   },
+   "RMSSD": {
+    "f1_norm": 0.5766,
+    "f2_norm": 0.2718,
+    "f1_raw": 24.85,
+    "f2_raw": 12.42
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8464,
+    "f2_norm": 0.6464,
+    "f1_raw": 3.21,
+    "f2_raw": 2.52
+   },
+   "SD1": {
+    "f1_norm": 0.5765,
+    "f2_norm": 0.2716,
+    "f1_raw": 17.57,
+    "f2_raw": 8.78
+   },
+   "SD2": {
+    "f1_norm": 0.3744,
+    "f2_norm": 0.3331,
+    "f1_raw": 50.23,
+    "f2_raw": 45.92
+   },
+   "MeanHR": {
+    "f1_norm": 0.2624,
+    "f2_norm": 0.3112,
+    "f1_raw": 64.67,
+    "f2_raw": 67.89
+   },
+   "LF": {
+    "f1_norm": 0.3301,
+    "f2_norm": 0.1027,
+    "f1_raw": 710225.67,
+    "f2_raw": 224250.35
+   },
+   "HF": {
+    "f1_norm": 0.1879,
+    "f2_norm": 0.0442,
+    "f1_raw": 74172.89,
+    "f2_raw": 17861.07
+   },
+   "LFHF": {
+    "f1_norm": 0.3574,
+    "f2_norm": 0.4864,
+    "f1_raw": 9.58,
+    "f2_raw": 12.56
+   }
+  },
+  "P23": {
+   "SDNN": {
+    "f1_norm": 0.3458,
+    "f2_norm": 0.2315,
+    "f1_raw": 34.41,
+    "f2_raw": 25.64
+   },
+   "RMSSD": {
+    "f1_norm": 0.2997,
+    "f2_norm": 0.2396,
+    "f1_raw": 13.56,
+    "f2_raw": 11.11
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6725,
+    "f2_norm": 0.6145,
+    "f1_raw": 2.61,
+    "f2_raw": 2.41
+   },
+   "SD1": {
+    "f1_norm": 0.2997,
+    "f2_norm": 0.2393,
+    "f1_raw": 9.59,
+    "f2_raw": 7.85
+   },
+   "SD2": {
+    "f1_norm": 0.3497,
+    "f2_norm": 0.232,
+    "f1_raw": 47.65,
+    "f2_raw": 35.35
+   },
+   "MeanHR": {
+    "f1_norm": 0.5459,
+    "f2_norm": 0.4154,
+    "f1_raw": 83.37,
+    "f2_raw": 74.76
+   },
+   "LF": {
+    "f1_norm": 0.1145,
+    "f2_norm": 0.0709,
+    "f1_raw": 249542.42,
+    "f2_raw": 156266.44
+   },
+   "HF": {
+    "f1_norm": 0.1105,
+    "f2_norm": 0.0367,
+    "f1_raw": 43853.71,
+    "f2_raw": 14952.0
+   },
+   "LFHF": {
+    "f1_norm": 0.1891,
+    "f2_norm": 0.3951,
+    "f1_raw": 5.69,
+    "f2_raw": 10.45
+   }
+  },
+  "P24": {
+   "SDNN": {
+    "f1_norm": 0.4133,
+    "f2_norm": 0.5931,
+    "f1_raw": 39.59,
+    "f2_raw": 53.38
+   },
+   "RMSSD": {
+    "f1_norm": 0.5708,
+    "f2_norm": 0.482,
+    "f1_raw": 24.61,
+    "f2_raw": 20.99
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8435,
+    "f2_norm": 0.7971,
+    "f1_raw": 3.2,
+    "f2_raw": 3.04
+   },
+   "SD1": {
+    "f1_norm": 0.5706,
+    "f2_norm": 0.4818,
+    "f1_raw": 17.4,
+    "f2_raw": 14.84
+   },
+   "SD2": {
+    "f1_norm": 0.4018,
+    "f2_norm": 0.6006,
+    "f1_raw": 53.1,
+    "f2_raw": 73.88
+   },
+   "MeanHR": {
+    "f1_norm": 0.1518,
+    "f2_norm": 0.2373,
+    "f1_raw": 57.37,
+    "f2_raw": 63.01
+   },
+   "LF": {
+    "f1_norm": 0.1283,
+    "f2_norm": 0.1308,
+    "f1_raw": 278895.37,
+    "f2_raw": 284212.15
+   },
+   "HF": {
+    "f1_norm": 0.1592,
+    "f2_norm": 0.1341,
+    "f1_raw": 62940.48,
+    "f2_raw": 53092.51
+   },
+   "LFHF": {
+    "f1_norm": 0.1346,
+    "f2_norm": 0.1744,
+    "f1_raw": 4.43,
+    "f2_raw": 5.35
+   }
+  },
+  "P25": {
+   "SDNN": {
+    "f1_norm": 0.1134,
+    "f2_norm": 0.6612,
+    "f1_raw": 16.58,
+    "f2_raw": 58.61
+   },
+   "RMSSD": {
+    "f1_norm": 0.091,
+    "f2_norm": 0.6649,
+    "f1_raw": 5.05,
+    "f2_raw": 28.45
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.3855,
+    "f2_norm": 0.887,
+    "f1_raw": 1.62,
+    "f2_raw": 3.35
+   },
+   "SD1": {
+    "f1_norm": 0.0909,
+    "f2_norm": 0.6649,
+    "f1_raw": 3.57,
+    "f2_raw": 20.12
+   },
+   "SD2": {
+    "f1_norm": 0.1154,
+    "f2_norm": 0.6615,
+    "f1_raw": 23.15,
+    "f2_raw": 80.25
+   },
+   "MeanHR": {
+    "f1_norm": 0.5908,
+    "f2_norm": 0.1395,
+    "f1_raw": 86.33,
+    "f2_raw": 56.56
+   },
+   "LF": {
+    "f1_norm": 0.0361,
+    "f2_norm": 0.2155,
+    "f1_raw": 81871.67,
+    "f2_raw": 465211.86
+   },
+   "HF": {
+    "f1_norm": 0.0099,
+    "f2_norm": 0.2365,
+    "f1_raw": 4422.85,
+    "f2_raw": 93221.84
+   },
+   "LFHF": {
+    "f1_norm": 0.7438,
+    "f2_norm": 0.1588,
+    "f1_raw": 18.51,
+    "f2_raw": 4.99
+   }
+  },
+  "P26": {
+   "SDNN": {
+    "f1_norm": 0.5206,
+    "f2_norm": 0.263,
+    "f1_raw": 47.82,
+    "f2_raw": 28.06
+   },
+   "RMSSD": {
+    "f1_norm": 0.3105,
+    "f2_norm": 0.2892,
+    "f1_raw": 14.0,
+    "f2_raw": 13.13
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6812,
+    "f2_norm": 0.6609,
+    "f1_raw": 2.64,
+    "f2_raw": 2.57
+   },
+   "SD1": {
+    "f1_norm": 0.3101,
+    "f2_norm": 0.2889,
+    "f1_raw": 9.89,
+    "f2_raw": 9.28
+   },
+   "SD2": {
+    "f1_norm": 0.5329,
+    "f2_norm": 0.2624,
+    "f1_raw": 66.8,
+    "f2_raw": 38.52
+   },
+   "MeanHR": {
+    "f1_norm": 0.4576,
+    "f2_norm": 0.3222,
+    "f1_raw": 77.54,
+    "f2_raw": 68.61
+   },
+   "LF": {
+    "f1_norm": 0.08,
+    "f2_norm": 0.0806,
+    "f1_raw": 175758.74,
+    "f2_raw": 176919.11
+   },
+   "HF": {
+    "f1_norm": 0.1054,
+    "f2_norm": 0.1068,
+    "f1_raw": 41846.84,
+    "f2_raw": 42390.84
+   },
+   "LFHF": {
+    "f1_norm": 0.1246,
+    "f2_norm": 0.1233,
+    "f1_raw": 4.2,
+    "f2_raw": 4.17
+   }
+  }
+ },
+ "hrv_st": {
+  "P01": {
+   "SDNN": {
+    "f1_norm": 0.0817,
+    "f2_norm": 0.0651,
+    "f1_raw": 22.23,
+    "f2_raw": 19.98
+   },
+   "RMSSD": {
+    "f1_norm": 0.1445,
+    "f2_norm": 0.0209,
+    "f1_raw": 7.58,
+    "f2_raw": 3.19
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.4128,
+    "f2_norm": 0.0956,
+    "f1_raw": 2.03,
+    "f2_raw": 1.16
+   },
+   "SD1": {
+    "f1_norm": 0.1443,
+    "f2_norm": 0.0208,
+    "f1_raw": 5.35,
+    "f2_raw": 2.26
+   },
+   "SD2": {
+    "f1_norm": 0.0806,
+    "f2_norm": 0.0658,
+    "f1_raw": 30.94,
+    "f2_raw": 28.14
+   },
+   "MeanHR": {
+    "f1_norm": 0.4982,
+    "f2_norm": 0.8332,
+    "f1_raw": 93.61,
+    "f2_raw": 119.27
+   },
+   "LF": {
+    "f1_norm": 0.0493,
+    "f2_norm": 0.0112,
+    "f1_raw": 160010.72,
+    "f2_raw": 68986.36045
+   },
+   "HF": {
+    "f1_norm": 0.0814,
+    "f2_norm": 0.01,
+    "f1_raw": 26266.15,
+    "f2_raw": 4331.530863
+   },
+   "LFHF": {
+    "f1_norm": 0.0925,
+    "f2_norm": 0.3917,
+    "f1_raw": 6.09,
+    "f2_raw": 15.92655406
+   }
+  },
+  "P02": {
+   "SDNN": {
+    "f1_norm": 0.2056,
+    "f2_norm": 0.1032,
+    "f1_raw": 39.04,
+    "f2_raw": 25.15
+   },
+   "RMSSD": {
+    "f1_norm": 0.33,
+    "f2_norm": 0.1538,
+    "f1_raw": 14.16,
+    "f2_raw": 7.91
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6389,
+    "f2_norm": 0.4267,
+    "f1_raw": 2.65,
+    "f2_raw": 2.068
+   },
+   "SD1": {
+    "f1_norm": 0.3307,
+    "f2_norm": 0.1539,
+    "f1_raw": 10.01,
+    "f2_raw": 5.59
+   },
+   "SD2": {
+    "f1_norm": 0.2034,
+    "f2_norm": 0.1025,
+    "f1_raw": 54.24,
+    "f2_raw": 35.09
+   },
+   "MeanHR": {
+    "f1_norm": 0.701,
+    "f2_norm": 0.6952,
+    "f1_raw": 109.14,
+    "f2_raw": 108.7
+   },
+   "LF": {
+    "f1_norm": 0.2079,
+    "f2_norm": 0.0912,
+    "f1_raw": 539389.11,
+    "f2_raw": 260184.1953
+   },
+   "HF": {
+    "f1_norm": 0.5532,
+    "f2_norm": 0.0755,
+    "f1_raw": 171205.97,
+    "f2_raw": 24453.65006
+   },
+   "LFHF": {
+    "f1_norm": 0.003,
+    "f2_norm": 0.2309,
+    "f1_raw": 3.15,
+    "f2_raw": 10.63989199
+   }
+  },
+  "P03": {
+   "SDNN": {
+    "f1_norm": 0.402,
+    "f2_norm": 0.411,
+    "f1_raw": 65.68,
+    "f2_raw": 66.9
+   },
+   "RMSSD": {
+    "f1_norm": 0.6881,
+    "f2_norm": 0.7179,
+    "f1_raw": 26.87,
+    "f2_raw": 27.93
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8724,
+    "f2_norm": 0.8869,
+    "f1_raw": 3.29,
+    "f2_raw": 3.33
+   },
+   "SD1": {
+    "f1_norm": 0.6901,
+    "f2_norm": 0.7201,
+    "f1_raw": 19.0,
+    "f2_raw": 19.75
+   },
+   "SD2": {
+    "f1_norm": 0.396,
+    "f2_norm": 0.4044,
+    "f1_raw": 90.79,
+    "f2_raw": 92.38
+   },
+   "MeanHR": {
+    "f1_norm": 0.2798,
+    "f2_norm": 0.2497,
+    "f1_raw": 76.89,
+    "f2_raw": 74.58
+   },
+   "LF": {
+    "f1_norm": 0.4985,
+    "f2_norm": 0.4922,
+    "f1_raw": 1234071.81,
+    "f2_raw": 1219075.489
+   },
+   "HF": {
+    "f1_norm": 0.5473,
+    "f2_norm": 0.287,
+    "f1_raw": 169377.01,
+    "f2_raw": 89417.65871
+   },
+   "LFHF": {
+    "f1_norm": 0.129,
+    "f2_norm": 0.3219,
+    "f1_raw": 7.29,
+    "f2_raw": 13.6334982
+   }
+  },
+  "P04": {
+   "SDNN": {
+    "f1_norm": 0.3825,
+    "f2_norm": 0.5593,
+    "f1_raw": 63.03,
+    "f2_raw": 87.01
+   },
+   "RMSSD": {
+    "f1_norm": 0.734,
+    "f2_norm": 0.7701,
+    "f1_raw": 28.5,
+    "f2_raw": 29.78
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8942,
+    "f2_norm": 0.9103,
+    "f1_raw": 3.35,
+    "f2_raw": 3.394
+   },
+   "SD1": {
+    "f1_norm": 0.7361,
+    "f2_norm": 0.7725,
+    "f1_raw": 20.15,
+    "f2_raw": 21.06
+   },
+   "SD2": {
+    "f1_norm": 0.3745,
+    "f2_norm": 0.5555,
+    "f1_raw": 86.71,
+    "f2_raw": 121.05
+   },
+   "MeanHR": {
+    "f1_norm": 0.2724,
+    "f2_norm": 0.2412,
+    "f1_raw": 76.32,
+    "f2_raw": 73.93
+   },
+   "LF": {
+    "f1_norm": 0.3412,
+    "f2_norm": 0.6621,
+    "f1_raw": 857988.16,
+    "f2_raw": 1625286.344
+   },
+   "HF": {
+    "f1_norm": 0.8913,
+    "f2_norm": 0.5202,
+    "f1_raw": 275063.2,
+    "f2_raw": 161061.5955
+   },
+   "LFHF": {
+    "f1_norm": 0.0021,
+    "f2_norm": 0.2142,
+    "f1_raw": 3.12,
+    "f2_raw": 10.09108558
+   }
+  },
+  "P05": {
+   "SDNN": {
+    "f1_norm": 0.4246,
+    "f2_norm": 0.5209,
+    "f1_raw": 68.74,
+    "f2_raw": 81.81
+   },
+   "RMSSD": {
+    "f1_norm": 0.8323,
+    "f2_norm": 0.8822,
+    "f1_raw": 31.99,
+    "f2_raw": 33.76
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.938,
+    "f2_norm": 0.9559,
+    "f1_raw": 3.47,
+    "f2_raw": 3.519
+   },
+   "SD1": {
+    "f1_norm": 0.8349,
+    "f2_norm": 0.8844,
+    "f1_raw": 22.62,
+    "f2_raw": 23.86
+   },
+   "SD2": {
+    "f1_norm": 0.4151,
+    "f2_norm": 0.513,
+    "f1_raw": 94.41,
+    "f2_raw": 112.98
+   },
+   "MeanHR": {
+    "f1_norm": 0.3502,
+    "f2_norm": 0.0,
+    "f1_raw": 82.28,
+    "f2_raw": 55.46
+   },
+   "LF": {
+    "f1_norm": 0.3265,
+    "f2_norm": 0.3131,
+    "f1_raw": 822936.39,
+    "f2_raw": 790808.4868
+   },
+   "HF": {
+    "f1_norm": 0.8696,
+    "f2_norm": 0.5939,
+    "f1_raw": 268386.2,
+    "f2_raw": 183709.8115
+   },
+   "LFHF": {
+    "f1_norm": 0.0006,
+    "f2_norm": 0.0382,
+    "f1_raw": 3.07,
+    "f2_raw": 4.304661141
+   }
+  },
+  "P06": {
+   "SDNN": {
+    "f1_norm": 0.1323,
+    "f2_norm": 0.3374,
+    "f1_raw": 29.1,
+    "f2_raw": 56.91
+   },
+   "RMSSD": {
+    "f1_norm": 0.3595,
+    "f2_norm": 0.2973,
+    "f1_raw": 15.21,
+    "f2_raw": 13.0
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6645,
+    "f2_norm": 0.608,
+    "f1_raw": 2.72,
+    "f2_raw": 2.565
+   },
+   "SD1": {
+    "f1_norm": 0.3607,
+    "f2_norm": 0.2979,
+    "f1_raw": 10.76,
+    "f2_raw": 9.19
+   },
+   "SD2": {
+    "f1_norm": 0.1266,
+    "f2_norm": 0.3362,
+    "f1_raw": 39.67,
+    "f2_raw": 79.45
+   },
+   "MeanHR": {
+    "f1_norm": 0.4155,
+    "f2_norm": 0.3193,
+    "f1_raw": 87.28,
+    "f2_raw": 79.91
+   },
+   "LF": {
+    "f1_norm": 0.0808,
+    "f2_norm": 0.2533,
+    "f1_raw": 235285.8,
+    "f2_raw": 647846.7848
+   },
+   "HF": {
+    "f1_norm": 0.247,
+    "f2_norm": 0.1701,
+    "f1_raw": 77135.01,
+    "f2_raw": 53527.91027
+   },
+   "LFHF": {
+    "f1_norm": 0.0,
+    "f2_norm": 0.2754,
+    "f1_raw": 3.05,
+    "f2_raw": 12.10297173
+   }
+  },
+  "P07": {
+   "SDNN": {
+    "f1_norm": 0.3144,
+    "f2_norm": 0.3222,
+    "f1_raw": 53.8,
+    "f2_raw": 54.85
+   },
+   "RMSSD": {
+    "f1_norm": 0.2356,
+    "f2_norm": 0.3288,
+    "f1_raw": 10.81,
+    "f2_raw": 14.12
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.5405,
+    "f2_norm": 0.6382,
+    "f1_raw": 2.38,
+    "f2_raw": 2.648
+   },
+   "SD1": {
+    "f1_norm": 0.2359,
+    "f2_norm": 0.3295,
+    "f1_raw": 7.64,
+    "f2_raw": 9.98
+   },
+   "SD2": {
+    "f1_norm": 0.316,
+    "f2_norm": 0.3223,
+    "f1_raw": 75.6,
+    "f2_raw": 76.8
+   },
+   "MeanHR": {
+    "f1_norm": 0.3236,
+    "f2_norm": 0.1089,
+    "f1_raw": 80.24,
+    "f2_raw": 63.8
+   },
+   "LF": {
+    "f1_norm": 0.0904,
+    "f2_norm": 0.0455,
+    "f1_raw": 258302.74,
+    "f2_raw": 150887.4151
+   },
+   "HF": {
+    "f1_norm": 0.0399,
+    "f2_norm": 0.0314,
+    "f1_raw": 13527.24,
+    "f2_raw": 10920.78742
+   },
+   "LFHF": {
+    "f1_norm": 0.4882,
+    "f2_norm": 0.3275,
+    "f1_raw": 19.1,
+    "f2_raw": 13.81653257
+   }
+  },
+  "P08": {
+   "SDNN": {
+    "f1_norm": 0.1396,
+    "f2_norm": 0.1396,
+    "f1_raw": 30.09,
+    "f2_raw": 30.09
+   },
+   "RMSSD": {
+    "f1_norm": 0.2108,
+    "f2_norm": 0.2108,
+    "f1_raw": 9.93,
+    "f2_raw": 9.93
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.5113,
+    "f2_norm": 0.5098,
+    "f1_raw": 2.3,
+    "f2_raw": 2.296
+   },
+   "SD1": {
+    "f1_norm": 0.2111,
+    "f2_norm": 0.2111,
+    "f1_raw": 7.02,
+    "f2_raw": 7.02
+   },
+   "SD2": {
+    "f1_norm": 0.1385,
+    "f2_norm": 0.1385,
+    "f1_raw": 41.93,
+    "f2_raw": 41.93
+   },
+   "MeanHR": {
+    "f1_norm": 0.7157,
+    "f2_norm": 0.7157,
+    "f1_raw": 110.27,
+    "f2_raw": 110.27
+   },
+   "LF": {
+    "f1_norm": 0.1477,
+    "f2_norm": 0.1477,
+    "f1_raw": 395438.06,
+    "f2_raw": 395438.0587
+   },
+   "HF": {
+    "f1_norm": 0.2443,
+    "f2_norm": 0.2443,
+    "f1_raw": 76302.87,
+    "f2_raw": 76302.87464
+   },
+   "LFHF": {
+    "f1_norm": 0.0648,
+    "f2_norm": 0.0649,
+    "f1_raw": 5.18,
+    "f2_raw": 5.182479173
+   }
+  },
+  "P09": {
+   "SDNN": {
+    "f1_norm": 0.0616,
+    "f2_norm": 0.1867,
+    "f1_raw": 19.5,
+    "f2_raw": 36.47
+   },
+   "RMSSD": {
+    "f1_norm": 0.0885,
+    "f2_norm": 0.1617,
+    "f1_raw": 5.59,
+    "f2_raw": 8.19
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.2998,
+    "f2_norm": 0.4395,
+    "f1_raw": 1.72,
+    "f2_raw": 2.103
+   },
+   "SD1": {
+    "f1_norm": 0.0888,
+    "f2_norm": 0.1619,
+    "f1_raw": 3.96,
+    "f2_raw": 5.79
+   },
+   "SD2": {
+    "f1_norm": 0.0612,
+    "f2_norm": 0.1874,
+    "f1_raw": 27.27,
+    "f2_raw": 51.2
+   },
+   "MeanHR": {
+    "f1_norm": 0.7017,
+    "f2_norm": 0.5786,
+    "f1_raw": 109.2,
+    "f2_raw": 99.77
+   },
+   "LF": {
+    "f1_norm": 0.0591,
+    "f2_norm": 0.04,
+    "f1_raw": 183377.32,
+    "f2_raw": 137842.1796
+   },
+   "HF": {
+    "f1_norm": 0.0225,
+    "f2_norm": 0.025,
+    "f1_raw": 8191.21,
+    "f2_raw": 8940.153405
+   },
+   "LFHF": {
+    "f1_norm": 0.5883,
+    "f2_norm": 0.3762,
+    "f1_raw": 22.39,
+    "f2_raw": 15.41832375
+   }
+  },
+  "P10": {
+   "SDNN": {
+    "f1_norm": 0.4888,
+    "f2_norm": 0.3815,
+    "f1_raw": 77.45,
+    "f2_raw": 62.89
+   },
+   "RMSSD": {
+    "f1_norm": 0.8132,
+    "f2_norm": 0.6754,
+    "f1_raw": 31.31,
+    "f2_raw": 26.42
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.9271,
+    "f2_norm": 0.8665,
+    "f1_raw": 3.44,
+    "f2_raw": 3.274
+   },
+   "SD1": {
+    "f1_norm": 0.8157,
+    "f2_norm": 0.6773,
+    "f1_raw": 22.14,
+    "f2_raw": 18.68
+   },
+   "SD2": {
+    "f1_norm": 0.4821,
+    "f2_norm": 0.3753,
+    "f1_raw": 107.12,
+    "f2_raw": 86.85
+   },
+   "MeanHR": {
+    "f1_norm": 0.3342,
+    "f2_norm": 0.4811,
+    "f1_raw": 81.05,
+    "f2_raw": 92.3
+   },
+   "LF": {
+    "f1_norm": 0.8398,
+    "f2_norm": 0.997,
+    "f1_raw": 2050290.3,
+    "f2_raw": 2426100.933
+   },
+   "HF": {
+    "f1_norm": 1.0,
+    "f2_norm": 0.6055,
+    "f1_raw": 308447.1,
+    "f2_raw": 187264.9661
+   },
+   "LFHF": {
+    "f1_norm": 0.1095,
+    "f2_norm": 0.3013,
+    "f1_raw": 6.65,
+    "f2_raw": 12.95544481
+   }
+  },
+  "P11": {
+   "SDNN": {
+    "f1_norm": 0.1951,
+    "f2_norm": 0.3787,
+    "f1_raw": 37.61,
+    "f2_raw": 62.52
+   },
+   "RMSSD": {
+    "f1_norm": 0.2017,
+    "f2_norm": 0.2609,
+    "f1_raw": 9.61,
+    "f2_raw": 11.71
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.4967,
+    "f2_norm": 0.5697,
+    "f1_raw": 2.26,
+    "f2_raw": 2.46
+   },
+   "SD1": {
+    "f1_norm": 0.2023,
+    "f2_norm": 0.2615,
+    "f1_raw": 6.8,
+    "f2_raw": 8.28
+   },
+   "SD2": {
+    "f1_norm": 0.1953,
+    "f2_norm": 0.3808,
+    "f1_raw": 52.7,
+    "f2_raw": 87.91
+   },
+   "MeanHR": {
+    "f1_norm": 0.6214,
+    "f2_norm": 0.3133,
+    "f1_raw": 103.05,
+    "f2_raw": 79.45
+   },
+   "LF": {
+    "f1_norm": 0.1419,
+    "f2_norm": 0.0841,
+    "f1_raw": 381574.01,
+    "f2_raw": 243262.4546
+   },
+   "HF": {
+    "f1_norm": 0.0974,
+    "f2_norm": 0.0683,
+    "f1_raw": 31192.66,
+    "f2_raw": 22253.71995
+   },
+   "LFHF": {
+    "f1_norm": 0.2792,
+    "f2_norm": 0.2397,
+    "f1_raw": 12.23,
+    "f2_raw": 10.93131643
+   }
+  },
+  "P12": {
+   "SDNN": {
+    "f1_norm": 0.4092,
+    "f2_norm": 0.5302,
+    "f1_raw": 66.65,
+    "f2_raw": 83.06
+   },
+   "RMSSD": {
+    "f1_norm": 0.6143,
+    "f2_norm": 0.4204,
+    "f1_raw": 24.25,
+    "f2_raw": 17.37
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.8359,
+    "f2_norm": 0.7133,
+    "f1_raw": 3.19,
+    "f2_raw": 2.854
+   },
+   "SD1": {
+    "f1_norm": 0.6162,
+    "f2_norm": 0.4214,
+    "f1_raw": 17.15,
+    "f2_raw": 12.28
+   },
+   "SD2": {
+    "f1_norm": 0.4052,
+    "f2_norm": 0.5323,
+    "f1_raw": 92.54,
+    "f2_raw": 116.64
+   },
+   "MeanHR": {
+    "f1_norm": 0.1952,
+    "f2_norm": 0.2159,
+    "f1_raw": 70.41,
+    "f2_raw": 71.99
+   },
+   "LF": {
+    "f1_norm": 1.0,
+    "f2_norm": 0.2533,
+    "f1_raw": 2433354.08,
+    "f2_raw": 647846.7848
+   },
+   "HF": {
+    "f1_norm": 0.2364,
+    "f2_norm": 0.1701,
+    "f1_raw": 73892.47,
+    "f2_raw": 53527.91027
+   },
+   "LFHF": {
+    "f1_norm": 0.9089,
+    "f2_norm": 0.2754,
+    "f1_raw": 32.93,
+    "f2_raw": 12.10297173
+   }
+  },
+  "P13": {
+   "SDNN": {
+    "f1_norm": 0.1281,
+    "f2_norm": 0.1281,
+    "f1_raw": 28.52,
+    "f2_raw": 28.52
+   },
+   "RMSSD": {
+    "f1_norm": 0.1975,
+    "f2_norm": 0.1975,
+    "f1_raw": 9.46,
+    "f2_raw": 9.46
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.4931,
+    "f2_norm": 0.492,
+    "f1_raw": 2.25,
+    "f2_raw": 2.247
+   },
+   "SD1": {
+    "f1_norm": 0.1979,
+    "f2_norm": 0.1979,
+    "f1_raw": 6.69,
+    "f2_raw": 6.69
+   },
+   "SD2": {
+    "f1_norm": 0.1269,
+    "f2_norm": 0.1269,
+    "f1_raw": 39.72,
+    "f2_raw": 39.72
+   },
+   "MeanHR": {
+    "f1_norm": 0.3628,
+    "f2_norm": 0.3628,
+    "f1_raw": 83.24,
+    "f2_raw": 83.24
+   },
+   "LF": {
+    "f1_norm": 0.0734,
+    "f2_norm": 0.0734,
+    "f1_raw": 217575.34,
+    "f2_raw": 217575.3395
+   },
+   "HF": {
+    "f1_norm": 0.1138,
+    "f2_norm": 0.1138,
+    "f1_raw": 36215.42,
+    "f2_raw": 36215.42137
+   },
+   "LFHF": {
+    "f1_norm": 0.09,
+    "f2_norm": 0.09,
+    "f1_raw": 6.01,
+    "f2_raw": 6.007809139
+   }
+  },
+  "P14": {
+   "SDNN": {
+    "f1_norm": 0.138,
+    "f2_norm": 0.138,
+    "f1_raw": 29.87,
+    "f2_raw": 29.87
+   },
+   "RMSSD": {
+    "f1_norm": 0.1719,
+    "f2_norm": 0.1719,
+    "f1_raw": 8.55,
+    "f2_raw": 8.55
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.4566,
+    "f2_norm": 0.4551,
+    "f1_raw": 2.15,
+    "f2_raw": 2.146
+   },
+   "SD1": {
+    "f1_norm": 0.1719,
+    "f2_norm": 0.1719,
+    "f1_raw": 6.04,
+    "f2_raw": 6.04
+   },
+   "SD2": {
+    "f1_norm": 0.1376,
+    "f2_norm": 0.1376,
+    "f1_raw": 41.76,
+    "f2_raw": 41.76
+   },
+   "MeanHR": {
+    "f1_norm": 0.4032,
+    "f2_norm": 0.4032,
+    "f1_raw": 86.34,
+    "f2_raw": 86.34
+   },
+   "LF": {
+    "f1_norm": 0.0414,
+    "f2_norm": 0.0414,
+    "f1_raw": 141171.38,
+    "f2_raw": 141171.383
+   },
+   "HF": {
+    "f1_norm": 0.0342,
+    "f2_norm": 0.0342,
+    "f1_raw": 11794.06,
+    "f2_raw": 11794.06335
+   },
+   "LFHF": {
+    "f1_norm": 0.2713,
+    "f2_norm": 0.2713,
+    "f1_raw": 11.97,
+    "f2_raw": 11.96969855
+   }
+  },
+  "P15": {
+   "SDNN": {
+    "f1_norm": 0.1565,
+    "f2_norm": 0.2225,
+    "f1_raw": 32.38,
+    "f2_raw": 41.33
+   },
+   "RMSSD": {
+    "f1_norm": 0.1893,
+    "f2_norm": 0.3291,
+    "f1_raw": 9.17,
+    "f2_raw": 14.13
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.4821,
+    "f2_norm": 0.6386,
+    "f1_raw": 2.22,
+    "f2_raw": 2.649
+   },
+   "SD1": {
+    "f1_norm": 0.1895,
+    "f2_norm": 0.3299,
+    "f1_raw": 6.48,
+    "f2_raw": 9.99
+   },
+   "SD2": {
+    "f1_norm": 0.1562,
+    "f2_norm": 0.2206,
+    "f1_raw": 45.28,
+    "f2_raw": 57.51
+   },
+   "MeanHR": {
+    "f1_norm": 0.4751,
+    "f2_norm": 0.42,
+    "f1_raw": 91.84,
+    "f2_raw": 87.62
+   },
+   "LF": {
+    "f1_norm": 0.1212,
+    "f2_norm": 0.2264,
+    "f1_raw": 331899.29,
+    "f2_raw": 583400.2107
+   },
+   "HF": {
+    "f1_norm": 0.033,
+    "f2_norm": 0.0666,
+    "f1_raw": 11412.77,
+    "f2_raw": 21736.82427
+   },
+   "LFHF": {
+    "f1_norm": 0.7918,
+    "f2_norm": 0.7236,
+    "f1_raw": 29.08,
+    "f2_raw": 26.83925689
+   }
+  },
+  "P16": {
+   "SDNN": {
+    "f1_norm": 0.3729,
+    "f2_norm": 0.2838,
+    "f1_raw": 61.73,
+    "f2_raw": 49.64
+   },
+   "RMSSD": {
+    "f1_norm": 0.3804,
+    "f2_norm": 0.3145,
+    "f1_raw": 15.95,
+    "f2_raw": 13.61
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6827,
+    "f2_norm": 0.6247,
+    "f1_raw": 2.77,
+    "f2_raw": 2.611
+   },
+   "SD1": {
+    "f1_norm": 0.381,
+    "f2_norm": 0.3155,
+    "f1_raw": 11.27,
+    "f2_raw": 9.63
+   },
+   "SD2": {
+    "f1_norm": 0.3732,
+    "f2_norm": 0.2836,
+    "f1_raw": 86.46,
+    "f2_raw": 69.46
+   },
+   "MeanHR": {
+    "f1_norm": 0.41,
+    "f2_norm": 0.4736,
+    "f1_raw": 86.86,
+    "f2_raw": 91.73
+   },
+   "LF": {
+    "f1_norm": 0.2792,
+    "f2_norm": 0.3239,
+    "f1_raw": 709849.17,
+    "f2_raw": 816685.9407
+   },
+   "HF": {
+    "f1_norm": 0.1569,
+    "f2_norm": 0.1512,
+    "f1_raw": 49477.08,
+    "f2_raw": 47716.43561
+   },
+   "LFHF": {
+    "f1_norm": 0.3437,
+    "f2_norm": 0.4278,
+    "f1_raw": 14.35,
+    "f2_raw": 17.11540123
+   }
+  },
+  "P17": {
+   "SDNN": {
+    "f1_norm": 0.0509,
+    "f2_norm": 0.3859,
+    "f1_raw": 18.06,
+    "f2_raw": 63.49
+   },
+   "RMSSD": {
+    "f1_norm": 0.0572,
+    "f2_norm": 0.4187,
+    "f1_raw": 4.48,
+    "f2_raw": 17.31
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.2195,
+    "f2_norm": 0.7126,
+    "f1_raw": 1.5,
+    "f2_raw": 2.852
+   },
+   "SD1": {
+    "f1_norm": 0.0572,
+    "f2_norm": 0.4198,
+    "f1_raw": 3.17,
+    "f2_raw": 12.24
+   },
+   "SD2": {
+    "f1_norm": 0.051,
+    "f2_norm": 0.3855,
+    "f1_raw": 25.32,
+    "f2_raw": 88.8
+   },
+   "MeanHR": {
+    "f1_norm": 0.5166,
+    "f2_norm": 0.1263,
+    "f1_raw": 95.02,
+    "f2_raw": 65.13
+   },
+   "LF": {
+    "f1_norm": 0.0166,
+    "f2_norm": 0.193,
+    "f1_raw": 81896.34,
+    "f2_raw": 503722.4574
+   },
+   "HF": {
+    "f1_norm": 0.0105,
+    "f2_norm": 0.0809,
+    "f1_raw": 4502.23,
+    "f2_raw": 26130.52179
+   },
+   "LFHF": {
+    "f1_norm": 0.4605,
+    "f2_norm": 0.4936,
+    "f1_raw": 18.19,
+    "f2_raw": 19.27716796
+   }
+  },
+  "P18": {
+   "SDNN": {
+    "f1_norm": 0.1834,
+    "f2_norm": 0.1834,
+    "f1_raw": 36.03,
+    "f2_raw": 36.03
+   },
+   "RMSSD": {
+    "f1_norm": 0.2674,
+    "f2_norm": 0.2674,
+    "f1_raw": 11.94,
+    "f2_raw": 11.94
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.577,
+    "f2_norm": 0.577,
+    "f1_raw": 2.48,
+    "f2_raw": 2.48
+   },
+   "SD1": {
+    "f1_norm": 0.2679,
+    "f2_norm": 0.2679,
+    "f1_raw": 8.44,
+    "f2_raw": 8.44
+   },
+   "SD2": {
+    "f1_norm": 0.182,
+    "f2_norm": 0.182,
+    "f1_raw": 50.18,
+    "f2_raw": 50.18
+   },
+   "MeanHR": {
+    "f1_norm": 0.3908,
+    "f2_norm": 0.3908,
+    "f1_raw": 85.39,
+    "f2_raw": 85.39
+   },
+   "LF": {
+    "f1_norm": 0.1355,
+    "f2_norm": 0.1355,
+    "f1_raw": 366090.33,
+    "f2_raw": 366090.3286
+   },
+   "HF": {
+    "f1_norm": 0.0429,
+    "f2_norm": 0.0429,
+    "f1_raw": 14462.19,
+    "f2_raw": 14462.19053
+   },
+   "LFHF": {
+    "f1_norm": 0.6771,
+    "f2_norm": 0.6772,
+    "f1_raw": 25.31,
+    "f2_raw": 25.31361538
+   }
+  },
+  "P19": {
+   "SDNN": {
+    "f1_norm": 0.4896,
+    "f2_norm": 0.2923,
+    "f1_raw": 77.56,
+    "f2_raw": 50.8
+   },
+   "RMSSD": {
+    "f1_norm": 0.9831,
+    "f2_norm": 0.5331,
+    "f1_raw": 37.34,
+    "f2_raw": 21.37
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.9927,
+    "f2_norm": 0.7892,
+    "f1_raw": 3.62,
+    "f2_raw": 3.062
+   },
+   "SD1": {
+    "f1_norm": 0.9864,
+    "f2_norm": 0.5346,
+    "f1_raw": 26.41,
+    "f2_raw": 15.11
+   },
+   "SD2": {
+    "f1_norm": 0.4777,
+    "f2_norm": 0.2872,
+    "f1_raw": 106.29,
+    "f2_raw": 70.15
+   },
+   "MeanHR": {
+    "f1_norm": 0.1709,
+    "f2_norm": 0.3489,
+    "f1_raw": 68.55,
+    "f2_raw": 82.18
+   },
+   "LF": {
+    "f1_norm": 0.5572,
+    "f2_norm": 0.4538,
+    "f1_raw": 1374536.98,
+    "f2_raw": 1127369.546
+   },
+   "HF": {
+    "f1_norm": 0.3168,
+    "f2_norm": 0.2642,
+    "f1_raw": 98595.07,
+    "f2_raw": 82435.69505
+   },
+   "LFHF": {
+    "f1_norm": 0.3312,
+    "f2_norm": 0.3232,
+    "f1_raw": 13.94,
+    "f2_raw": 13.67574501
+   }
+  },
+  "P20": {
+   "SDNN": {
+    "f1_norm": 1.0,
+    "f2_norm": 0.1027,
+    "f1_raw": 146.79,
+    "f2_raw": 25.08
+   },
+   "RMSSD": {
+    "f1_norm": 1.0,
+    "f2_norm": 0.2291,
+    "f1_raw": 37.94,
+    "f2_raw": 10.58
+   },
+   "lnRMSSD": {
+    "f1_norm": 1.0,
+    "f2_norm": 0.5328,
+    "f1_raw": 3.64,
+    "f2_raw": 2.359
+   },
+   "SD1": {
+    "f1_norm": 1.0,
+    "f2_norm": 0.2295,
+    "f1_raw": 26.75,
+    "f2_raw": 7.48
+   },
+   "SD2": {
+    "f1_norm": 1.0,
+    "f2_norm": 0.1,
+    "f1_raw": 205.39,
+    "f2_raw": 34.62
+   },
+   "MeanHR": {
+    "f1_norm": 0.2228,
+    "f2_norm": 0.3249,
+    "f1_raw": 72.52,
+    "f2_raw": 80.34
+   },
+   "LF": {
+    "f1_norm": 0.1428,
+    "f2_norm": 0.0461,
+    "f1_raw": 383657.54,
+    "f2_raw": 152259.9843
+   },
+   "HF": {
+    "f1_norm": 0.1994,
+    "f2_norm": 0.0519,
+    "f1_raw": 62512.35,
+    "f2_raw": 17209.15261
+   },
+   "LFHF": {
+    "f1_norm": 0.094,
+    "f2_norm": 0.1763,
+    "f1_raw": 6.14,
+    "f2_raw": 8.847616599
+   }
+  },
+  "P21": {
+   "SDNN": {
+    "f1_norm": 0.1854,
+    "f2_norm": 0.0,
+    "f1_raw": 36.3,
+    "f2_raw": 11.15
+   },
+   "RMSSD": {
+    "f1_norm": 0.4024,
+    "f2_norm": 0.0,
+    "f1_raw": 16.73,
+    "f2_raw": 2.45
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.7009,
+    "f2_norm": 0.0,
+    "f1_raw": 2.82,
+    "f2_raw": 0.898
+   },
+   "SD1": {
+    "f1_norm": 0.4034,
+    "f2_norm": 0.0,
+    "f1_raw": 11.83,
+    "f2_raw": 1.74
+   },
+   "SD2": {
+    "f1_norm": 0.1804,
+    "f2_norm": 0.0,
+    "f1_raw": 49.88,
+    "f2_raw": 15.65
+   },
+   "MeanHR": {
+    "f1_norm": 0.3218,
+    "f2_norm": 1.0,
+    "f1_raw": 80.1,
+    "f2_raw": 132.04
+   },
+   "LF": {
+    "f1_norm": 0.128,
+    "f2_norm": 0.0,
+    "f1_raw": 348188.6,
+    "f2_raw": 42144.01227
+   },
+   "HF": {
+    "f1_norm": 0.3432,
+    "f2_norm": 0.0,
+    "f1_raw": 106687.01,
+    "f2_raw": 1273.818145
+   },
+   "LFHF": {
+    "f1_norm": 0.0064,
+    "f2_norm": 0.9136,
+    "f1_raw": 3.26,
+    "f2_raw": 33.08479506
+   }
+  },
+  "P22": {
+   "SDNN": {
+    "f1_norm": 0.1846,
+    "f2_norm": 0.2872,
+    "f1_raw": 36.19,
+    "f2_raw": 50.11
+   },
+   "RMSSD": {
+    "f1_norm": 0.3801,
+    "f2_norm": 0.4669,
+    "f1_raw": 15.94,
+    "f2_raw": 19.02
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.6827,
+    "f2_norm": 0.7469,
+    "f1_raw": 2.77,
+    "f2_raw": 2.946
+   },
+   "SD1": {
+    "f1_norm": 0.381,
+    "f2_norm": 0.4682,
+    "f1_raw": 11.27,
+    "f2_raw": 13.45
+   },
+   "SD2": {
+    "f1_norm": 0.1802,
+    "f2_norm": 0.2837,
+    "f1_raw": 49.85,
+    "f2_raw": 69.47
+   },
+   "MeanHR": {
+    "f1_norm": 0.261,
+    "f2_norm": 0.2461,
+    "f1_raw": 75.45,
+    "f2_raw": 74.31
+   },
+   "LF": {
+    "f1_norm": 0.1807,
+    "f2_norm": 0.299,
+    "f1_raw": 474147.38,
+    "f2_raw": 757089.0156
+   },
+   "HF": {
+    "f1_norm": 0.1047,
+    "f2_norm": 0.0788,
+    "f1_raw": 33440.78,
+    "f2_raw": 25492.23239
+   },
+   "LFHF": {
+    "f1_norm": 0.3385,
+    "f2_norm": 0.8106,
+    "f1_raw": 14.18,
+    "f2_raw": 29.69881194
+   }
+  },
+  "P23": {
+   "SDNN": {
+    "f1_norm": 0.2376,
+    "f2_norm": 0.1807,
+    "f1_raw": 43.38,
+    "f2_raw": 35.66
+   },
+   "RMSSD": {
+    "f1_norm": 0.2218,
+    "f2_norm": 0.1741,
+    "f1_raw": 10.32,
+    "f2_raw": 8.63
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.5222,
+    "f2_norm": 0.4584,
+    "f1_raw": 2.33,
+    "f2_raw": 2.155
+   },
+   "SD1": {
+    "f1_norm": 0.2223,
+    "f2_norm": 0.1743,
+    "f1_raw": 7.3,
+    "f2_raw": 6.1
+   },
+   "SD2": {
+    "f1_norm": 0.2382,
+    "f2_norm": 0.181,
+    "f1_raw": 60.85,
+    "f2_raw": 50.0
+   },
+   "MeanHR": {
+    "f1_norm": 0.6071,
+    "f2_norm": 0.5214,
+    "f1_raw": 101.95,
+    "f2_raw": 95.39
+   },
+   "LF": {
+    "f1_norm": 0.0563,
+    "f2_norm": 0.0969,
+    "f1_raw": 176723.31,
+    "f2_raw": 273741.9897
+   },
+   "HF": {
+    "f1_norm": 0.128,
+    "f2_norm": 0.0207,
+    "f1_raw": 40583.08,
+    "f2_raw": 7619.62763
+   },
+   "LFHF": {
+    "f1_norm": 0.0395,
+    "f2_norm": 1.0,
+    "f1_raw": 4.35,
+    "f2_raw": 35.92590124
+   }
+  },
+  "P24": {
+   "SDNN": {
+    "f1_norm": 0.4205,
+    "f2_norm": 0.3626,
+    "f1_raw": 68.18,
+    "f2_raw": 60.33
+   },
+   "RMSSD": {
+    "f1_norm": 0.4815,
+    "f2_norm": 0.348,
+    "f1_raw": 19.54,
+    "f2_raw": 14.8
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.7557,
+    "f2_norm": 0.6554,
+    "f1_raw": 2.97,
+    "f2_raw": 2.695
+   },
+   "SD1": {
+    "f1_norm": 0.483,
+    "f2_norm": 0.3487,
+    "f1_raw": 13.82,
+    "f2_raw": 10.46
+   },
+   "SD2": {
+    "f1_norm": 0.4198,
+    "f2_norm": 0.3632,
+    "f1_raw": 95.3,
+    "f2_raw": 84.57
+   },
+   "MeanHR": {
+    "f1_norm": 0.3299,
+    "f2_norm": 0.3252,
+    "f1_raw": 80.72,
+    "f2_raw": 80.36
+   },
+   "LF": {
+    "f1_norm": 0.5233,
+    "f2_norm": 0.1529,
+    "f1_raw": 1293581.84,
+    "f2_raw": 407685.6995
+   },
+   "HF": {
+    "f1_norm": 0.1545,
+    "f2_norm": 0.0596,
+    "f1_raw": 48723.35,
+    "f2_raw": 19567.76369
+   },
+   "LFHF": {
+    "f1_norm": 0.7148,
+    "f2_norm": 0.541,
+    "f1_raw": 26.55,
+    "f2_raw": 20.8345576
+   }
+  },
+  "P25": {
+   "SDNN": {
+    "f1_norm": 0.0683,
+    "f2_norm": 0.174,
+    "f1_raw": 20.42,
+    "f2_raw": 34.75
+   },
+   "RMSSD": {
+    "f1_norm": 0.1313,
+    "f2_norm": 0.1708,
+    "f1_raw": 7.11,
+    "f2_raw": 8.51
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.3873,
+    "f2_norm": 0.4537,
+    "f1_raw": 1.96,
+    "f2_raw": 2.142
+   },
+   "SD1": {
+    "f1_norm": 0.1315,
+    "f2_norm": 0.1711,
+    "f1_raw": 5.03,
+    "f2_raw": 6.02
+   },
+   "SD2": {
+    "f1_norm": 0.0672,
+    "f2_norm": 0.1742,
+    "f1_raw": 28.41,
+    "f2_raw": 48.7
+   },
+   "MeanHR": {
+    "f1_norm": 0.5398,
+    "f2_norm": 0.2847,
+    "f1_raw": 96.8,
+    "f2_raw": 77.26
+   },
+   "LF": {
+    "f1_norm": 0.0718,
+    "f2_norm": 0.0274,
+    "f1_raw": 213796.05,
+    "f2_raw": 107596.4764
+   },
+   "HF": {
+    "f1_norm": 0.0707,
+    "f2_norm": 0.0164,
+    "f1_raw": 22985.37,
+    "f2_raw": 6318.414201
+   },
+   "LFHF": {
+    "f1_norm": 0.1901,
+    "f2_norm": 0.4252,
+    "f1_raw": 9.3,
+    "f2_raw": 17.02903181
+   }
+  },
+  "P26": {
+   "SDNN": {
+    "f1_norm": 0.1951,
+    "f2_norm": 0.3787,
+    "f1_raw": 37.61,
+    "f2_raw": 62.52
+   },
+   "RMSSD": {
+    "f1_norm": 0.9267,
+    "f2_norm": 0.8453,
+    "f1_raw": 35.34,
+    "f2_raw": 32.45
+   },
+   "lnRMSSD": {
+    "f1_norm": 0.4967,
+    "f2_norm": 0.5697,
+    "f1_raw": 2.26,
+    "f2_raw": 2.46
+   },
+   "SD1": {
+    "f1_norm": 0.2023,
+    "f2_norm": 0.2615,
+    "f1_raw": 6.8,
+    "f2_raw": 8.28
+   },
+   "SD2": {
+    "f1_norm": 0.1953,
+    "f2_norm": 0.3808,
+    "f1_raw": 52.7,
+    "f2_raw": 87.91
+   },
+   "MeanHR": {
+    "f1_norm": 0.6214,
+    "f2_norm": 0.3133,
+    "f1_raw": 103.05,
+    "f2_raw": 79.45
+   },
+   "LF": {
+    "f1_norm": 0.1419,
+    "f2_norm": 0.0841,
+    "f1_raw": 381574.01,
+    "f2_raw": 243262.4546
+   },
+   "HF": {
+    "f1_norm": 0.0974,
+    "f2_norm": 0.0683,
+    "f1_raw": 31192.66,
+    "f2_raw": 22253.71995
+   },
+   "LFHF": {
+    "f1_norm": 0.2792,
+    "f2_norm": 0.2397,
+    "f1_raw": 12.23,
+    "f2_raw": 10.93131643
+   }
+  }
+ },
+ "brs": {
+  "P01": {
+   "f1": 3.5,
+   "f2": 4.666666666666667,
+   "f1_norm": 0.3077,
+   "f2_norm": 0.8462,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P02": {
+   "f1": 4.166666666666667,
+   "f2": 3.6666666666666665,
+   "f1_norm": 0.6154,
+   "f2_norm": 0.3846,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P03": {
+   "f1": 3.6666666666666665,
+   "f2": 4.0,
+   "f1_norm": 0.3846,
+   "f2_norm": 0.5385,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P04": {
+   "f1": 3.1666666666666665,
+   "f2": 3.8333333333333335,
+   "f1_norm": 0.1538,
+   "f2_norm": 0.4615,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P05": {
+   "f1": 3.5,
+   "f2": 3.5,
+   "f1_norm": 0.3077,
+   "f2_norm": 0.3077,
+   "estado_fase2": "Faltante en fase 2",
+   "requiere_revision": "OK"
+  },
+  "P06": {
+   "f1": 4.166666666666667,
+   "f2": 3.3333333333333335,
+   "f1_norm": 0.6154,
+   "f2_norm": 0.2308,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "Revisar"
+  },
+  "P07": {
+   "f1": 5.0,
+   "f2": 4.333333333333333,
+   "f1_norm": 1.0,
+   "f2_norm": 0.6923,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P08": {
+   "f1": 4.0,
+   "f2": 5.0,
+   "f1_norm": 0.5385,
+   "f2_norm": 1.0,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P09": {
+   "f1": 3.8333333333333335,
+   "f2": 3.0,
+   "f1_norm": 0.4615,
+   "f2_norm": 0.0769,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P10": {
+   "f1": 3.1666666666666665,
+   "f2": 3.5,
+   "f1_norm": 0.1538,
+   "f2_norm": 0.3077,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "Revisar"
+  },
+  "P11": {
+   "f1": 4.0,
+   "f2": 3.5,
+   "f1_norm": 0.5385,
+   "f2_norm": 0.3077,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P12": {
+   "f1": 3.0,
+   "f2": 3.8333333333333335,
+   "f1_norm": 0.0769,
+   "f2_norm": 0.4615,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "Revisar"
+  },
+  "P13": {
+   "f1": 3.6666666666666665,
+   "f2": 3.1666666666666665,
+   "f1_norm": 0.3846,
+   "f2_norm": 0.1538,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P14": {
+   "f1": 3.1666666666666665,
+   "f2": 3.1666666666666665,
+   "f1_norm": 0.1538,
+   "f2_norm": 0.1538,
+   "estado_fase2": "Faltante en fase 2",
+   "requiere_revision": "OK"
+  },
+  "P15": {
+   "f1": 3.0,
+   "f2": 3.6666666666666665,
+   "f1_norm": 0.0769,
+   "f2_norm": 0.3846,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "Revisar"
+  },
+  "P16": {
+   "f1": 4.5,
+   "f2": 3.5,
+   "f1_norm": 0.7692,
+   "f2_norm": 0.3077,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P17": {
+   "f1": 4.833333333333333,
+   "f2": 3.8333333333333335,
+   "f1_norm": 0.9231,
+   "f2_norm": 0.4615,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "Revisar"
+  },
+  "P18": {
+   "f1": 4.333333333333333,
+   "f2": 3.5,
+   "f1_norm": 0.6923,
+   "f2_norm": 0.3077,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P19": {
+   "f1": 3.1666666666666665,
+   "f2": 4.0,
+   "f1_norm": 0.1538,
+   "f2_norm": 0.5385,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P20": {
+   "f1": 3.0,
+   "f2": 4.0,
+   "f1_norm": 0.0769,
+   "f2_norm": 0.5385,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P21": {
+   "f1": 4.166666666666667,
+   "f2": 3.3333333333333335,
+   "f1_norm": 0.6154,
+   "f2_norm": 0.2308,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P22": {
+   "f1": 3.5,
+   "f2": 4.666666666666667,
+   "f1_norm": 0.3077,
+   "f2_norm": 0.8462,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "Revisar"
+  },
+  "P23": {
+   "f1": 3.8333333333333335,
+   "f2": 3.6666666666666665,
+   "f1_norm": 0.4615,
+   "f2_norm": 0.3846,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P24": {
+   "f1": 4.833333333333333,
+   "f2": 3.0,
+   "f1_norm": 0.9231,
+   "f2_norm": 0.0769,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "OK"
+  },
+  "P25": {
+   "f1": 2.8333333333333335,
+   "f2": 2.8333333333333335,
+   "f1_norm": 0.0,
+   "f2_norm": 0.0,
+   "estado_fase2": "Faltante en fase 2",
+   "requiere_revision": "OK"
+  },
+  "P26": {
+   "f1": 3.5,
+   "f2": 3.1666666666666665,
+   "f1_norm": 0.3077,
+   "f2_norm": 0.1538,
+   "estado_fase2": "Contestó fase 2",
+   "requiere_revision": "Revisar"
+  }
+ },
+ "correlation": {
+  "labels": [
+   "IMC",
+   "Sistolica",
+   "Fc reposo",
+   "Glucosa",
+   "Colesterol",
+   "Trigliceridos",
+   "HDL",
+   "IL-6",
+   "PCR",
+   "Cortisol",
+   "SDNN supino",
+   "LF/HF supino",
+   "SDNN de pie",
+   "LF/HF de pie",
+   "Resiliencia (BRS)"
+  ],
+  "keys": [
+   "BMI",
+   "SISTOLICA",
+   "F_CARDIACA",
+   "GLUCOSA",
+   "COLESTEROL",
+   "TRIGLICERIDOS",
+   "HDL",
+   "IL6",
+   "PCR",
+   "CORTISOL",
+   "sup_SDNN",
+   "sup_LFHF",
+   "st_SDNN",
+   "st_LFHF",
+   "BRS"
+  ],
+  "matrix": [
+   [
+    1.0,
+    0.39,
+    0.144,
+    0.341,
+    0.418,
+    0.513,
+    -0.16,
+    0.35,
+    0.05,
+    0.111,
+    -0.571,
+    0.288,
+    -0.392,
+    0.176,
+    0.1
+   ],
+   [
+    0.39,
+    1.0,
+    0.237,
+    0.021,
+    0.026,
+    -0.035,
+    0.039,
+    -0.1,
+    -0.067,
+    0.281,
+    -0.242,
+    -0.138,
+    -0.245,
+    0.039,
+    -0.004
+   ],
+   [
+    0.144,
+    0.237,
+    1.0,
+    0.186,
+    0.26,
+    0.269,
+    0.158,
+    0.223,
+    0.254,
+    0.027,
+    -0.492,
+    -0.018,
+    -0.372,
+    -0.261,
+    -0.06
+   ],
+   [
+    0.341,
+    0.021,
+    0.186,
+    1.0,
+    0.421,
+    0.575,
+    0.238,
+    0.39,
+    0.123,
+    -0.021,
+    -0.382,
+    0.579,
+    -0.279,
+    0.021,
+    -0.314
+   ],
+   [
+    0.418,
+    0.026,
+    0.26,
+    0.421,
+    1.0,
+    0.634,
+    0.535,
+    0.395,
+    0.191,
+    -0.234,
+    -0.287,
+    0.244,
+    -0.355,
+    0.268,
+    0.204
+   ],
+   [
+    0.513,
+    -0.035,
+    0.269,
+    0.575,
+    0.634,
+    1.0,
+    0.054,
+    0.617,
+    0.127,
+    -0.139,
+    -0.384,
+    0.552,
+    -0.26,
+    -0.069,
+    -0.204
+   ],
+   [
+    -0.16,
+    0.039,
+    0.158,
+    0.238,
+    0.535,
+    0.054,
+    1.0,
+    0.071,
+    0.138,
+    -0.104,
+    -0.114,
+    -0.002,
+    0.006,
+    0.388,
+    -0.184
+   ],
+   [
+    0.35,
+    -0.1,
+    0.223,
+    0.39,
+    0.395,
+    0.617,
+    0.071,
+    1.0,
+    0.219,
+    -0.025,
+    -0.483,
+    0.362,
+    -0.275,
+    -0.198,
+    -0.136
+   ],
+   [
+    0.05,
+    -0.067,
+    0.254,
+    0.123,
+    0.191,
+    0.127,
+    0.138,
+    0.219,
+    1.0,
+    -0.25,
+    -0.003,
+    -0.193,
+    -0.019,
+    -0.154,
+    -0.155
+   ],
+   [
+    0.111,
+    0.281,
+    0.027,
+    -0.021,
+    -0.234,
+    -0.139,
+    -0.104,
+    -0.025,
+    -0.25,
+    1.0,
+    -0.283,
+    -0.104,
+    -0.253,
+    0.048,
+    0.057
+   ],
+   [
+    -0.571,
+    -0.242,
+    -0.492,
+    -0.382,
+    -0.287,
+    -0.384,
+    -0.114,
+    -0.483,
+    -0.003,
+    -0.283,
+    1.0,
+    -0.213,
+    0.484,
+    -0.084,
+    0.046
+   ],
+   [
+    0.288,
+    -0.138,
+    -0.018,
+    0.579,
+    0.244,
+    0.552,
+    -0.002,
+    0.362,
+    -0.193,
+    -0.104,
+    -0.213,
+    1.0,
+    -0.26,
+    0.117,
+    -0.181
+   ],
+   [
+    -0.392,
+    -0.245,
+    -0.372,
+    -0.279,
+    -0.355,
+    -0.26,
+    0.006,
+    -0.275,
+    -0.019,
+    -0.253,
+    0.484,
+    -0.26,
+    1.0,
+    -0.067,
+    -0.241
+   ],
+   [
+    0.176,
+    0.039,
+    -0.261,
+    0.021,
+    0.268,
+    -0.069,
+    0.388,
+    -0.198,
+    -0.154,
+    0.048,
+    -0.084,
+    0.117,
+    -0.067,
+    1.0,
+    0.13
+   ],
+   [
+    0.1,
+    -0.004,
+    -0.06,
+    -0.314,
+    0.204,
+    -0.204,
+    -0.184,
+    -0.136,
+    -0.155,
+    0.057,
+    0.046,
+    -0.181,
+    -0.241,
+    0.13,
+    1.0
+   ]
+  ]
+ },
+ "domains": {
+  "biomarcadores": [
+   {
+    "key": "HDL",
+    "label": "HDL",
+    "unit": "mg/dL",
+    "f1_mean": 0.5771,
+    "f2_mean": 0.3338
+   },
+   {
+    "key": "F_CARDIACA",
+    "label": "Frecuencia cardiaca",
+    "unit": "lpm",
+    "f1_mean": 0.4116,
+    "f2_mean": 0.3561
+   },
+   {
+    "key": "PCR",
+    "label": "Proteina C reactiva",
+    "unit": "mg/L",
+    "f1_mean": 0.2461,
+    "f2_mean": 0.2087
+   },
+   {
+    "key": "SISTOLICA",
+    "label": "Presion sistolica",
+    "unit": "mmHg",
+    "f1_mean": 0.3122,
+    "f2_mean": 0.2811
+   },
+   {
+    "key": "H_GLICOSILADA",
+    "label": "Hemoglobina glicosilada",
+    "unit": "%",
+    "f1_mean": 0.2011,
+    "f2_mean": 0.1741
+   },
+   {
+    "key": "DIASTOLICA",
+    "label": "Presion diastolica",
+    "unit": "mmHg",
+    "f1_mean": 0.4904,
+    "f2_mean": 0.4798
+   },
+   {
+    "key": "GLUCOSA",
+    "label": "Glucosa",
+    "unit": "mg/dL",
+    "f1_mean": 0.1035,
+    "f2_mean": 0.101
+   },
+   {
+    "key": "ALBUMINA",
+    "label": "Albumina",
+    "unit": "g/dL",
+    "f1_mean": 0.5598,
+    "f2_mean": 0.5831
+   },
+   {
+    "key": "INDICE_CINTURA",
+    "label": "Indice cintura-cadera",
+    "unit": "",
+    "f1_mean": 0.5426,
+    "f2_mean": 0.5745
+   },
+   {
+    "key": "IL6",
+    "label": "Interleucina-6",
+    "unit": "pg/mL",
+    "f1_mean": 0.2244,
+    "f2_mean": 0.2581
+   },
+   {
+    "key": "BMI",
+    "label": "IMC",
+    "unit": "kg/m2",
+    "f1_mean": 0.4355,
+    "f2_mean": 0.4846
+   },
+   {
+    "key": "TRIGLICERIDOS",
+    "label": "Trigliceridos",
+    "unit": "mg/dL",
+    "f1_mean": 0.1152,
+    "f2_mean": 0.1847
+   },
+   {
+    "key": "COLESTEROL",
+    "label": "Colesterol total",
+    "unit": "mg/dL",
+    "f1_mean": 0.4009,
+    "f2_mean": 0.4871
+   },
+   {
+    "key": "LDL",
+    "label": "LDL",
+    "unit": "mg/dL",
+    "f1_mean": 0.428,
+    "f2_mean": 0.5318
+   },
+   {
+    "key": "CORTISOL",
+    "label": "Cortisol",
+    "unit": "ug/dL",
+    "f1_mean": 0.1069,
+    "f2_mean": 0.3197
+   }
+  ],
+  "hrv_sup": [
+   {
+    "key": "MeanHR",
+    "label": "Frecuencia cardiaca media",
+    "unit": "lpm",
+    "f1_mean": 0.4178,
+    "f2_mean": 0.3564
+   },
+   {
+    "key": "HF",
+    "label": "Potencia HF",
+    "unit": "ms2",
+    "f1_mean": 0.232,
+    "f2_mean": 0.2151
+   },
+   {
+    "key": "lnRMSSD",
+    "label": "ln(RMSSD)",
+    "unit": "",
+    "f1_mean": 0.7272,
+    "f2_mean": 0.7272
+   },
+   {
+    "key": "SD2",
+    "label": "SD2 (Poincare)",
+    "unit": "ms",
+    "f1_mean": 0.4049,
+    "f2_mean": 0.4134
+   },
+   {
+    "key": "SDNN",
+    "label": "SDNN",
+    "unit": "ms",
+    "f1_mean": 0.4062,
+    "f2_mean": 0.4169
+   },
+   {
+    "key": "LF",
+    "label": "Potencia LF",
+    "unit": "ms2",
+    "f1_mean": 0.1869,
+    "f2_mean": 0.1978
+   },
+   {
+    "key": "RMSSD",
+    "label": "RMSSD",
+    "unit": "ms",
+    "f1_mean": 0.4248,
+    "f2_mean": 0.4555
+   },
+   {
+    "key": "SD1",
+    "label": "SD1 (Poincare)",
+    "unit": "ms",
+    "f1_mean": 0.4246,
+    "f2_mean": 0.4553
+   },
+   {
+    "key": "LFHF",
+    "label": "Razon LF/HF",
+    "unit": "",
+    "f1_mean": 0.2219,
+    "f2_mean": 0.2848
+   }
+  ],
+  "hrv_st": [
+   {
+    "key": "HF",
+    "label": "Potencia HF",
+    "unit": "ms2",
+    "f1_mean": 0.2552,
+    "f2_mean": 0.1481
+   },
+   {
+    "key": "RMSSD",
+    "label": "RMSSD",
+    "unit": "ms",
+    "f1_mean": 0.4247,
+    "f2_mean": 0.3603
+   },
+   {
+    "key": "SD1",
+    "label": "SD1 (Poincare)",
+    "unit": "ms",
+    "f1_mean": 0.3978,
+    "f2_mean": 0.3386
+   },
+   {
+    "key": "lnRMSSD",
+    "label": "ln(RMSSD)",
+    "unit": "",
+    "f1_mean": 0.6339,
+    "f2_mean": 0.5895
+   },
+   {
+    "key": "MeanHR",
+    "label": "Frecuencia cardiaca media",
+    "unit": "lpm",
+    "f1_mean": 0.4247,
+    "f2_mean": 0.3959
+   },
+   {
+    "key": "LF",
+    "label": "Potencia LF",
+    "unit": "ms2",
+    "f1_mean": 0.2405,
+    "f2_mean": 0.2132
+   },
+   {
+    "key": "SDNN",
+    "label": "SDNN",
+    "unit": "ms",
+    "f1_mean": 0.2711,
+    "f2_mean": 0.2714
+   },
+   {
+    "key": "SD2",
+    "label": "SD2 (Poincare)",
+    "unit": "ms",
+    "f1_mean": 0.2685,
+    "f2_mean": 0.27
+   },
+   {
+    "key": "LFHF",
+    "label": "Razon LF/HF",
+    "unit": "",
+    "f1_mean": 0.2805,
+    "f2_mean": 0.3912
+   }
+  ],
+  "resiliencia": [
+   {
+    "key": "BRS_promedio",
+    "label": "BRS promedio",
+    "unit": "escala 1-5",
+    "f1_mean": 3.75,
+    "f2_mean": 3.6795
+   }
+  ]
+ }
+}

@@ -1,0 +1,565 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carga Alostática en Bomberos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.1/chart.umd.min.js"></script>
+
+<style>
+  :root{
+    color-scheme: light;
+    --page:            #f9f9f7;
+    --surface:         #fcfcfb;
+    --surface-raised:  #ffffff;
+    --ink:             #0b0b0b;
+    --ink-2:           #52514e;
+    --ink-muted:       #898781;
+    --hairline:        #e1e0d9;
+    --baseline:        #c3c2b7;
+    --ring:            rgba(11,11,11,0.10);
+
+    --accent:          #2a78d6;   /* categorical slot 1 - blue : Fase 1 / UI accent */
+    --accent-2:        #eb6834;   /* categorical slot 2 - orange : Fase 2 */
+    --accent-3:        #1baf7a;   /* categorical slot 3 - aqua  : "de pie" posture */
+    --div-pos:         #2a78d6;
+    --div-neg:         #e34948;
+    --div-mid:         #f0efec;
+    --good:            #0ca30c;
+    --critical:        #d03b3b;
+
+    --font-display: "Libre Franklin", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-body:    "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --page:            #0d0d0d;
+      --surface:         #1a1a19;
+      --surface-raised:  #202020;
+      --ink:             #ffffff;
+      --ink-2:           #c3c2b7;
+      --ink-muted:       #8f8d86;
+      --hairline:        #2c2c2a;
+      --baseline:        #383835;
+      --ring:            rgba(255,255,255,0.10);
+
+      --accent:          #3987e5;
+      --accent-2:        #d95926;
+      --accent-3:        #199e70;
+      --div-pos:         #3987e5;
+      --div-neg:         #e66767;
+      --div-mid:         #383835;
+      --good:            #0ca30c;
+      --critical:        #e66767;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --page:            #0d0d0d;
+    --surface:         #1a1a19;
+    --surface-raised:  #202020;
+    --ink:             #ffffff;
+    --ink-2:           #c3c2b7;
+    --ink-muted:       #8f8d86;
+    --hairline:        #2c2c2a;
+    --baseline:        #383835;
+    --ring:            rgba(255,255,255,0.10);
+
+    --accent:          #3987e5;
+    --accent-2:        #d95926;
+    --accent-3:        #199e70;
+    --div-pos:         #3987e5;
+    --div-neg:         #e66767;
+    --div-mid:         #383835;
+    --good:            #0ca30c;
+    --critical:        #e66767;
+  }
+
+  *{ box-sizing: border-box; }
+  body{
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{ font-family: var(--font-display); text-wrap: balance; margin: 0; }
+  .mono{ font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+  .wrap{ max-width: 1180px; margin: 0 auto; padding: 28px 24px 64px; }
+
+  /* ---------- header ---------- */
+  header.top{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:24px;
+    padding-bottom: 20px; border-bottom: 1px solid var(--hairline); margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+  .title-block{ display:flex; flex-direction:column; gap:6px; max-width: 640px; }
+  .eyebrow{
+    font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  h1{ font-size: 26px; font-weight: 800; letter-spacing: -0.01em; }
+  .subtitle{ font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+  .header-right{ display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+  .badge-row{ display:flex; gap:8px; flex-wrap: wrap; justify-content:flex-end; }
+  .badge{
+    font-family: var(--font-mono); font-size: 11px; letter-spacing:.02em;
+    border: 1px solid var(--hairline); border-radius: 999px; padding: 4px 10px;
+    color: var(--ink-2); background: var(--surface);
+    white-space: nowrap;
+  }
+  .theme-btn{
+    font-family: var(--font-body); font-size: 12.5px; font-weight: 500;
+    border: 1px solid var(--hairline); background: var(--surface); color: var(--ink-2);
+    border-radius: 8px; padding: 6px 12px; cursor: pointer;
+  }
+  .theme-btn:hover{ border-color: var(--baseline); color: var(--ink); }
+  .theme-btn:focus-visible, button:focus-visible, select:focus-visible, [tabindex]:focus-visible{
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+
+  /* ---------- tabs ---------- */
+  nav.tabs{ display:flex; gap: 4px; margin-bottom: 22px; border-bottom: 1px solid var(--hairline); }
+  nav.tabs button{
+    font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--ink-2);
+    background: none; border: none; padding: 10px 4px; margin-right: 22px; cursor: pointer;
+    border-bottom: 2px solid transparent; position: relative; top: 1px;
+  }
+  nav.tabs button[aria-selected="true"]{ color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+  nav.tabs button:hover{ color: var(--ink); }
+
+  section.tab{ display: flex; flex-direction: column; gap: 20px; }
+  section.tab[hidden]{ display: none; }
+
+  /* ---------- grid / cards ---------- */
+  .kpi-row{ display:grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .kpi{
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 10px;
+    padding: 16px 16px; display:flex; flex-direction:column; gap: 6px; min-width: 0;
+  }
+  .kpi .label{ font-size: 11.5px; color: var(--ink-muted); letter-spacing:.02em; }
+  .kpi .value{ font-family: var(--font-mono); font-size: 25px; font-weight: 600; letter-spacing:-0.01em; }
+  .kpi .value small{ font-size: 13px; font-weight: 500; color: var(--ink-2); }
+  .kpi .delta{ font-size: 12px; display:flex; align-items:center; gap: 5px; }
+  .kpi .delta.up{ color: var(--good); }
+  .kpi .delta.down{ color: var(--critical); }
+
+  .panel-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 16px; align-items: start; }
+  .panel{
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 12px;
+    padding: 18px 20px 20px;
+  }
+  .panel h2{ font-size: 15.5px; font-weight: 700; }
+  .panel .desc{ font-size: 12.5px; color: var(--ink-2); margin-top: 3px; line-height: 1.5; }
+  .panel-head{ display:flex; justify-content:space-between; align-items:flex-start; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+
+  .legend{ display:flex; gap: 14px; flex-wrap: wrap; }
+  .legend-item{ display:flex; align-items:center; gap: 6px; font-size: 12px; color: var(--ink-2); }
+  .legend-swatch{ width: 10px; height: 10px; border-radius: 3px; flex: none; }
+
+  select{
+    font-family: var(--font-body); font-size: 13px; color: var(--ink);
+    background: var(--surface-raised); border: 1px solid var(--hairline); border-radius: 7px;
+    padding: 7px 10px; cursor: pointer;
+  }
+
+  .segmented{ display:inline-flex; border:1px solid var(--hairline); border-radius: 8px; overflow:hidden; }
+  .segmented button{
+    font-family: var(--font-body); font-size: 12.5px; font-weight: 500; color: var(--ink-2);
+    background: var(--surface-raised); border: none; padding: 7px 13px; cursor: pointer;
+    border-right: 1px solid var(--hairline);
+  }
+  .segmented button:last-child{ border-right: none; }
+  .segmented button[aria-pressed="true"]{ background: var(--accent); color: #fff; }
+
+  /* ---------- heatmap ---------- */
+  .heatmap-wrap{ overflow-x: auto; }
+  table.heatmap{ border-collapse: collapse; font-size: 11px; }
+  table.heatmap th{ font-weight: 500; color: var(--ink-2); padding: 3px 5px; text-align: left; }
+  table.heatmap th.colhead{
+    writing-mode: vertical-rl; transform: rotate(180deg); height: 92px; vertical-align: bottom;
+    text-align: left; padding-bottom: 4px;
+  }
+  table.heatmap td{ width: 30px; height: 30px; text-align:center; position: relative; border: 2px solid var(--surface); }
+  table.heatmap td .cell-val{ font-family: var(--font-mono); font-size: 9.5px; mix-blend-mode: difference; color: #fff; opacity:.85;}
+  table.heatmap td[data-self="1"]{ background: var(--hairline) !important; }
+
+  #hm-tooltip{
+    position: fixed; pointer-events:none; z-index: 30; background: var(--ink); color: var(--page);
+    font-family: var(--font-body); font-size: 12px; padding: 7px 10px; border-radius: 7px;
+    max-width: 220px; line-height: 1.4; opacity: 0; transition: opacity .1s ease; transform: translate(-50%,-100%);
+  }
+  :root[data-theme="dark"] #hm-tooltip{ background: var(--surface-raised); color: var(--ink); border: 1px solid var(--hairline); }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) #hm-tooltip{ background: var(--surface-raised); color: var(--ink); border: 1px solid var(--hairline); } }
+
+  /* ---------- profile ---------- */
+  .subject-picker{ display:flex; align-items:center; gap: 10px; flex-wrap: wrap; }
+  .subject-meta{ display:flex; gap: 10px; flex-wrap: wrap; }
+  .chip{
+    font-size: 11.5px; font-family: var(--font-mono); color: var(--ink-2);
+    background: var(--surface-raised); border: 1px solid var(--hairline); border-radius: 6px; padding: 3px 8px;
+  }
+  .status-chip{ font-size: 11.5px; font-weight: 600; border-radius: 6px; padding: 3px 9px; display:inline-flex; align-items:center; gap:5px; }
+  .status-chip.ok{ background: color-mix(in srgb, var(--good) 14%, transparent); color: var(--good); }
+  .status-chip.warn{ background: color-mix(in srgb, var(--critical) 14%, transparent); color: var(--critical); }
+
+  .brs-tile{ display:flex; gap: 22px; align-items: stretch; flex-wrap: wrap; }
+  .brs-num{ display:flex; flex-direction:column; gap:2px; }
+  .brs-num .label{ font-size: 11px; color: var(--ink-muted); }
+  .brs-num .value{ font-family: var(--font-mono); font-size: 28px; font-weight: 600; }
+  .brs-arrow{ align-self:center; font-size: 18px; color: var(--ink-muted); }
+
+  canvas{ max-width: 100%; }
+
+  /* ---------- dumbbell ---------- */
+  .dumbbell-row{ display:flex; align-items:center; gap: 10px; }
+  .dumbbell-label{ font-size: 12px; color: var(--ink-2); width: 168px; flex: none; text-align:right; }
+  .dumbbell-track{ flex:1; position:relative; height: 26px; }
+  .dumbbell-track .baseline{ position:absolute; left:0; right:0; top:50%; height:1px; background:var(--hairline); }
+  .dumbbell-track .connector{ position:absolute; top:50%; height:2px; background:var(--ink-muted); transform: translateY(-50%); border-radius: 1px; }
+  .dumbbell-track .dot{ position:absolute; top:50%; width:9px; height:9px; border-radius:50%; transform: translate(-50%,-50%); }
+  .dumbbell-delta{ width: 58px; flex: none; font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-2); text-align:left; }
+
+  footer{
+    margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--hairline);
+    font-size: 12px; color: var(--ink-muted); line-height: 1.6;
+  }
+  footer a{ color: inherit; }
+
+  @media (max-width: 860px){
+    .panel-grid{ grid-template-columns: 1fr; }
+    .kpi-row{ grid-template-columns: repeat(2, 1fr); }
+    .dumbbell-label{ width: 108px; font-size: 11px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="title-block">
+      <span class="eyebrow">Investigación doctoral · Fisiología del estrés ocupacional</span>
+      <h1>Carga alostática en personal de bomberos</h1>
+      <p class="subtitle">Biomarcadores sanguíneos, variabilidad de frecuencia cardiaca (HRV) y resiliencia percibida (BRS), medidos en dos momentos — Fase 1 y Fase 2 — sobre la misma cohorte.</p>
+    </div>
+    <div class="header-right">
+      <div class="badge-row">
+        <span class="badge" id="badge-n">N = — sujetos</span>
+        <span class="badge">Datos anonimizados</span>
+      </div>
+      <button class="theme-btn" id="theme-toggle" type="button">Modo oscuro</button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="resumen">Resumen del grupo</button>
+    <button role="tab" aria-selected="false" data-tab="perfil">Perfil individual</button>
+    <button role="tab" aria-selected="false" data-tab="comparacion">Comparación Fase 1 vs Fase 2</button>
+  </nav>
+
+  <!-- ============ TAB 1: RESUMEN ============ -->
+  <section class="tab" id="tab-resumen" role="tabpanel">
+    <div class="kpi-row" id="kpi-row"></div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Correlación entre biomarcadores, HRV y resiliencia</h2>
+          <p class="desc">Coeficiente de Pearson (r) sobre valores normalizados de Fase 1, n = 26. Pasa el cursor sobre una celda para ver el par y el coeficiente exacto.</p>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><span class="legend-swatch" style="background:var(--div-neg)"></span>r negativo</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:var(--div-mid); border:1px solid var(--hairline)"></span>r ≈ 0</div>
+          <div class="legend-item"><span class="legend-swatch" style="background:var(--div-pos)"></span>r positivo</div>
+        </div>
+      </div>
+      <div class="heatmap-wrap"><table class="heatmap" id="heatmap"></table></div>
+    </div>
+  </section>
+
+  <!-- ============ TAB 2: PERFIL INDIVIDUAL ============ -->
+  <section class="tab" id="tab-perfil" role="tabpanel" hidden>
+    <div class="panel">
+      <div class="panel-head">
+        <div class="subject-picker">
+          <label for="subject-select" style="font-size:13px; color:var(--ink-2)">Sujeto</label>
+          <select id="subject-select"></select>
+          <div class="subject-meta" id="subject-meta"></div>
+        </div>
+      </div>
+      <div class="brs-tile" id="brs-tile"></div>
+    </div>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Perfil de biomarcadores</h2>
+            <p class="desc">15 variables normalizadas (0–1, mín-máx de la cohorte). El área muestra cómo se ubica el sujeto en Fase 1 frente a Fase 2.</p>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><span class="legend-swatch" style="background:var(--accent)"></span>Fase 1</div>
+            <div class="legend-item"><span class="legend-swatch" style="background:var(--accent-2)"></span>Fase 2</div>
+          </div>
+        </div>
+        <canvas id="radar-chart" height="330"></canvas>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Respuesta ortostática (HRV)</h2>
+            <p class="desc">Variables de HRV normalizadas, posición supina vs. de pie, Fase 1.</p>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><span class="legend-swatch" style="background:var(--accent)"></span>Supina</div>
+            <div class="legend-item"><span class="legend-swatch" style="background:var(--accent-3)"></span>De pie</div>
+          </div>
+        </div>
+        <canvas id="hrv-bar-chart" height="330"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TAB 3: COMPARACION ============ -->
+  <section class="tab" id="tab-comparacion" role="tabpanel" hidden>
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Promedio de la cohorte: Fase 1 vs Fase 2</h2>
+          <p class="desc">Cada fila es una variable normalizada (0–1); el punto izquierdo es la media en Fase 1 y el derecho en Fase 2, ordenadas por magnitud del cambio.</p>
+        </div>
+        <div class="segmented" id="domain-segmented" role="tablist">
+          <button aria-pressed="true" data-domain="biomarcadores">Biomarcadores</button>
+          <button aria-pressed="false" data-domain="hrv_sup">HRV supina</button>
+          <button aria-pressed="false" data-domain="hrv_st">HRV de pie</button>
+          <button aria-pressed="false" data-domain="resiliencia">Resiliencia</button>
+        </div>
+      </div>
+      <div class="legend" style="margin-bottom:14px;">
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--accent); border-radius:50%;"></span>Fase 1 (media)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--accent-2); border-radius:50%;"></span>Fase 2 (media)</div>
+      </div>
+      <div id="dumbbell-chart"></div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>Nota metodológica.</strong> Cohorte de n = 26 elementos de un cuerpo de bomberos, evaluados en dos momentos (Fase 1 / Fase 2). Los biomarcadores, la HRV y el puntaje de resiliencia (Brief Resilience Scale, BRS) fueron normalizados con escalamiento mín-máx (0–1) sobre el rango observado en la cohorte para hacerlos comparables entre unidades. Los identificadores originales fueron reemplazados por códigos anónimos (P01–P26); ningún nombre se incluye en este panel ni en los datos que lo alimentan.
+    <br>Parte del proyecto de investigación doctoral de Marcel Carmona — dashboard construido como pieza de portafolio en ciencia de datos.
+  </footer>
+
+  <div id="hm-tooltip" role="tooltip"></div>
+</div>
+
+<script>
+(async function(){
+  const DATA = await fetch('data/dashboard_data.json').then(r => r.json());
+  const css = getComputedStyle(document.documentElement);
+  const cv = name => css.getPropertyValue(name).trim();
+
+  /* ---------------- theme toggle ---------------- */
+  const themeBtn = document.getElementById('theme-toggle');
+  function applyTheme(mode){
+    if(mode){ document.documentElement.setAttribute('data-theme', mode); }
+    else { document.documentElement.removeAttribute('data-theme'); }
+    const effectiveDark = mode === 'dark' || (!mode && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    themeBtn.textContent = effectiveDark ? 'Modo claro' : 'Modo oscuro';
+    try{ localStorage.setItem('al-theme', mode || ''); }catch(e){}
+  }
+  let saved = ''; try{ saved = localStorage.getItem('al-theme') || ''; }catch(e){}
+  applyTheme(saved);
+  themeBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const isDark = current === 'dark' || (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    applyTheme(isDark ? 'light' : 'dark');
+    renderAll(); // re-render charts so Chart.js picks up new CSS var colors
+  });
+
+  /* ---------------- tabs ---------------- */
+  const tabButtons = document.querySelectorAll('nav.tabs button');
+  const panels = { resumen: document.getElementById('tab-resumen'), perfil: document.getElementById('tab-perfil'), comparacion: document.getElementById('tab-comparacion') };
+  tabButtons.forEach(btn => btn.addEventListener('click', () => {
+    tabButtons.forEach(b => b.setAttribute('aria-selected', 'false'));
+    btn.setAttribute('aria-selected', 'true');
+    Object.entries(panels).forEach(([k, el]) => el.hidden = (k !== btn.dataset.tab));
+  }));
+
+  /* ---------------- KPIs ---------------- */
+  document.getElementById('badge-n').textContent = `N = ${DATA.kpis.n_sujetos} sujetos`;
+  const brsUp = DATA.kpis.brs_f2_promedio >= DATA.kpis.brs_f1_promedio;
+  const kpiRow = document.getElementById('kpi-row');
+  const kpis = [
+    { label: 'Cohorte', value: DATA.kpis.n_sujetos, suffix: 'bomberos', sub: `Edad media ${DATA.kpis.edad_promedio} años · ${DATA.kpis.pct_masculino}% masculino` },
+    { label: 'Resiliencia (BRS) · Fase 1', value: DATA.kpis.brs_f1_promedio.toFixed(2), suffix: '/ 5' },
+    { label: 'Resiliencia (BRS) · Fase 2', value: DATA.kpis.brs_f2_promedio.toFixed(2), suffix: '/ 5', delta: brsUp },
+    { label: 'Mejoró su resiliencia F1→F2', value: DATA.kpis.pct_mejora_resiliencia + '%', sub: 'de la cohorte' },
+    { label: 'Más asociado a resiliencia', value: DATA.kpis.variable_mas_asociada_resiliencia, mono:false, sub: `r = ${DATA.kpis.r_variable_mas_asociada_resiliencia}` },
+  ];
+  kpiRow.innerHTML = kpis.map(k => `
+    <div class="kpi">
+      <div class="label">${k.label}</div>
+      <div class="value" style="${k.mono===false?'font-family:var(--font-display); font-size:19px;':''}">${k.value}${k.suffix ? ` <small>${k.suffix}</small>` : ''}</div>
+      ${k.sub ? `<div class="delta">${k.sub}</div>` : ''}
+      ${k.delta !== undefined ? `<div class="delta ${k.delta ? 'up' : 'down'}">${k.delta ? '▲ vs. Fase 1' : '▼ vs. Fase 1'}</div>` : ''}
+    </div>`).join('');
+
+  /* ---------------- correlation heatmap ---------------- */
+  function corrColor(r){
+    const pos = cv('--div-pos'), neg = cv('--div-neg'), mid = cv('--div-mid');
+    const hex2rgb = h => { h = h.replace('#',''); return [parseInt(h.substr(0,2),16), parseInt(h.substr(2,2),16), parseInt(h.substr(4,2),16)]; };
+    const lerp = (a,b,t) => a.map((v,i) => Math.round(v + (b[i]-v)*t));
+    const a = r < 0 ? hex2rgb(neg) : hex2rgb(pos);
+    const m = hex2rgb(mid);
+    const t = Math.min(Math.abs(r), 1);
+    const [rr,gg,bb] = lerp(m, a, t);
+    return `rgb(${rr},${gg},${bb})`;
+  }
+  function renderHeatmap(){
+    const { labels, matrix } = DATA.correlation;
+    const tbl = document.getElementById('heatmap');
+    let thead = '<tr><th></th>' + labels.map(l => `<th class="colhead">${l}</th>`).join('') + '</tr>';
+    let rows = labels.map((rowLabel, i) => {
+      const cells = matrix[i].map((r, j) => {
+        const isSelf = i === j;
+        const bg = isSelf ? '' : corrColor(r);
+        return `<td data-self="${isSelf?1:0}" style="background:${bg}" data-row="${rowLabel}" data-col="${labels[j]}" data-r="${r.toFixed(2)}"><span class="cell-val">${isSelf ? '' : r.toFixed(2)}</span></td>`;
+      }).join('');
+      return `<tr><th>${rowLabel}</th>${cells}</tr>`;
+    }).join('');
+    tbl.innerHTML = thead + rows;
+
+    const tooltip = document.getElementById('hm-tooltip');
+    tbl.querySelectorAll('td[data-self="0"]').forEach(td => {
+      td.addEventListener('mousemove', e => {
+        tooltip.style.opacity = 1;
+        tooltip.style.left = e.clientX + 'px';
+        tooltip.style.top = (e.clientY - 10) + 'px';
+        tooltip.innerHTML = `<strong>${td.dataset.row}</strong> × <strong>${td.dataset.col}</strong><br>r = ${td.dataset.r}`;
+      });
+      td.addEventListener('mouseleave', () => tooltip.style.opacity = 0);
+    });
+  }
+
+  /* ---------------- profile tab ---------------- */
+  const select = document.getElementById('subject-select');
+  select.innerHTML = DATA.subjects.map(s => `<option value="${s.id}">${s.id} — ${s.edad} años, ${s.genero === 'M' ? 'masculino' : 'femenino'}</option>`).join('');
+
+  let radarChart, hrvChart;
+  const radarShort = { INDICE_CINTURA:'Cintura/cadera', BMI:'IMC', SISTOLICA:'Sistólica', DIASTOLICA:'Diastólica', F_CARDIACA:'FC reposo', COLESTEROL:'Colesterol', TRIGLICERIDOS:'Triglicéridos', HDL:'HDL', LDL:'LDL', ALBUMINA:'Albúmina', GLUCOSA:'Glucosa', IL6:'IL-6', CORTISOL:'Cortisol', H_GLICOSILADA:'HbA1c', PCR:'PCR' };
+
+  function renderProfile(){
+    const id = select.value;
+    const subj = DATA.subjects.find(s => s.id === id);
+    document.getElementById('subject-meta').innerHTML = `
+      <span class="chip">${subj.edad} años</span>
+      <span class="chip">${subj.genero === 'M' ? 'Masculino' : 'Femenino'}</span>
+      <span class="chip">${subj.exp_previa ? 'Con experiencia previa en emergencias' : 'Sin experiencia previa'}</span>`;
+
+    const brs = DATA.brs[id];
+    const brsDeltaUp = brs.f2 >= brs.f1;
+    const isMissing = brs.estado_fase2 !== 'Contestó fase 2';
+    document.getElementById('brs-tile').innerHTML = `
+      <div class="brs-num"><div class="label">BRS Fase 1</div><div class="value">${brs.f1.toFixed(2)}</div></div>
+      <div class="brs-arrow">→</div>
+      <div class="brs-num"><div class="label">BRS Fase 2</div><div class="value">${isMissing ? '—' : brs.f2.toFixed(2)}</div></div>
+      <div class="brs-num"><div class="label">Estado</div>
+        <span class="status-chip ${isMissing ? 'warn' : 'ok'}">${isMissing ? '⚠ ' : '✓ '}${brs.estado_fase2}</span>
+      </div>`;
+
+    const bio = DATA.biomarcadores[id];
+    const bioKeys = DATA.biomarcadores_catalog.map(c => c.key);
+    const labels = bioKeys.map(k => radarShort[k] || k);
+    const f1 = bioKeys.map(k => bio[k].f1_norm);
+    const f2 = bioKeys.map(k => bio[k].f2_norm);
+
+    if(radarChart) radarChart.destroy();
+    radarChart = new Chart(document.getElementById('radar-chart'), {
+      type: 'radar',
+      data: { labels, datasets: [
+        { label: 'Fase 1', data: f1, borderColor: cv('--accent'), backgroundColor: cv('--accent') + '33', borderWidth: 2, pointRadius: 2 },
+        { label: 'Fase 2', data: f2, borderColor: cv('--accent-2'), backgroundColor: cv('--accent-2') + '33', borderWidth: 2, pointRadius: 2 },
+      ]},
+      options: {
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => {
+          const key = bioKeys[ctx.dataIndex]; const cat = DATA.biomarcadores_catalog[ctx.dataIndex];
+          const raw = ctx.datasetIndex === 0 ? bio[key].f1_raw : bio[key].f2_raw;
+          return `${ctx.dataset.label}: ${raw != null ? raw + ' ' + cat.unit : ctx.formattedValue}`;
+        } } } },
+        scales: { r: { min: 0, max: 1, ticks: { display: false }, grid: { color: cv('--hairline') }, angleLines: { color: cv('--hairline') },
+          pointLabels: { color: cv('--ink-2'), font: { size: 10.5, family: css.getPropertyValue('--font-body') } } } },
+        animation: { duration: 250 },
+      }
+    });
+
+    const hrvKeys = DATA.hrv_catalog.map(c => c.key);
+    const hrvLabels = DATA.hrv_catalog.map(c => c.label);
+    const sup = hrvKeys.map(k => DATA.hrv_sup[id][k].f1_norm);
+    const st = hrvKeys.map(k => DATA.hrv_st[id][k].f1_norm);
+
+    if(hrvChart) hrvChart.destroy();
+    hrvChart = new Chart(document.getElementById('hrv-bar-chart'), {
+      type: 'bar',
+      data: { labels: hrvLabels, datasets: [
+        { label: 'Supina', data: sup, backgroundColor: cv('--accent'), borderRadius: 3, maxBarThickness: 16 },
+        { label: 'De pie', data: st, backgroundColor: cv('--accent-3'), borderRadius: 3, maxBarThickness: 16 },
+      ]},
+      options: {
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => {
+          const key = hrvKeys[ctx.dataIndex]; const cat = DATA.hrv_catalog[ctx.dataIndex];
+          const src = ctx.datasetIndex === 0 ? DATA.hrv_sup[id] : DATA.hrv_st[id];
+          const raw = src[key].f1_raw;
+          return `${ctx.dataset.label}: ${raw != null ? raw.toFixed(2) + ' ' + cat.unit : ctx.formattedValue}`;
+        } } } },
+        scales: {
+          x: { ticks: { color: cv('--ink-2'), font: { size: 10.5 } }, grid: { display: false } },
+          y: { min: 0, max: 1, ticks: { color: cv('--ink-muted'), font: { size: 10.5 } }, grid: { color: cv('--hairline') } },
+        },
+        animation: { duration: 250 },
+      }
+    });
+  }
+  select.addEventListener('change', renderProfile);
+
+  /* ---------------- dumbbell (SVG) ---------------- */
+  const domainLabels = { biomarcadores: 'valor normalizado', hrv_sup: 'valor normalizado', hrv_st: 'valor normalizado', resiliencia: 'puntaje (escala 1–5)' };
+  function renderDumbbell(domainKey){
+    const rows = DATA.domains[domainKey];
+    const host = document.getElementById('dumbbell-chart');
+    const isRes = domainKey === 'resiliencia';
+    const maxVal = isRes ? 5 : 1;
+    const pad = 3;
+    host.innerHTML = rows.map(r => {
+      const x1 = pad + (r.f1_mean / maxVal) * (100 - pad*2);
+      const x2 = pad + (r.f2_mean / maxVal) * (100 - pad*2);
+      const lo = Math.min(x1, x2), hi = Math.max(x1, x2);
+      const delta = r.f2_mean - r.f1_mean;
+      const deltaStr = (delta >= 0 ? '+' : '') + delta.toFixed(2);
+      return `
+      <div class="dumbbell-row">
+        <div class="dumbbell-label">${r.label}</div>
+        <div class="dumbbell-track">
+          <div class="baseline"></div>
+          <div class="connector" style="left:${lo}%; width:${hi-lo}%;"></div>
+          <div class="dot" style="left:${x1}%; background:${cv('--accent')};"></div>
+          <div class="dot" style="left:${x2}%; background:${cv('--accent-2')};"></div>
+        </div>
+        <div class="dumbbell-delta">Δ ${deltaStr}</div>
+      </div>`;
+    }).join('');
+  }
+  document.querySelectorAll('#domain-segmented button').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('#domain-segmented button').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    btn.setAttribute('aria-pressed', 'true');
+    renderDumbbell(btn.dataset.domain);
+  }));
+
+  function renderAll(){
+    renderHeatmap();
+    renderProfile();
+    renderDumbbell(document.querySelector('#domain-segmented button[aria-pressed="true"]').dataset.domain);
+  }
+  renderAll();
+})();
+</script>
