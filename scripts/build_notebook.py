@@ -23,7 +23,7 @@ md("""\
 | Resiliencia | 1 | Puntaje promedio de la Brief Resilience Scale (BRS) |
 
 **Nota de privacidad:** los datos usados en este notebook ya están anonimizados — los identificadores
-originales fueron reemplazados por códigos `P01`–`P26` antes de guardarse en `data/cohorte_anonimizada.csv`.
+originales fueron reemplazados por códigos `P01`–`P32` antes de guardarse en `data/cohorte_anonimizada.csv`.
 Ningún nombre se procesa ni se muestra en ningún punto de este análisis.
 
 Una versión interactiva de estas mismas figuras (con selector de sujeto y tooltips) vive en

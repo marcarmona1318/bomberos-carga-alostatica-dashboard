@@ -27,7 +27,7 @@ alostática:
 - `Resiliencia_BRS_normalizado_minmax.csv` — puntaje promedio de la Brief Resilience Scale
 
 Cohorte: **n = 26**, evaluados en Fase 1 y Fase 2. Los identificadores originales fueron
-reemplazados por códigos anónimos `P01`–`P26` antes de que ningún dato saliera de la carpeta de
+reemplazados por códigos anónimos `P01`–`P32` antes de que ningún dato saliera de la carpeta de
 trabajo — ningún nombre se incluye en este repositorio.
 
 ## Cómo ver el dashboard

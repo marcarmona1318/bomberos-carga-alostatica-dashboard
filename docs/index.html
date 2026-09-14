@@ -301,7 +301,7 @@
       <p><b>Discrepancia de datos — Cortisol:</b> este panel calcula un cambio de <b id="dq-median-val"></b>% en la mediana de cortisol entre fases. Un artículo relacionado reporta +61%. No se pudo reconciliar exactamente con los datos disponibles en este entorno; los valores obtenidos con distintas fórmulas son:</p>
       <table class="dq-table" id="dq-table"></table>
       <p>Ninguno de estos cálculos iguala el +61% publicado. Posibles causas no verificables aquí: una fórmula distinta, un subconjunto de participantes diferente, o una versión de la base de datos posterior a esta. Se documenta la discrepancia en vez de ajustar las cifras para que coincidan.</p>
-      <p><b>Privacidad:</b> los identificadores originales fueron reemplazados por códigos anónimos (P01–P26); ningún nombre se usa en este panel ni en los datos que lo alimentan.</p>
+      <p><b>Privacidad:</b> los identificadores originales fueron reemplazados por códigos anónimos (P01–P32, con huecos: algunos participantes salieron del estudio); ningún nombre se usa en este panel ni en los datos que lo alimentan.</p>
     </div>
   </details>
 
@@ -318,7 +318,7 @@ try{
   // cache-busting query param: bump DATA_VERSION on every deploy so GitHub
   // Pages' CDN (Cache-Control: max-age=600) never serves a stale JSON file
   // alongside a freshly-deployed index.html.
-  const DATA_VERSION = 4;
+  const DATA_VERSION = 5;
   const DATA = await fetch(`data/dashboard_data.json?v=${DATA_VERSION}`, { cache: 'no-cache' }).then(r => r.json());
   if(!DATA.variable_groups_ordered) throw new Error('El archivo de datos está incompleto o desactualizado (variable_groups_ordered no encontrado).');
   const css = getComputedStyle(document.documentElement);

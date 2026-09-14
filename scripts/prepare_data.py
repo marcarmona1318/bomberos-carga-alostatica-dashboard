@@ -20,9 +20,14 @@ st = pd.read_csv(f"{SRC}/HRV_st_normalizado_minmax.csv")
 brs = pd.read_csv(f"{SRC}/Resiliencia_BRS_normalizado_minmax.csv")
 raw = pd.read_csv(f"{SRC}/2027-DATOS REVISADOS.csv")
 
-# --- anonymize: assign P01..P26 by ascending PM, drop names entirely -------
+# --- anonymize: code = "P" + original PM number (zero-padded), NOT a
+# re-sequenced 1..26 rank. Several PM numbers are missing (participants who
+# left the study), so the codes have gaps too (P02, P03, P06... don't exist)
+# -- that's intentional: it keeps every code traceable back to the
+# researcher's own PM numbering in the source spreadsheets, while still
+# dropping the name. Drop names entirely -------------------------------
 pm_order = sorted(bio["PM"].unique())
-code_of = {pm: f"P{str(i+1).zfill(2)}" for i, pm in enumerate(pm_order)}
+code_of = {pm: f"P{str(pm).zfill(2)}" for pm in pm_order}
 
 for df in (bio, sup, st, brs, raw):
     df["SUBJECT"] = df["PM"].map(code_of)
