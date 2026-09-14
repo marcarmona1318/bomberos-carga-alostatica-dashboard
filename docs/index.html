@@ -304,7 +304,13 @@
 
 <script>
 (async function(){
-  const DATA = await fetch('data/dashboard_data.json').then(r => r.json());
+try{
+  // cache-busting query param: bump DATA_VERSION on every deploy so GitHub
+  // Pages' CDN (Cache-Control: max-age=600) never serves a stale JSON file
+  // alongside a freshly-deployed index.html.
+  const DATA_VERSION = 4;
+  const DATA = await fetch(`data/dashboard_data.json?v=${DATA_VERSION}`, { cache: 'no-cache' }).then(r => r.json());
+  if(!DATA.variable_groups_ordered) throw new Error('El archivo de datos está incompleto o desactualizado (variable_groups_ordered no encontrado).');
   const css = getComputedStyle(document.documentElement);
   const cv = name => css.getPropertyValue(name).trim();
 
@@ -644,5 +650,11 @@
     renderDetail();
   }
   renderAll();
+} catch(err) {
+  console.error(err);
+  document.getElementById('hero-headline').textContent = 'No se pudieron cargar los datos del panel.';
+  const cav = document.querySelector('.hero .caveat');
+  if(cav) cav.textContent = 'Intenta recargar la página. Si el problema persiste, es un error técnico (ver consola) y no un hallazgo del estudio: ' + (err && err.message ? err.message : err);
+}
 })();
 </script>
